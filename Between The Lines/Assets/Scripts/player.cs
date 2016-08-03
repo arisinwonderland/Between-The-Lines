@@ -76,6 +76,11 @@ public class player : MonoBehaviour {
             }
 
         }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> sean
         if (!grounded)
         {
             transform.Translate(Vector3.down * gravity * Time.deltaTime);
@@ -88,6 +93,7 @@ public class player : MonoBehaviour {
 
     }
 
+<<<<<<< HEAD
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("Floor")) {
 			grounded = true;
@@ -104,6 +110,10 @@ public class player : MonoBehaviour {
             isjumping = false;
         }
     }
+=======
+	
+
+>>>>>>> sean
 
 
 	void move(Vector3 direction) {
