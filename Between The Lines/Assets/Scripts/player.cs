@@ -89,24 +89,28 @@ public class player : MonoBehaviour {
     }
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag ("Floor")) {
+		while (other.gameObject.CompareTag ("Floor")) {
 			grounded = true;
             isjumping = false;
 		}
-        if (other.gameObject.CompareTag("redfloor"))
+        while (other.gameObject.CompareTag("redfloor"))
         {
             grounded = true;
             isjumping = false;
         }
-        if (other.gameObject.CompareTag("bluefloor"))
+        while (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
             isjumping = false;
         }
     }
 
+    public static void IgnoreLayerCollision(int layer1, int layer2, bool ignore = true)
+    {
+            
+    }
 
-	void move(Vector3 direction) {
+    void move(Vector3 direction) {
 		if (grounded) {
 			transform.Translate (direction * moveSpeed * Time.deltaTime);
 		} else {
