@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\aspects.cs" />
     <Compile Include="Assets\Scripts\mouseCamera.cs" />
     <Compile Include="Assets\Scripts\mouseScreen.cs" />
+    <Compile Include="Assets\Scripts\noRotate.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

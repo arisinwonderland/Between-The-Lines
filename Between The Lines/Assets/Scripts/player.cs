@@ -13,6 +13,7 @@ public class player : MonoBehaviour {
 	public int moveSpeed = 5;
 
     public float antiGrav = 10;
+    public bool stopped;
 
 
     // Use this for initialization
@@ -105,6 +106,18 @@ public class player : MonoBehaviour {
             isjumping = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
+        else if (other.gameObject.CompareTag("redblock"))
+        {
+            grounded = true;
+            isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("blueblock"))
+        {
+            grounded = true;
+            isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
@@ -119,23 +132,34 @@ public class player : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            //ground        ed = false;
+            grounded = false;
 
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
         }
         else if (other.gameObject.CompareTag("redfloor"))
         {
-            //grounded = false;
+            grounded = false;
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
 
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
-           // grounded = false;
+            grounded = false;
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
 
         }
-        else grounded = true;
+        else if (other.gameObject.CompareTag("blueblock"))
+        {
+            grounded = false;
+            //isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("redblock"))
+        {
+            grounded = false;
+            //isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
     }
 
     public static void IgnoreLayerCollision(int layer1, int layer2, bool ignore = true)
