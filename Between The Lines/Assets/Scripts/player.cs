@@ -90,25 +90,18 @@ public class player : MonoBehaviour {
     }
 
 
-	void OnTriggerEnter(Collider other) {
-		while (other.gameObject.CompareTag ("Floor")) {
-			grounded = true;
-            isjumping = false;
-		}
-<<<<<<< HEAD
-        else if (other.gameObject.CompareTag("redfloor"))
-=======
-        while (other.gameObject.CompareTag("redfloor"))
->>>>>>> alex
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
             isjumping = false;
         }
-<<<<<<< HEAD
+        else if (other.gameObject.CompareTag("redfloor"))
+        {
+            grounded = true;
+            isjumping = false;
+        }
         else if (other.gameObject.CompareTag("bluefloor"))
-=======
-        while (other.gameObject.CompareTag("bluefloor"))
->>>>>>> alex
         {
             grounded = true;
             isjumping = false;
