@@ -95,16 +95,17 @@ public class player : MonoBehaviour {
 			grounded = true;
             isjumping = false;
 		}
-        if (other.gameObject.CompareTag("redfloor"))
+        else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = true;
             isjumping = false;
         }
-        if (other.gameObject.CompareTag("bluefloor"))
+        else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
             isjumping = false;
         }
+        else grounded = false;
     }
 
 
