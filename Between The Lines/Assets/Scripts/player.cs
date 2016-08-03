@@ -6,16 +6,53 @@ public class player : MonoBehaviour {
 	public bool grounded = false;
     public bool isjumping = false;
     public float jumptimer = 0;
+    public bool midJump = false;
+
+    public float gravity = 3f;
 
 	public int moveSpeed = 5;
 
-	// Use this for initialization
-	void Start () {
+    public float antiGrav = 10;
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            grounded = true;
+            isjumping = false;
+        }
+        if (other.gameObject.CompareTag("redfloor"))
+        {
+            grounded = true;
+            isjumping = false;
+        }
+        if (other.gameObject.CompareTag("bluefloor"))
+        {
+            grounded = true;
+            isjumping = false;
+        }
+        
+    }
+
+
+    
+    // Update is called once per frame
+    void Update () {
+        if (grounded)
+        {
+            jumptimer = 0;
+            midJump = false;
+            isjumping = false;
+            gravity = 4f;
+            jumptimer = 0;
+            antiGrav = 10;
+        }
         if (grounded == false && isjumping == false)
         {
             transform.Translate(Vector3.down*Time.deltaTime*4);
@@ -29,38 +66,57 @@ public class player : MonoBehaviour {
 		} else if (Input.GetKey (KeyCode.S)) {
 			move (Vector3.back);
 		}
-		if (Input.GetKey (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) && !isjumping) {
 			if(grounded == true)
             {
                 grounded = false;
                 isjumping = true;
             }
 		}
+
         if(isjumping == true)
         {
-            transform.Translate(Vector3.up*10*Time.deltaTime);
-            jumptimer += Time.deltaTime;
-            if(jumptimer >= .25)
-            {
-                jumptimer = 0;
-                isjumping = false;
-            }
-        }
-	}
 
-	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag ("Floor")) {
-			grounded = true;
-            isjumping = false;
-		}
-	}
+            antiGrav = 10;
+
+
+
+
+            if (!midJump)
+            {
+                transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+            }
+            else gravity = 4f;
+            jumptimer += Time.deltaTime;
+            if(jumptimer >= .25 && jumptimer <= .55 && midJump == false)
+            {
+                
+                midJump = true;
+            }
+
+        }
+
+        if (!grounded)
+        {
+            transform.Translate(Vector3.down * gravity * Time.deltaTime);
+        }
+
+
+
+
+
+
+    }
+
+	
 
 
 	void move(Vector3 direction) {
 		if (grounded) {
 			transform.Translate (direction * moveSpeed * Time.deltaTime);
 		} else {
-			transform.Translate (direction * moveSpeed * Time.deltaTime / 2);
-		}
+			transform.Translate (direction * moveSpeed * Time.deltaTime);
+            transform.Translate(direction * moveSpeed * Time.deltaTime / 4);
+        }
 	}
 }
