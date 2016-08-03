@@ -7,7 +7,7 @@ public class player : MonoBehaviour {
     public bool isjumping = false;
     public float jumptimer = 0;
 
-	public int moveSpeed = 10;
+	public int moveSpeed = 5;
 
 	// Use this for initialization
 	void Start () {
