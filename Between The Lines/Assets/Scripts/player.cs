@@ -53,7 +53,17 @@ public class player : MonoBehaviour {
 			grounded = true;
             isjumping = false;
 		}
-	}
+        if (other.gameObject.CompareTag("redfloor"))
+        {
+            grounded = true;
+            isjumping = false;
+        }
+        if (other.gameObject.CompareTag("bluefloor"))
+        {
+            grounded = true;
+            isjumping = false;
+        }
+    }
 
 
 	void move(Vector3 direction) {
