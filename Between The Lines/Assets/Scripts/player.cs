@@ -90,12 +90,31 @@ public class player : MonoBehaviour {
     }
 
 
+<<<<<<< HEAD
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
             isjumping = false;
         }
+=======
+<<<<<<< HEAD
+
+
+
+    void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag ("Floor")) {
+		 	grounded = true;
+=======
+	void OnTriggerEnter(Collider other) {
+		while (other.gameObject.CompareTag ("Floor")) {
+			grounded = true;
+>>>>>>> 3d95178ed60d2940ce2c26d42dd148e849a5d696
+            isjumping = false;
+ 
+		}
+<<<<<<< HEAD
+>>>>>>> origin/master
         else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = true;
@@ -109,9 +128,33 @@ public class player : MonoBehaviour {
         else grounded = false;
     }
 
+<<<<<<< HEAD
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            grounded = false;
+
+            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+        }
+        else if (other.gameObject.CompareTag("redfloor"))
+        {
+            grounded = false;
+            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+        }
+        else if (other.gameObject.CompareTag("bluefloor"))
+        {
+            grounded = false;
+            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+        }
+        else grounded = true;
+=======
     public static void IgnoreLayerCollision(int layer1, int layer2, bool ignore = true)
     {
             
+>>>>>>> 3d95178ed60d2940ce2c26d42dd148e849a5d696
     }
 
     void move(Vector3 direction) {
