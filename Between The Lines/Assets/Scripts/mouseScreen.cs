@@ -13,12 +13,12 @@ public class mouseScreen : MonoBehaviour {
         if (Input.GetAxis("Mouse X") < 0)
         {
             //Code for action on mouse moving left
-            transform.Rotate(new Vector3(0, -3, 0));
+            transform.Rotate(new Vector3(0, -2, 0));
         }
         if (Input.GetAxis("Mouse X") > 0)
         {
             //Code for action on mouse moving right
-            transform.Rotate(new Vector3(0, 3, 0));
+            transform.Rotate(new Vector3(0, 2, 0));
         }
 
         if (Input.GetAxis("Mouse Y") < 0)
@@ -33,7 +33,7 @@ public class mouseScreen : MonoBehaviour {
         }
 
 
-
+        gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, 0);
        
 
     }
