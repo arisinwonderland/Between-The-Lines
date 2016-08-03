@@ -90,10 +90,14 @@ public class player : MonoBehaviour {
     }
 
 
-	void OnTriggerEnter(Collider other) {
+
+
+
+    void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("Floor")) {
-			grounded = true;
+		 	grounded = true;
             isjumping = false;
+ 
 		}
         else if (other.gameObject.CompareTag("redfloor"))
         {
@@ -108,8 +112,30 @@ public class player : MonoBehaviour {
         else grounded = false;
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            grounded = false;
 
-	void move(Vector3 direction) {
+            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+        }
+        else if (other.gameObject.CompareTag("redfloor"))
+        {
+            grounded = false;
+            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+        }
+        else if (other.gameObject.CompareTag("bluefloor"))
+        {
+            grounded = false;
+            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+        }
+        else grounded = true;
+    }
+
+    void move(Vector3 direction) {
 		if (grounded) {
 			transform.Translate (direction * moveSpeed * Time.deltaTime);
 		} else {
