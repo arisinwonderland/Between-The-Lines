@@ -16,7 +16,11 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.A)) {
+        if (grounded == false)
+        {
+            transform.Translate(Vector3.down / 10);
+        }
+        if (Input.GetKey (KeyCode.A)) {
 			move (Vector3.left);
 		} else if (Input.GetKey (KeyCode.D)) {
 			move (Vector3.right);
