@@ -16,7 +16,11 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.A)) {
+        if (grounded == false && isjumping == false)
+        {
+            transform.Translate(Vector3.down*Time.deltaTime*4);
+        }
+        if (Input.GetKey (KeyCode.A)) {
 			move (Vector3.left);
 		} else if (Input.GetKey (KeyCode.D)) {
 			move (Vector3.right);
@@ -26,7 +30,7 @@ public class player : MonoBehaviour {
 			move (Vector3.back);
 		}
 		if (Input.GetKey (KeyCode.Space)) {
-			if(grounded == true && isjumping == false)
+			if(grounded == true)
             {
                 grounded = false;
                 isjumping = true;
@@ -34,9 +38,9 @@ public class player : MonoBehaviour {
 		}
         if(isjumping == true)
         {
-            move(Vector3.up);
+            transform.Translate(Vector3.up*10*Time.deltaTime);
             jumptimer += Time.deltaTime;
-            if(jumptimer >= 2)
+            if(jumptimer >= .25)
             {
                 jumptimer = 0;
                 isjumping = false;
