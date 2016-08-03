@@ -96,17 +96,20 @@ public class player : MonoBehaviour {
         {
             grounded = true;
             isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
 
         else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = true;
             isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
             isjumping = false;
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
         else grounded = false;
     }
@@ -116,19 +119,19 @@ public class player : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            grounded = false;
+            //ground        ed = false;
 
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
         }
         else if (other.gameObject.CompareTag("redfloor"))
         {
-            grounded = false;
+            //grounded = false;
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
 
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
-            grounded = false;
+           // grounded = false;
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
 
         }
