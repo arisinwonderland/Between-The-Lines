@@ -35,10 +35,6 @@ public class player : MonoBehaviour {
             jumptimer = 0;
             antiGrav = 10;
         }
-        if (grounded == false && isjumping == false)
-        {
-            transform.Translate(Vector3.down*Time.deltaTime*4);
-        }
         /* if (grounded == false && isjumping == false)
         {
             transform.Translate(Vector3.down*Time.deltaTime*4);
@@ -85,138 +81,81 @@ public class player : MonoBehaviour {
         /*if (!grounded)
         {
             transform.Translate(Vector3.down * gravity * Time.deltaTime);
-<<<<<<< .merge_file_a01452
         }*/
     }
 
-    void OnCollisonEnter(Collision other) {
-=======
-        }
-
-
-
-
-    }
-
-
-
-    void OnTriggerEnter(Collider other) {
-
-    }
-
-    void OnCollisionEnter2D(Collision2D other) {
-
->>>>>>> .merge_file_a98924
+    void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
             isjumping = false;
+			midJump = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-<<<<<<< .merge_file_a01452
-=======
-            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-
->>>>>>> .merge_file_a98924
         }
 
         else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = true;
-            isjumping = false;
+			isjumping = false;
+			midJump = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-<<<<<<< .merge_file_a01452
-=======
-            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
->>>>>>> .merge_file_a98924
         }
         else if (other.gameObject.CompareTag("redblock"))
         {
             grounded = true;
-            isjumping = false;
+			isjumping = false;
+			midJump = false;
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-<<<<<<< .merge_file_a01452
-=======
-            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
->>>>>>> .merge_file_a98924
         }
         else if (other.gameObject.CompareTag("blueblock"))
         {
             grounded = true;
-            isjumping = false;
+			isjumping = false;
+			midJump = false;
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-<<<<<<< .merge_file_a01452
-=======
-            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
->>>>>>> .merge_file_a98924
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
-            isjumping = false;
+			isjumping = false;
+			midJump = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-<<<<<<< .merge_file_a01452
-=======
-            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
->>>>>>> .merge_file_a98924
         }
         else grounded = false;
     }
 
 
-<<<<<<< .merge_file_a01452
-    void OnCollisonExit(Collision other)
-=======
-    void OnTriggerExit(Collider other) { }
-
-    void OnCollisionExit2D(Collision2D other)
-
->>>>>>> .merge_file_a98924
+    void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = false;
 
-
-            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-
             //transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-
         }
         else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = false;
-            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-
             //transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-
 
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = false;
-            transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-
             //transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-
 
         }
         else if (other.gameObject.CompareTag("blueblock"))
         {
             grounded = false;
             //isjumping = false;
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
             //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
         }
         else if (other.gameObject.CompareTag("redblock"))
         {
             grounded = false;
             //isjumping = false;
-
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-   //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
+            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
     }
 
