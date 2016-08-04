@@ -78,10 +78,10 @@ public class player : MonoBehaviour {
 
         }
 
-        if (!grounded)
+        /*if (!grounded)
         {
             transform.Translate(Vector3.down * gravity * Time.deltaTime);
-        }
+        }*/
     }
 
     void OnCollisonEnter(Collision other) {
