@@ -84,7 +84,7 @@ public class player : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
@@ -120,7 +120,7 @@ public class player : MonoBehaviour {
     }
 
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
