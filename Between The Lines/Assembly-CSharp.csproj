@@ -46,10 +46,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\aspects.cs" />
+     <Compile Include="Assets\Scripts\blueTextureChanger.cs" />
+     <Compile Include="Assets\Scripts\getPicked.cs" />
+     <Compile Include="Assets\Scripts\hands.cs" />
      <Compile Include="Assets\Scripts\mouseCamera.cs" />
      <Compile Include="Assets\Scripts\mouseScreen.cs" />
      <Compile Include="Assets\Scripts\noRotate.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
+     <Compile Include="Assets\Scripts\redTextureChanger.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
