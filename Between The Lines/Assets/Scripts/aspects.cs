@@ -7,12 +7,16 @@ public class aspects : MonoBehaviour {
 	public GameObject playercam;
 	public GameObject playerfootbox;
 
+    
 	// Use this for initialization
 	void Start () {
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+   
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

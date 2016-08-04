@@ -27,7 +27,7 @@ public class redTextureChanger : MonoBehaviour {
             rend.material = solid;
         }else if (!red)
         {
-            rend.material = trans   ;
+            rend.material = trans;
         }
     }
 }
