@@ -8,6 +8,7 @@ public class getPicked : MonoBehaviour {
     public bool picked;
     public bool good;
     public float Timer;
+    public bool food;
 
 	// Use this for initialization
 	void Start () {
@@ -19,13 +20,13 @@ public class getPicked : MonoBehaviour {
 	void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.CompareTag("Hands")){
-
-                if (Input.GetKeyDown(KeyCode.E) && picked == false && good)
-                {
-                    picked = true;
-                    good = false;
-                    Timer = 0;
-                }
+            food = true;
+            if (Input.GetKeyDown(KeyCode.E) && picked == false && good)
+            {
+                picked = true;
+                good = false;
+                Timer = 0;
+            }
 
 
 		}
