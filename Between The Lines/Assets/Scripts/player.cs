@@ -85,6 +85,7 @@ public class player : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
+        
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
@@ -129,6 +130,53 @@ public class player : MonoBehaviour {
         else grounded = false;
     }
 
+    void OnCollisionStay(Collision other)
+    {
+
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            grounded = true;
+            isjumping = false;
+            midJump = false;
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+        }
+
+        else if (other.gameObject.CompareTag("redfloor"))
+        {
+            grounded = true;
+            isjumping = false;
+            midJump = false;
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("redblock"))
+        {
+            grounded = true;
+            isjumping = false;
+            midJump = false;
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("blueblock"))
+        {
+            grounded = true;
+            isjumping = false;
+            midJump = false;
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("bluefloor"))
+        {
+            grounded = true;
+            isjumping = false;
+            midJump = false;
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+        }
+        else if (other.gameObject.CompareTag("deathbox"))
+        {
+            Debug.Log("a");
+            grounded = false;
+            transform.position = new Vector3(0, 2, 0);
+        }
+        else grounded = false;
+    }
 
     void OnCollisionExit(Collision other)
     {
