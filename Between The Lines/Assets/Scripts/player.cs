@@ -35,10 +35,10 @@ public class player : MonoBehaviour {
             jumptimer = 0;
             antiGrav = 10;
         }
-        if (grounded == false && isjumping == false)
+        /* if (grounded == false && isjumping == false)
         {
             transform.Translate(Vector3.down*Time.deltaTime*4);
-        }
+        } */
         if (Input.GetKey (KeyCode.A)) {
 			move (Vector3.left);
 		} else if (Input.GetKey (KeyCode.D)) {
@@ -82,15 +82,7 @@ public class player : MonoBehaviour {
         {
             transform.Translate(Vector3.down * gravity * Time.deltaTime);
         }
-
-
-
-
-
-
     }
-
-
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Floor"))
