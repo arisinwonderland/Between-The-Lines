@@ -84,43 +84,43 @@ public class player : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
+    void OnCollisonEnter(Collision other) {
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
             isjumping = false;
-            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
 
         else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = true;
             isjumping = false;
-            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("redblock"))
         {
             grounded = true;
             isjumping = false;
-            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("blueblock"))
         {
             grounded = true;
             isjumping = false;
-            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
             isjumping = false;
-            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
         else grounded = false;
     }
 
 
-    void OnCollisionExit2D(Collision2D other)
+    void OnCollisonExit(Collision other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
