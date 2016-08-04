@@ -71,6 +71,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\aspects.cs" />
     <Compile Include="Assets\Scripts\blueTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\getPicked.cs" />
+    <Compile Include="Assets\Scripts\hands.cs" />
     <Compile Include="Assets\Scripts\mouseCamera.cs" />
     <Compile Include="Assets\Scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\noRotate.cs" />

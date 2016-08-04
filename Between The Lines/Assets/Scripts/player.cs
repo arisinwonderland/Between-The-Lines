@@ -39,6 +39,10 @@ public class player : MonoBehaviour {
         {
             transform.Translate(Vector3.down*Time.deltaTime*4);
         }
+        /* if (grounded == false && isjumping == false)
+        {
+            transform.Translate(Vector3.down*Time.deltaTime*4);
+        } */
         if (Input.GetKey (KeyCode.A)) {
 			move (Vector3.left);
 		} else if (Input.GetKey (KeyCode.D)) {
@@ -86,18 +90,23 @@ public class player : MonoBehaviour {
 
 
 
-
-
     }
 
 
 
     void OnTriggerEnter(Collider other) {
+
+    }
+
+    void OnCollisionEnter2D(Collision2D other) {
+
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
             isjumping = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+
         }
 
         else if (other.gameObject.CompareTag("redfloor"))
@@ -105,41 +114,55 @@ public class player : MonoBehaviour {
             grounded = true;
             isjumping = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("redblock"))
         {
             grounded = true;
             isjumping = false;
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("blueblock"))
         {
             grounded = true;
             isjumping = false;
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             grounded = true;
             isjumping = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
+            //transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
         else grounded = false;
     }
 
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other) { }
+
+    void OnCollisionExit2D(Collision2D other)
+
     {
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = false;
 
+
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+            //transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
         }
         else if (other.gameObject.CompareTag("redfloor"))
         {
             grounded = false;
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+            //transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
 
         }
         else if (other.gameObject.CompareTag("bluefloor"))
@@ -147,18 +170,27 @@ public class player : MonoBehaviour {
             grounded = false;
             transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
 
+            //transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+
+
         }
         else if (other.gameObject.CompareTag("blueblock"))
         {
             grounded = false;
             //isjumping = false;
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+
+            //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+
         }
         else if (other.gameObject.CompareTag("redblock"))
         {
             grounded = false;
             //isjumping = false;
+
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+   //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+
         }
     }
 
