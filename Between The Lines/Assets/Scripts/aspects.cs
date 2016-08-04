@@ -2,27 +2,18 @@
 using System.Collections;
 
 public class aspects : MonoBehaviour {
-    public bool red;
-<<<<<<< .merge_file_a01476
+	public bool red;
+	public GameObject player;
+	public GameObject playercam;
+	public GameObject playerfootbox;
 
 	// Use this for initialization
 	void Start () {
-=======
-    public GameObject player;
-    public GameObject playercam;
-    public GameObject playerfootbox;
-    // Use this for initialization
-    void Start () {
->>>>>>> .merge_file_a01524
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-<<<<<<< .merge_file_a01476
-	
-	}
-=======
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (red)
@@ -41,5 +32,4 @@ public class aspects : MonoBehaviour {
             }
         }
     }
->>>>>>> .merge_file_a01524
 }
