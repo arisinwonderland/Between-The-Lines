@@ -121,6 +121,11 @@ public class player : MonoBehaviour {
 			midJump = false;
             transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
         }
+		else if (other.gameObject.CompareTag("deathbox")) {
+			Debug.Log ("a");
+			grounded = false;
+			transform.position = new Vector3(0, 2, 0);
+		}
         else grounded = false;
     }
 
