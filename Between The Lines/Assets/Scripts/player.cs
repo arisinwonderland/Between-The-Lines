@@ -4,9 +4,10 @@ using System.Collections;
 public class player : MonoBehaviour {
 
 	public bool grounded = false;
-    public bool isjumping = false;
+	public bool isjumping = false;
+	public bool midJump = false;
+	public bool carryingObject = false;
     public float jumptimer = 0;
-    public bool midJump = false;
 
     public float gravity = 3f;
 
@@ -171,9 +172,7 @@ public class player : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("deathbox"))
         {
-            Debug.Log("a");
-            grounded = false;
-            transform.position = new Vector3(0, 2, 0);
+			Application.LoadLevel (Application.loadedLevel);
         }
         else grounded = false;
     }

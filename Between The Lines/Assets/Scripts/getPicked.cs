@@ -3,16 +3,17 @@ using System.Collections;
 
 public class getPicked : MonoBehaviour {
 
+	player playerScript;
 
 	public GameObject obj;
     public bool picked;
     public bool good;
     public float Timer;
-    public bool food;
 
 	// Use this for initialization
 	void Start () {
         Timer = 0;
+		playerScript = GameObject.Find ("Player").GetComponent<player>();
         good = false;
 	}
 
@@ -20,11 +21,11 @@ public class getPicked : MonoBehaviour {
 	void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.CompareTag("Hands")){
-            food = true;
-            if (Input.GetKeyDown(KeyCode.E) && picked == false && good)
+			if (Input.GetKeyDown(KeyCode.E) && picked == false && good && !playerScript.carryingObject)
             {
                 picked = true;
                 good = false;
+				playerScript.carryingObject = true;
                 Timer = 0;
             }
 
@@ -41,7 +42,8 @@ public class getPicked : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.E) && picked == true )
                 {
                     picked = false;
-                    good = false;
+					good = false;
+					playerScript.carryingObject = false;
                     Timer = 0;
                 }
 
