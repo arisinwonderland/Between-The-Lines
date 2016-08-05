@@ -14,6 +14,7 @@ public class getPicked : MonoBehaviour {
 	void Start () {
         Timer = 0;
 		playerScript = GameObject.Find ("Player").GetComponent<player>();
+        obj = GameObject.Find("Hands");
         good = false;
 	}
 
