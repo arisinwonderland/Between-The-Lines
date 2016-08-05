@@ -31,7 +31,26 @@ public class getPicked : MonoBehaviour {
 
 
 		}
-	}
+
+        if (this.CompareTag("redblock"))
+        {
+            if (other.gameObject.CompareTag("redfield"))
+            {
+                picked = false;
+                playerScript.carryingObject = false;
+            }
+        }
+
+        if (this.CompareTag("blueblock"))
+        {
+            if (other.gameObject.CompareTag("bluefield"))
+            {
+                picked = false;
+                playerScript.carryingObject = false;
+            }
+        }
+    }
+
 
 	// Update is called once per frame
 	void Update () {
