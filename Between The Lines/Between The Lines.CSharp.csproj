@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\getPicked.cs" />
     <Compile Include="Assets\Scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\hands.cs" />
+    <Compile Include="Assets\Scripts\level2plate1.cs" />
     <Compile Include="Assets\Scripts\mouseCamera.cs" />
     <Compile Include="Assets\Scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\noRotate.cs" />
