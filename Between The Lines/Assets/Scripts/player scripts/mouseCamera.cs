@@ -28,7 +28,7 @@ public class mouseCamera : MonoBehaviour {
         x = transform.eulerAngles.x;
         y = transform.eulerAngles.y;
 
-        if(x < 300 && x > 45)
+        if(x < 275 && x > 85)
         {
             looklimit = 0;
             if(x > 180)
