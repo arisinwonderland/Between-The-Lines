@@ -17,6 +17,7 @@ public class player : MonoBehaviour {
     public float antiGrav = 10;
     public bool stopped;
 
+    public GameObject feets;
 
     // Use this for initialization
     void Start () {
@@ -37,10 +38,7 @@ public class player : MonoBehaviour {
             jumptimer = 0;
             antiGrav = 10;
         }
-        /* if (grounded == false && isjumping == false)
-        {
-            transform.Translate(Vector3.down*Time.deltaTime*4);
-        } */
+
         if (Input.GetKey (KeyCode.A)) {
 			move (Vector3.left);
 		} else if (Input.GetKey (KeyCode.D)) {

@@ -33,6 +33,18 @@ public class deathboxscript : MonoBehaviour {
                 case 2:
                     SceneManager.LoadScene("Level 2");
                     break;
+                case 3:
+                    SceneManager.LoadScene("Level 3");
+                    break;
+                case 4:
+                    SceneManager.LoadScene("Level 4");
+                    break;
+                case 5:
+                    SceneManager.LoadScene("Level 5");
+                    break;
+                case 6:
+                    SceneManager.LoadScene("Level 6");
+                    break;
 
                 default:
                     SceneManager.LoadScene("Level 0");

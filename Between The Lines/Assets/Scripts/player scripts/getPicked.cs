@@ -6,6 +6,7 @@ public class getPicked : MonoBehaviour {
 	player playerScript;
 
 	public GameObject obj;
+    public GameObject camera;
     public bool picked;
     public bool good;
     public float Timer;
