@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\button scripts\title\newgamescript.cs" />
     <Compile Include="Assets\Scripts\button scripts\title\quitscript.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
+    <Compile Include="Assets\Scripts\dimension swapping scripts\beamcolorchanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
