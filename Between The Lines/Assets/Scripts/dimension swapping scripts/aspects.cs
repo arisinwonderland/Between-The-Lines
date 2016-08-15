@@ -15,6 +15,7 @@ public class aspects : MonoBehaviour {
     void Start () {
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
+        
     }
 	
 	// Update is called once per frame

@@ -16,13 +16,13 @@ public class player : MonoBehaviour {
 
     public float antiGrav = 10;
     public bool stopped;
-
+    public float Timer;
     public GameObject feets;
 
     // Use this for initialization
     void Start () {
-		
-	}
+        Timer = 0;
+    }
     
 
 
@@ -128,7 +128,6 @@ public class player : MonoBehaviour {
 
     void OnCollisionStay(Collision other)
     {
-
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
@@ -156,6 +155,7 @@ public class player : MonoBehaviour {
             grounded = true;
             isjumping = false;
             midJump = false;
+
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("bluefloor"))

@@ -83,12 +83,13 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
     <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
     <Compile Include="Assets\Scripts\object scripts\bluebeam.cs" />
-    <Compile Include="Assets\Scripts\object scripts\deathboxscript.cs" />
     <Compile Include="Assets\Scripts\object scripts\level2plate1.cs" />
     <Compile Include="Assets\Scripts\object scripts\moving2pts.cs" />
     <Compile Include="Assets\Scripts\object scripts\nextlevel.cs" />
     <Compile Include="Assets\Scripts\object scripts\redField.cs" />
+    <Compile Include="Assets\Scripts\object scripts\redPlate.cs" />
     <Compile Include="Assets\Scripts\object scripts\redbeam.cs" />
+    <Compile Include="Assets\Scripts\player scripts\deathboxscript.cs" />
     <Compile Include="Assets\Scripts\player scripts\getPicked.cs" />
     <Compile Include="Assets\Scripts\player scripts\hands.cs" />
     <Compile Include="Assets\Scripts\player scripts\mouseCamera.cs" />
