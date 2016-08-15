@@ -33,12 +33,12 @@ public class mouseCamera : MonoBehaviour {
             looklimit = 0;
             if(x > 180)
             {
-                transform.eulerAngles = new Vector3(x + 1, 0, 0);
+                transform.eulerAngles = new Vector3(x + 3, 0, 0);
                 x = transform.eulerAngles.x;
             }
             else if(x < 180)
             {
-                transform.eulerAngles = new Vector3(x - 1, 0, 0);
+                transform.eulerAngles = new Vector3(x - 3, 0, 0);
                 x = transform.eulerAngles.x;
             }
            
