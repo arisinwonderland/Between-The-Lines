@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/levels/Misc. Level 1.unity
+=======
+- path: Assets/levels/Level 5.unity
+>>>>>>> alex
   isLoaded: 1
   isActive: 1
