@@ -9,17 +9,31 @@ public class aspects : MonoBehaviour {
     bool switched;
     bool grounded;
 
+    float cd;
+    float cdtimer;
+    bool oncd;
+
     public player playerscript;
 
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
-        
+
+        cdtimer = 5;
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (oncd)
+        {
+            cd -= Time.deltaTime;
+            if (cd <= 0)
+            {
+                oncd = false;
+            }
+        }
 
         grounded = playerscript.grounded;
         if(grounded == true)
@@ -32,23 +46,30 @@ public class aspects : MonoBehaviour {
 
         if (!switched)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (oncd == false)
             {
-                if (red)
+                if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    red = false;
-                    player.layer = LayerMask.NameToLayer("bluePlayer");
-                    playercam.layer = LayerMask.NameToLayer("bluePlayer");
-                    playerfootbox.layer = LayerMask.NameToLayer("bluePlayer");
-                    switched = true;
-                }
-                else if (!red)
-                {
-                    red = true;
-                    player.layer = LayerMask.NameToLayer("redPlayer");
-                    playercam.layer = LayerMask.NameToLayer("redPlayer");
-                    playerfootbox.layer = LayerMask.NameToLayer("redPlayer");
-                    switched = true;
+                    if (red)
+                    {
+                        red = false;
+                        player.layer = LayerMask.NameToLayer("bluePlayer");
+                        playercam.layer = LayerMask.NameToLayer("bluePlayer");
+                        playerfootbox.layer = LayerMask.NameToLayer("bluePlayer");
+                        switched = true;
+                        oncd = true;
+                        cd = cdtimer;
+                    }
+                    else if (!red)
+                    {
+                        red = true;
+                        player.layer = LayerMask.NameToLayer("redPlayer");
+                        playercam.layer = LayerMask.NameToLayer("redPlayer");
+                        playerfootbox.layer = LayerMask.NameToLayer("redPlayer");
+                        switched = true;
+                        oncd = true;
+                        cd = cdtimer;
+                    }
                 }
             }
         }
