@@ -16,7 +16,7 @@ public class player : MonoBehaviour {
 
     public float antiGrav = 10;
     public bool stopped;
-    public float Timer;
+
     public GameObject feets;
 
     public GameObject gamecontroller;
@@ -29,10 +29,6 @@ public class player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-<<<<<<< HEAD
-        Timer = 0;
-    }
-=======
         gamecontroller = GameObject.Find("GameController");
         aspects = gamecontroller.GetComponent<aspects>();
 
@@ -42,7 +38,6 @@ public class player : MonoBehaviour {
         bluemana = 50;
 
     }   
->>>>>>> alex
     
 
 
@@ -147,6 +142,7 @@ public class player : MonoBehaviour {
 
     void OnCollisionStay(Collision other)
     {
+
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
@@ -174,7 +170,6 @@ public class player : MonoBehaviour {
             grounded = true;
             isjumping = false;
             midJump = false;
-
             transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
         else if (other.gameObject.CompareTag("bluefloor"))

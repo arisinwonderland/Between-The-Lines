@@ -11,7 +11,7 @@ public class red2 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        red2cd = 5;
+        red2cd = 5  ;
 	}
 	
 	// Update is called once per frame
