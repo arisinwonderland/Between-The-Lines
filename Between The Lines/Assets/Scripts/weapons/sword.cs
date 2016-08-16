@@ -7,12 +7,13 @@ public class sword : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    
-	}
+        
+        gameObject.transform.parent = holder.transform;
+        transform.position = holder.transform.position;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position.Set(holder.transform.position.x, holder.transform.position.y, holder.transform.position.z);
-        transform.rotation.Set(holder.transform.rotation.x, holder.transform.rotation.y, holder.transform.rotation.z, holder.transform.rotation.w);
+        
 	}
 }

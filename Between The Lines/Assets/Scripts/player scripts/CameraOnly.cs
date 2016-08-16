@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class mouseCamera : MonoBehaviour {
+public class CameraOnly : MonoBehaviour
+{
 
     float x;
     float y;
@@ -12,13 +13,15 @@ public class mouseCamera : MonoBehaviour {
     public GameObject player;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         transform.eulerAngles = new Vector3(0, 0, 0);
     }
-	
-	// Update is called once per frame
-	void Update () {
-     
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     void FixedUpdate()
@@ -28,20 +31,20 @@ public class mouseCamera : MonoBehaviour {
         x = transform.eulerAngles.x;
         y = transform.eulerAngles.y;
 
-        if(x < 310 && x > 180)
+        if (x < 310 && x > 180)
         {
             looklimit = 0;
-            if(x > 210)
+            if (x > 210)
             {
                 transform.eulerAngles = new Vector3(x + 1, 0, 0);
                 x = transform.eulerAngles.x;
             }
-            else if(x < 210)
+            else if (x < 210)
             {
                 transform.eulerAngles = new Vector3(x - 1, 0, 0);
                 x = transform.eulerAngles.x;
             }
-           
+
 
         }
         else
@@ -50,8 +53,9 @@ public class mouseCamera : MonoBehaviour {
         }
 
 
-        player.transform.eulerAngles = new Vector3(0, y  + 1, 0);
-        transform.eulerAngles = new Vector3(x - Input.GetAxis("Mouse Y") * looklimit, y + Input.GetAxis("Mouse X"), 0);
+        player.transform.eulerAngles = new Vector3(0, y + 1, 0);
+
+        transform.eulerAngles = new Vector3(x - Input.GetAxis("Mouse Y") * looklimit, 0, 0);
         //feets.transform.eulerAngles = new Vector3(0, y + 1, 0);
         //feets.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z)    ;
         //x - Input.GetAxis("Mouse Y") * looklimit 

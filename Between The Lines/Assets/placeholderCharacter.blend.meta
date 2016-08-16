@@ -28,6 +28,34 @@ ModelImporter:
     100040: Sphere_002
     100042: Sphere_003
     100044: Sphere_004
+    100046: Right_Hand
+    100048: Body
+    100050: Crotch
+    100052: Head
+    100054: Left_Biscep
+    100056: Left_Elbow
+    100058: Left_Foot
+    100060: Left_Forearm
+    100062: Left_Hand
+    100064: Left_Hip
+    100066: Left_Knee
+    100068: Left_Leg
+    100070: Left_Shoulder
+    100072: Left_Thigh
+    100074: Neck
+    100076: Right_Biscep
+    100078: Right_Elbow
+    100080: Right_Foot
+    100082: Right_Forearm
+    100084: Right_Hip
+    100086: Right_Knee
+    100088: Right_Leg
+    100090: Right_Shoulder
+    100092: Right_Thigh
+    100094: Plane
+    100096: Torus
+    100098: Right_Hip_000
+    100100: Right_Hip_001
     400000: Cone
     400002: Cube
     400004: Cube_001
@@ -51,6 +79,34 @@ ModelImporter:
     400040: Sphere_002
     400042: Sphere_003
     400044: Sphere_004
+    400046: Right_Hand
+    400048: Body
+    400050: Crotch
+    400052: Head
+    400054: Left_Biscep
+    400056: Left_Elbow
+    400058: Left_Foot
+    400060: Left_Forearm
+    400062: Left_Hand
+    400064: Left_Hip
+    400066: Left_Knee
+    400068: Left_Leg
+    400070: Left_Shoulder
+    400072: Left_Thigh
+    400074: Neck
+    400076: Right_Biscep
+    400078: Right_Elbow
+    400080: Right_Foot
+    400082: Right_Forearm
+    400084: Right_Hip
+    400086: Right_Knee
+    400088: Right_Leg
+    400090: Right_Shoulder
+    400092: Right_Thigh
+    400094: Plane
+    400096: Torus
+    400098: Right_Hip_000
+    400100: Right_Hip_001
     2300000: Cone
     2300002: Cube
     2300004: Cube_001
@@ -73,6 +129,34 @@ ModelImporter:
     2300038: Sphere_002
     2300040: Sphere_003
     2300042: Sphere_004
+    2300044: Right_Hand
+    2300046: Body
+    2300048: Crotch
+    2300050: Head
+    2300052: Left_Biscep
+    2300054: Left_Elbow
+    2300056: Left_Foot
+    2300058: Left_Forearm
+    2300060: Left_Hand
+    2300062: Left_Hip
+    2300064: Left_Knee
+    2300066: Left_Leg
+    2300068: Left_Shoulder
+    2300070: Left_Thigh
+    2300072: Neck
+    2300074: Right_Biscep
+    2300076: Right_Elbow
+    2300078: Right_Foot
+    2300080: Right_Forearm
+    2300082: Right_Hip
+    2300084: Right_Knee
+    2300086: Right_Leg
+    2300088: Right_Shoulder
+    2300090: Right_Thigh
+    2300092: Plane
+    2300094: Torus
+    2300096: Right_Hip_000
+    2300098: Right_Hip_001
     3300000: Cone
     3300002: Cube
     3300004: Cube_001
@@ -95,6 +179,34 @@ ModelImporter:
     3300038: Sphere_002
     3300040: Sphere_003
     3300042: Sphere_004
+    3300044: Right_Hand
+    3300046: Body
+    3300048: Crotch
+    3300050: Head
+    3300052: Left_Biscep
+    3300054: Left_Elbow
+    3300056: Left_Foot
+    3300058: Left_Forearm
+    3300060: Left_Hand
+    3300062: Left_Hip
+    3300064: Left_Knee
+    3300066: Left_Leg
+    3300068: Left_Shoulder
+    3300070: Left_Thigh
+    3300072: Neck
+    3300074: Right_Biscep
+    3300076: Right_Elbow
+    3300078: Right_Foot
+    3300080: Right_Forearm
+    3300082: Right_Hip
+    3300084: Right_Knee
+    3300086: Right_Leg
+    3300088: Right_Shoulder
+    3300090: Right_Thigh
+    3300092: Plane
+    3300094: Torus
+    3300096: Right_Hip_000
+    3300098: Right_Hip_001
     4300000: Cone
     4300002: Sphere_001
     4300004: Cube_001
@@ -117,6 +229,34 @@ ModelImporter:
     4300038: Sphere_002
     4300040: Sphere_003
     4300042: Sphere_004
+    4300044: Right_Hand
+    4300046: Right_Hip
+    4300048: Crotch
+    4300050: Right_Shoulder
+    4300052: Body
+    4300054: Left_Knee
+    4300056: Left_Hand
+    4300058: Left_Thigh
+    4300060: Neck
+    4300062: Head
+    4300064: Right_Biscep
+    4300066: Left_Forearm
+    4300068: Left_Biscep
+    4300070: Right_Forearm
+    4300072: Right_Thigh
+    4300074: Right_Leg
+    4300076: Left_Leg
+    4300078: Right_Foot
+    4300080: Right_Knee
+    4300082: Left_Elbow
+    4300084: Right_Elbow
+    4300086: Left_Shoulder
+    4300088: Left_Hip
+    4300090: Left_Foot
+    4300092: Torus
+    4300094: Plane
+    4300096: Right_Hip_001
+    4300098: Right_Hip_000
     7400000: Default Take
     9500000: //RootNode
   materials:

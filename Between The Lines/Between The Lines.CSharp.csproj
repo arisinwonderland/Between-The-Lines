@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\object scripts\redField.cs" />
     <Compile Include="Assets\Scripts\object scripts\redPlate.cs" />
     <Compile Include="Assets\Scripts\object scripts\redbeam.cs" />
+    <Compile Include="Assets\Scripts\player scripts\CameraOnly.cs" />
     <Compile Include="Assets\Scripts\player scripts\deathboxscript.cs" />
     <Compile Include="Assets\Scripts\player scripts\getPicked.cs" />
     <Compile Include="Assets\Scripts\player scripts\hands.cs" />
