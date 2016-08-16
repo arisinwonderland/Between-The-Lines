@@ -69,6 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\abilities\red1.cs" />
+    <Compile Include="Assets\Scripts\abilities\red1orb.cs" />
+    <Compile Include="Assets\Scripts\abilities\red2.cs" />
+    <Compile Include="Assets\Scripts\abilities\red2aoe.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl0.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl1.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl2.cs" />
@@ -85,6 +89,8 @@
     <Compile Include="Assets\Scripts\object scripts\bluebeam.cs" />
     <Compile Include="Assets\Scripts\object scripts\deathboxscript.cs" />
     <Compile Include="Assets\Scripts\object scripts\level2plate1.cs" />
+    <Compile Include="Assets\Scripts\object scripts\level4playerrotater.cs" />
+    <Compile Include="Assets\Scripts\object scripts\level4rotating.cs" />
     <Compile Include="Assets\Scripts\object scripts\moving2pts.cs" />
     <Compile Include="Assets\Scripts\object scripts\nextlevel.cs" />
     <Compile Include="Assets\Scripts\object scripts\redField.cs" />
@@ -95,6 +101,8 @@
     <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
     <Compile Include="Assets\Scripts\player scripts\player.cs" />
+    <Compile Include="Assets\Scripts\weapons\arrow.cs" />
+    <Compile Include="Assets\Scripts\weapons\bow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
