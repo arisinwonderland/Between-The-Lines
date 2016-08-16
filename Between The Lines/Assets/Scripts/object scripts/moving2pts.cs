@@ -36,8 +36,6 @@ public class moving2pts : MonoBehaviour
                     state = 0;
                 }
             }
-
-            Debug.Log(state);
         
     }
 }
