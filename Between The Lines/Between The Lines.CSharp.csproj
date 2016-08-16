@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\abilities\red1orb.cs" />
     <Compile Include="Assets\Scripts\abilities\red2.cs" />
     <Compile Include="Assets\Scripts\abilities\red2aoe.cs" />
+    <Compile Include="Assets\Scripts\abilities\red3.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl0.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl1.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl2.cs" />
