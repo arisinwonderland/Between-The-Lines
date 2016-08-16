@@ -29,11 +29,10 @@ public class player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-<<<<<<< HEAD
+
         Timer = 0;
-    }
-=======
-        gamecontroller = GameObject.Find("GameController");
+
+     gamecontroller = GameObject.Find("GameController");
         aspects = gamecontroller.GetComponent<aspects>();
 
         //Stats
@@ -42,7 +41,7 @@ public class player : MonoBehaviour {
         bluemana = 50;
 
     }   
->>>>>>> alex
+
     
 
 

@@ -51,7 +51,7 @@ public class mouseCamera : MonoBehaviour {
 
 
         player.transform.eulerAngles = new Vector3(0, y  + 1, 0);
-        transform.eulerAngles = new Vector3(x - Input.GetAxis("Mouse Y") * looklimit, y + Input.GetAxis("Mouse X"), 0);
+        transform.eulerAngles = new Vector3(x /*- Input.GetAxis("Mouse Y") * looklimit */, y + Input.GetAxis("Mouse X"), 0);
         feets.transform.eulerAngles = new Vector3(0, y + 1, 0);
         feets.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z)    ;
 
