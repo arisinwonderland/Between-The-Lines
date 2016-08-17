@@ -9,16 +9,32 @@ public class red2 : MonoBehaviour {
     public bool oncd;
     public float red2timer;
 
+    public int buttonid;
+
+    KeyCode button;
     // Use this for initialization
     void Start () {
         red2cd = 5  ;
-	}
+
+        if (buttonid == 0)
+        {
+            button = KeyCode.Alpha2;
+        }
+        else if (buttonid == 1)
+        {
+            button = KeyCode.Alpha2;
+        }
+        else if (buttonid == 2)
+        {
+            button = KeyCode.Alpha3;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
         //shoot
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(button))
         {
             if (!oncd)
             {

@@ -23,6 +23,10 @@ public class player : MonoBehaviour {
     public aspects aspects;
     public bool red;
 
+    public GameObject GameManager;
+    public gamemanager gamemanager;
+    string current;
+
     public int hp;
     public int redmana;
     public int bluemana;
@@ -32,15 +36,63 @@ public class player : MonoBehaviour {
 
         Timer = 0;
 
-     gamecontroller = GameObject.Find("GameController");
+        gamecontroller = GameObject.Find("GameController");
         aspects = gamecontroller.GetComponent<aspects>();
+
+        GameManager = GameObject.Find("gamemanager");
+        gamemanager = GameManager.GetComponent<gamemanager>();
 
         //Stats
         hp = 100;
         redmana = 50;
         bluemana = 50;
 
+        for (int num = 0; num <= 2; num++)
+        {
+            if(num == 0)
+            {
+                current = gamemanager.selectedability1;
+            }
+            else if(num == 1)
+            {
+                current = gamemanager.selectedability2;
+            }
+            else if(num == 2)
+            {
+                current = gamemanager.selectedability3;
+            }
+         
+
+
+            if (current == "firebolt")  
+            {
+                gameObject.GetComponentInChildren<red1>().enabled = true;
+
+                gameObject.GetComponentInChildren<red1>().buttonid = num;
+
+            }
+            else if (current == "surgeofflame")
+            {
+                gameObject.GetComponentInChildren<red2>().enabled = true;
+
+                gameObject.GetComponentInChildren<red1>().buttonid = num;
+
+            }
+            else if (current == "flamedash")
+            {
+                gameObject.GetComponentInChildren<red3>().enabled = true;
+
+                gameObject.GetComponentInChildren<red1>().buttonid = num;
+
+            }
+            else
+            {
+
+            }
+
+        }
     }   
+
 
     
 

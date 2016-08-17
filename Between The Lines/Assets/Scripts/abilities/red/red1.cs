@@ -9,16 +9,32 @@ public class red1 : MonoBehaviour {
     public bool oncd;
     public float red1timer;
 
+    public int buttonid;
+
+    KeyCode button;
     // Use this for initialization
     void Start () {
         red1cd = 3;
+
+
+        if(buttonid == 0)
+        {
+            button = KeyCode.Alpha1;
+        }else if(buttonid == 1)
+        {
+            button = KeyCode.Alpha2;
+        }
+        else if(buttonid == 2)
+        {
+            button = KeyCode.Alpha3;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         //shoot
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(button))
         {
             if (!oncd)
             {
@@ -39,6 +55,8 @@ public class red1 : MonoBehaviour {
             }
         }
     }
+
+
 
         void shoot(Vector3 pos, Quaternion angle)
         {
