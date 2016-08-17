@@ -1,29 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class red1 : MonoBehaviour {
+public class blue3 : MonoBehaviour {
 
-    public GameObject red1orb;
+    public GameObject blue3orb;
 
-    public float red1cd;
+    public float blue3cd;
     public bool oncd;
-    public float red1timer;
+    public float blue3timer;
 
     // Use this for initialization
     void Start () {
-        red1cd = 3;
-	}
-	
+
+        blue3cd = 10f;
+
+    }
+	    
 	// Update is called once per frame
 	void Update () {
 
         //shoot
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (!oncd)
             {
                 shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
-                red1timer = red1cd;
+                blue3timer = blue3cd;
                 oncd = true;
             }
         }
@@ -31,17 +33,17 @@ public class red1 : MonoBehaviour {
         //Cooldown Timer
         if (oncd)
         {
-            red1timer -= Time.deltaTime;
-            if (red1timer <= 0)
+            blue3timer -= Time.deltaTime;
+            if (blue3timer <= 0)
             {
                 oncd = false;
-                red1timer = 0;
+                blue3timer = 0;
             }
         }
     }
 
     void shoot(Vector3 pos, Quaternion angle)
     {
-        Instantiate(red1orb, pos, angle);
+        Instantiate(blue3orb, pos, angle);
     }
 }
