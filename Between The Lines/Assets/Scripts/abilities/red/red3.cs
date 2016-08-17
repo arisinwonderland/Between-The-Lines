@@ -11,17 +11,34 @@ public class red3 : MonoBehaviour {
     public bool oncd;
     public float red3timer;
 
+    public int buttonid;
+
     public float dashtime;
+
+    KeyCode button;
 
     // Use this for initialization
     void Start () {
         red3cd = 8;
-	}
+
+        if (buttonid == 0)
+        {
+            button = KeyCode.Alpha1;
+        }
+        else if (buttonid == 1)
+        {
+            button = KeyCode.Alpha2;
+        }
+        else if (buttonid == 2)
+        {
+            button = KeyCode.Alpha3;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(button))
         {
             if (!oncd)
             {
