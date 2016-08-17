@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class gamemanager : MonoBehaviour {
 
     public string selectedability;
-    public string selectedability1;
-    public string selectedability2;
-    public string selectedability3;
+    public string SelectedRedAbility1;
+    public string SelectedRedAbility2;
+    public string SelectedRedAbility3;
 
 
     // Use this for initialization
@@ -31,13 +31,13 @@ public class gamemanager : MonoBehaviour {
     {       
         if(selectedability != "null")
         {
-            if (selectedability != selectedability2)
+            if (selectedability != SelectedRedAbility2)
             {
-                if (selectedability != selectedability3)
+                if (selectedability != SelectedRedAbility3)
                 {
                     Text txt = buttontext.GetComponentInChildren<Text>();
                     txt.text = selectedability;
-                    selectedability1 = selectedability;
+                    SelectedRedAbility1 = selectedability;
                     selectedability = "null";
 
                 }
@@ -50,13 +50,13 @@ public class gamemanager : MonoBehaviour {
 
         if (selectedability != "null")
         {
-            if (selectedability != selectedability1)
+            if (selectedability != SelectedRedAbility1)
             {
-                if (selectedability != selectedability3)
+                if (selectedability != SelectedRedAbility3)
                 {
                     Text txt = buttontext.GetComponentInChildren<Text>();
                     txt.text = selectedability;
-                    selectedability2 = selectedability;
+                    SelectedRedAbility2 = selectedability;
                     selectedability = "null";
                 }
             }
@@ -66,13 +66,13 @@ public class gamemanager : MonoBehaviour {
     {
         if (selectedability != "null")
         {
-            if (selectedability != selectedability1)
+            if (selectedability != SelectedRedAbility1)
             {
-                if (selectedability != selectedability2)
+                if (selectedability != SelectedRedAbility2)
                 {
                     Text txt = buttontext.GetComponentInChildren<Text>();
                     txt.text = selectedability;
-                    selectedability3 = selectedability;
+                    SelectedRedAbility3 = selectedability;
                     selectedability = "null";
                 }
             }
@@ -83,8 +83,15 @@ public class gamemanager : MonoBehaviour {
     {
         DontDestroyOnLoad(transform.gameObject);
         SceneManager.LoadScene("testlevel");
+    }
 
-
+    public void loadmenu(string menu)
+    {
+        if(menu == "blue")
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            SceneManager.LoadScene("bluemenu");
+        }
     }
 
 }

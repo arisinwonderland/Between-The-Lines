@@ -18,7 +18,7 @@ public class red2 : MonoBehaviour {
 
         if (buttonid == 0)
         {
-            button = KeyCode.Alpha2;
+            button = KeyCode.Alpha1;
         }
         else if (buttonid == 1)
         {

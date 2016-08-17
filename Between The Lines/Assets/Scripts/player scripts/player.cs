@@ -51,15 +51,15 @@ public class player : MonoBehaviour {
         {
             if(num == 0)
             {
-                current = gamemanager.selectedability1;
+                current = gamemanager.SelectedRedAbility1;
             }
             else if(num == 1)
             {
-                current = gamemanager.selectedability2;
+                current = gamemanager.SelectedRedAbility2;
             }
             else if(num == 2)
             {
-                current = gamemanager.selectedability3;
+                current = gamemanager.SelectedRedAbility3;
             }
          
 
@@ -71,25 +71,21 @@ public class player : MonoBehaviour {
                 gameObject.GetComponentInChildren<red1>().buttonid = num;
 
             }
-            else if (current == "surgeofflame")
+            if (current == "surgeofflame")
             {
                 gameObject.GetComponentInChildren<red2>().enabled = true;
 
-                gameObject.GetComponentInChildren<red1>().buttonid = num;
+                gameObject.GetComponentInChildren<red2>().buttonid = num;
 
             }
-            else if (current == "flamedash")
+            if (current == "flamedash")
             {
                 gameObject.GetComponentInChildren<red3>().enabled = true;
 
-                gameObject.GetComponentInChildren<red1>().buttonid = num;
+                gameObject.GetComponentInChildren<red3>().buttonid = num;
 
             }
-            else
-            {
-
-            }
-
+            
         }
     }   
 
