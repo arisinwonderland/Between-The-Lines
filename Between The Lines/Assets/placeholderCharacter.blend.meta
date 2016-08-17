@@ -60,6 +60,8 @@ ModelImporter:
     100104: Cone_002
     100106: Cone_003
     100108: Torus_002
+    100110: Cone_004
+    100112: Cone_005
     400000: Cone
     400002: Cube
     400004: Cube_001
@@ -115,6 +117,8 @@ ModelImporter:
     400104: Cone_002
     400106: Cone_003
     400108: Torus_002
+    400110: Cone_004
+    400112: Cone_005
     2300000: Cone
     2300002: Cube
     2300004: Cube_001
@@ -169,6 +173,8 @@ ModelImporter:
     2300102: Cone_002
     2300104: Cone_003
     2300106: Torus_002
+    2300108: Cone_004
+    2300110: Cone_005
     3300000: Cone
     3300002: Cube
     3300004: Cube_001
@@ -223,6 +229,8 @@ ModelImporter:
     3300102: Cone_002
     3300104: Cone_003
     3300106: Torus_002
+    3300108: Cone_004
+    3300110: Cone_005
     4300000: Cone
     4300002: Sphere_001
     4300004: Cube_001
@@ -277,6 +285,8 @@ ModelImporter:
     4300102: Cone_001
     4300104: Cone_002
     4300106: Cone_003
+    4300108: Cone_004
+    4300110: Cone_005
     7400000: Default Take
     9500000: //RootNode
   materials:
