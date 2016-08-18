@@ -67,6 +67,24 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Assets\levels\first_Data\Managed\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>Assets\levels\first_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>Assets\levels\first_Data\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>Assets\levels\first_Data\Managed\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>Assets\levels\first_Data\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Assets\levels\first_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\abilities\blue\blue1.cs" />
@@ -117,6 +135,12 @@
     <Compile Include="Assets\Scripts\weapons\arrow.cs" />
     <Compile Include="Assets\Scripts\weapons\bow.cs" />
     <Compile Include="Assets\Scripts\weapons\sword.cs" />
+    <Compile Include="Assets\levels\first_Data\Managed\Assembly-CSharp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\levels\first_Data\Managed\UnityEngine.xml" />
+    <None Include="Assets\levels\first_Data\Mono\etc\mono\mconfig\config.xml" />
+    <None Include="Assets\levels\first_Data\output_log.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
