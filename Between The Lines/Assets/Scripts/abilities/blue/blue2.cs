@@ -9,23 +9,45 @@ public class blue2 : MonoBehaviour {
 
     public GameObject player;
 
+    public int buttonid;
+    KeyCode button;
+
+    public GameObject gamecontroller;
+    public aspects aspects;
+    public bool red;
     // Use this for initialization
     void Start () {
-
+        aspects = gamecontroller.GetComponent<aspects>();
         blue2cd = 1f;
         player = GameObject.Find("Player");
 
-	}
+
+        if (buttonid == 0)
+        {
+            button = KeyCode.Alpha1;
+        }
+        else if (buttonid == 1)
+        {
+            button = KeyCode.Alpha2;
+        }
+        else if (buttonid == 2)
+        {
+            button = KeyCode.Alpha3;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        red = aspects.red;
+        if (!red)
         {
-            if (!oncd)
+            if (Input.GetKeyDown(button))
             {
-                blue2timer = blue2cd;
-                oncd = true;
+                if (!oncd)
+                {
+                    blue2timer = blue2cd;
+                    oncd = true;
+                }
             }
         }
 

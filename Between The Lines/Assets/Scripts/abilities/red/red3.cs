@@ -17,10 +17,13 @@ public class red3 : MonoBehaviour {
 
     KeyCode button;
 
+    public GameObject gamecontroller;
+    public aspects aspects;
+    public bool red;
     // Use this for initialization
     void Start () {
         red3cd = 8;
-
+        aspects = gamecontroller.GetComponent<aspects>();
         if (buttonid == 0)
         {
             button = KeyCode.Alpha1;
@@ -37,15 +40,17 @@ public class red3 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Input.GetKeyDown(button))
-        {
-            if (!oncd)
+        red = aspects.red;
+        if (red) {
+            if (Input.GetKeyDown(button))
             {
-                shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
-                red3timer = red3cd;
-                oncd = true;
-                dashtime = 0;  
+                if (!oncd)
+                {
+                    shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
+                    red3timer = red3cd;
+                    oncd = true;
+                    dashtime = 0;
+                }
             }
         }
 
