@@ -30,10 +30,11 @@ public class player : MonoBehaviour {
     public int hp;
     public int redmana;
     public int bluemana;
+    public Vector3 direction;
 
     // Use this for initialization
     void Start () {
-
+        direction = Vector3.right;
         Timer = 0;
 
         gamecontroller = GameObject.Find("GameController");
@@ -152,14 +153,17 @@ public class player : MonoBehaviour {
 
         //Movement
         if (Input.GetKey (KeyCode.A)) {
-			move (Vector3.left);
-		} else if (Input.GetKey (KeyCode.D)) {
-			move (Vector3.right);
-		} else if (Input.GetKey (KeyCode.W)) {
-			move (Vector3.forward);
-		} else if (Input.GetKey (KeyCode.S)) {
-			move (Vector3.back);
-		}
+			move ();
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
+        } else if (Input.GetKey (KeyCode.D)) {
+			move ();
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        } //else if (Input.GetKey (KeyCode.W)) {
+		//	move (Vector3.forward);
+		//} else if (Input.GetKey (KeyCode.S)) {
+		//	move (Vector3.back);
+		//}
 
         //Jumping
 		if (Input.GetKeyDown (KeyCode.Space) && !isjumping) {
@@ -304,7 +308,8 @@ public class player : MonoBehaviour {
 
     }
 
-    void move(Vector3 direction) {
+    void move() { 
+        
 		if (grounded) {
 			transform.Translate (direction * moveSpeed * Time.deltaTime);
 		} else {
