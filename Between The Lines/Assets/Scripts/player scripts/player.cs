@@ -82,6 +82,12 @@ public class player : MonoBehaviour {
 
                 gameObject.GetComponentInChildren<red3>().buttonid = num;
             }
+            if (current == "Burning Pillar")
+            {
+                gameObject.GetComponentInChildren<red4>().enabled = true;
+
+                gameObject.GetComponentInChildren<red4>().buttonid = num;
+            }
         }
 
         for (int num = 0; num <= 2; num++)

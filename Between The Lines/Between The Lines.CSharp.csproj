@@ -69,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AbilityButtonTextSetter.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue1.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue1cone.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue2.cs" />
@@ -81,6 +80,9 @@
     <Compile Include="Assets\Scripts\abilities\red\red2aoe.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red3.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red3dash.cs" />
+    <Compile Include="Assets\Scripts\abilities\red\red4.cs" />
+    <Compile Include="Assets\Scripts\abilities\red\red4pillar.cs" />
+    <Compile Include="Assets\Scripts\button scripts\AbilityButtonTextSetter.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl0.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl1.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl2.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\gamemanager.cs" />
     <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
     <Compile Include="Assets\Scripts\object scripts\bluebeam.cs" />
     <Compile Include="Assets\Scripts\object scripts\level2plate1.cs" />
@@ -114,8 +117,6 @@
     <Compile Include="Assets\Scripts\weapons\arrow.cs" />
     <Compile Include="Assets\Scripts\weapons\bow.cs" />
     <Compile Include="Assets\Scripts\weapons\sword.cs" />
-    <Compile Include="Assets\fireboltbutton.cs" />
-    <Compile Include="Assets\gamemanager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
