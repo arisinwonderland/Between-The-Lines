@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class gamemanager : MonoBehaviour {
 
-    public string selectedability;
+    public string SelectedAbility;
     public string SelectedRedAbility1;
     public string SelectedRedAbility2;
     public string SelectedRedAbility3;
+    public string SelectedBlueAbility1;
+    public string SelectedBlueAbility2;
+    public string SelectedBlueAbility3;
 
 
     // Use this for initialization
@@ -24,56 +27,107 @@ public class gamemanager : MonoBehaviour {
 
     public void abilityselect(string selected)
     {
-        selectedability = selected;
+        SelectedAbility = selected;
     }
 
-    public void select1(GameObject buttontext)
+    public void SelectRed1(GameObject buttontext)
     {       
-        if(selectedability != "null")
+        if(SelectedAbility != "null")
         {
-            if (selectedability != SelectedRedAbility2)
+            if (SelectedAbility != SelectedRedAbility2)
             {
-                if (selectedability != SelectedRedAbility3)
+                if (SelectedAbility != SelectedRedAbility3)
                 {
                     Text txt = buttontext.GetComponentInChildren<Text>();
-                    txt.text = selectedability;
-                    SelectedRedAbility1 = selectedability;
-                    selectedability = "null";
+                    txt.text = SelectedAbility;
+                    SelectedRedAbility1 = SelectedAbility;
+                    SelectedAbility = "null";
 
                 }
             }    
         }
     }
 
-    public void select2(GameObject buttontext)
+    public void SelectRed2(GameObject buttontext)
     {
 
-        if (selectedability != "null")
+        if (SelectedAbility != "null")
         {
-            if (selectedability != SelectedRedAbility1)
+            if (SelectedAbility != SelectedRedAbility1)
             {
-                if (selectedability != SelectedRedAbility3)
+                if (SelectedAbility != SelectedRedAbility3)
                 {
                     Text txt = buttontext.GetComponentInChildren<Text>();
-                    txt.text = selectedability;
-                    SelectedRedAbility2 = selectedability;
-                    selectedability = "null";
+                    txt.text = SelectedAbility;
+                    SelectedRedAbility2 = SelectedAbility;
+                    SelectedAbility = "null";
                 }
             }
         }
     }
-    public void select3(GameObject buttontext)
+    public void SelectRed3(GameObject buttontext)
     {
-        if (selectedability != "null")
+        if (SelectedAbility != "null")
         {
-            if (selectedability != SelectedRedAbility1)
+            if (SelectedAbility != SelectedRedAbility1)
             {
-                if (selectedability != SelectedRedAbility2)
+                if (SelectedAbility != SelectedRedAbility2)
                 {
                     Text txt = buttontext.GetComponentInChildren<Text>();
-                    txt.text = selectedability;
-                    SelectedRedAbility3 = selectedability;
-                    selectedability = "null";
+                    txt.text = SelectedAbility;
+                    SelectedRedAbility3 = SelectedAbility;
+                    SelectedAbility = "null";
+                }
+            }
+        }
+    }
+
+    public void SelectBlue1(GameObject buttontext)
+    {
+        if (SelectedAbility != "null")
+        {
+            if (SelectedAbility != SelectedBlueAbility2)
+            {
+                if (SelectedAbility != SelectedBlueAbility3)
+                {
+                    Text txt = buttontext.GetComponentInChildren<Text>();
+                    txt.text = SelectedAbility;
+                    SelectedBlueAbility1 = SelectedAbility;
+                    SelectedAbility = "null";
+                }
+            }
+        }
+    }
+
+    public void SelectBlue2(GameObject buttontext)
+    {
+        if (SelectedAbility != "null")
+        {
+            if (SelectedAbility != SelectedBlueAbility1)
+            {
+                if (SelectedAbility != SelectedBlueAbility3)
+                {
+                    Text txt = buttontext.GetComponentInChildren<Text>();
+                    txt.text = SelectedAbility;
+                    SelectedBlueAbility2 = SelectedAbility;
+                    SelectedAbility = "null";
+                }
+            }
+        }
+    }
+
+    public void SelectBlue3(GameObject buttontext)
+    {
+        if (SelectedAbility != "null")
+        {
+            if (SelectedAbility != SelectedBlueAbility1)
+            {
+                if (SelectedAbility != SelectedBlueAbility3)
+                {
+                    Text txt = buttontext.GetComponentInChildren<Text>();
+                    txt.text = SelectedAbility;
+                    SelectedBlueAbility3 = SelectedAbility;
+                    SelectedAbility = "null";
                 }
             }
         }
@@ -91,6 +145,12 @@ public class gamemanager : MonoBehaviour {
         {
             DontDestroyOnLoad(transform.gameObject);
             SceneManager.LoadScene("bluemenu");
+        }
+
+        if(menu == "red")
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            SceneManager.LoadScene("redmenu");
         }
     }
 

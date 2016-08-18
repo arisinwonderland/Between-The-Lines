@@ -12,10 +12,15 @@ public class red1 : MonoBehaviour {
     public int buttonid;
 
     KeyCode button;
+
+    public GameObject gamecontroller;
+    public aspects aspects;
+    public bool red;
     // Use this for initialization
     void Start () {
         red1cd = 3;
 
+        aspects = gamecontroller.GetComponent<aspects>();
 
         if(buttonid == 0)
         {
@@ -32,18 +37,20 @@ public class red1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        red = aspects.red;
         //shoot
-        if (Input.GetKeyDown(button))
+        if (red)
         {
-            if (!oncd)
+            if (Input.GetKeyDown(button))
             {
-                shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
-                red1timer = red1cd;
-                oncd = true;
+                if (!oncd)
+                {
+                    shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
+                    red1timer = red1cd;
+                    oncd = true;
+                }
             }
         }
-
         //Cooldown Timer
         if (oncd)
         {
