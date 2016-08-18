@@ -42,6 +42,8 @@ public class player : MonoBehaviour {
         GameManager = GameObject.Find("gamemanager");
         gamemanager = GameManager.GetComponent<gamemanager>();
 
+        Debug.Log(gamemanager.name);
+
         //Stats
         hp = 100;
         redmana = 50;
@@ -61,32 +63,63 @@ public class player : MonoBehaviour {
             {
                 current = gamemanager.SelectedRedAbility3;
             }
-         
 
-
-            if (current == "firebolt")  
+            if (current == "Firebolt")  
             {
                 gameObject.GetComponentInChildren<red1>().enabled = true;
 
                 gameObject.GetComponentInChildren<red1>().buttonid = num;
-
             }
-            if (current == "surgeofflame")
+            if (current == "Surge of Flame")
             {
                 gameObject.GetComponentInChildren<red2>().enabled = true;
 
                 gameObject.GetComponentInChildren<red2>().buttonid = num;
-
             }
-            if (current == "flamedash")
+            if (current == "Flame Dash")
             {
                 gameObject.GetComponentInChildren<red3>().enabled = true;
 
                 gameObject.GetComponentInChildren<red3>().buttonid = num;
-
             }
-            
         }
+
+        for (int num = 0; num <= 2; num++)
+        {
+            if (num == 0)
+            {
+                current = gamemanager.SelectedBlueAbility1;
+            }
+            else if (num == 1)
+            {
+                current = gamemanager.SelectedBlueAbility2;
+            }
+            else if (num == 2)
+            {
+                current = gamemanager.SelectedBlueAbility3;
+            }
+
+            if (current == "Cone of Cold")
+            {
+                gameObject.GetComponentInChildren<blue1>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue1>().buttonid = num;
+            }
+            if (current == "Soaring Hope")
+            {
+                gameObject.GetComponentInChildren<blue2>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue2>().buttonid = num;
+            }
+            if (current == "Guardian Blade")
+            {
+                gameObject.GetComponentInChildren<blue3>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue3>().buttonid = num;
+            }
+
+        }
+
     }   
 
 

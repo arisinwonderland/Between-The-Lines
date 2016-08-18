@@ -9,24 +9,46 @@ public class blue3 : MonoBehaviour {
     public bool oncd;
     public float blue3timer;
 
+    public int buttonid;
+    KeyCode button;
+
+    public GameObject gamecontroller;
+    public aspects aspects;
+    public bool red;
     // Use this for initialization
     void Start () {
 
         blue3cd = 10f;
+        aspects = gamecontroller.GetComponent<aspects>();
 
+        if (buttonid == 0)
+        {
+            button = KeyCode.Alpha1;
+        }
+        else if (buttonid == 1)
+        {
+            button = KeyCode.Alpha2;
+        }
+        else if (buttonid == 2)
+        {
+            button = KeyCode.Alpha3;
+        }
     }
 	    
 	// Update is called once per frame
 	void Update () {
-
+        red = aspects.red;
         //shoot
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (!red)
         {
-            if (!oncd)
+            if (Input.GetKeyDown(button))
             {
-                shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
-                blue3timer = blue3cd;
-                oncd = true;
+                if (!oncd)
+                {
+                    shoot(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
+                    blue3timer = blue3cd;
+                    oncd = true;
+                }
             }
         }
 
