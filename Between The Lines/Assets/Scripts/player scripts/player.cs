@@ -10,6 +10,8 @@ public class player : MonoBehaviour {
 	public bool carryingObject = false;
     public float jumptimer = 0;
 
+    public bool rooted;
+
     public float gravity = 3f;
 
 	public int moveSpeed = 5;
@@ -28,8 +30,11 @@ public class player : MonoBehaviour {
     string current;
 
     public int hp;
-    public int redmana;
-    public int bluemana;
+    public float redmana;
+    public float redmanaregen;
+    public float bluemana;
+    public float bluemanaregen;
+
     public Vector3 direction;
 
     // Use this for initialization
@@ -37,18 +42,20 @@ public class player : MonoBehaviour {
         direction = Vector3.right;
         Timer = 0;
 
+        rooted = false;
+
         gamecontroller = GameObject.Find("GameController");
         aspects = gamecontroller.GetComponent<aspects>();
 
         GameManager = GameObject.Find("gamemanager");
         gamemanager = GameManager.GetComponent<gamemanager>();
 
-        Debug.Log(gamemanager.name);
-
         //Stats
         hp = 100;
-        redmana = 50;
-        bluemana = 50;
+        redmana = 100;
+        redmanaregen = 5;
+        bluemana = 100;
+        bluemanaregen = 5;
 
         for (int num = 0; num <= 2; num++)
         {
@@ -127,15 +134,34 @@ public class player : MonoBehaviour {
 
         }
 
-    }   
+    }
 
 
-    
 
 
-    
+
+
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
+
+        //Mana regen
+        if(redmana < 100)
+        {
+            redmana = redmana + (redmanaregen * Time.deltaTime);
+        }
+        if(redmana > 100)
+        {
+            redmana = 100;
+        }
+        if (bluemana < 100)
+        {
+            bluemana = bluemana + (bluemanaregen * Time.deltaTime);
+        }
+        if (bluemana > 100)
+        {
+            bluemana = 100;
+        }
 
         //Get state
         red = aspects.red;
@@ -152,25 +178,32 @@ public class player : MonoBehaviour {
         }
 
         //Movement
-        if (Input.GetKey (KeyCode.A)) {
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            transform.eulerAngles = new Vector3(0, 0, 0);
-
-        } else if (Input.GetKey (KeyCode.D)) {
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            transform.eulerAngles = new Vector3(0, -180 , 0);
-        }
-
-        //Jumping
-		if (Input.GetKeyDown (KeyCode.Space) && !isjumping) {
-			if(grounded == true)
+        if (!rooted)
+        {
+            if (Input.GetKey(KeyCode.A))
             {
-                grounded = false;
-                isjumping = true;
-            }
-		}
+                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                transform.eulerAngles = new Vector3(0, 0, 0);
 
-        if(isjumping == true)
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                transform.eulerAngles = new Vector3(0, -180, 0);
+            }
+
+
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && !isjumping)
+            {
+                if (grounded == true)
+                {
+                    grounded = false;
+                    isjumping = true;
+                }
+            }
+        
+        if (isjumping == true)
         {
             antiGrav = 10;
 
@@ -180,12 +213,12 @@ public class player : MonoBehaviour {
             }
             else gravity = 4f;
             jumptimer += Time.deltaTime;
-            if(jumptimer >= .25 && jumptimer <= .55 && midJump == false)
-            {               
+            if (jumptimer >= .25 && jumptimer <= .55 && midJump == false)
+            {
                 midJump = true;
             }
         }
-
+    }
 
 
     }

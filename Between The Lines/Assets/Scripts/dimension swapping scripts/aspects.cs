@@ -20,7 +20,7 @@ public class aspects : MonoBehaviour {
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
 
-        cdtimer = 5;
+        cdtimer = 1;
     }
 	
 	// Update is called once per frame

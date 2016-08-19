@@ -17,7 +17,7 @@ public class red1orb : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.Translate(Vector3.forward * 60 * Time.deltaTime);
+        transform.Translate(Vector3.forward * 30 * Time.deltaTime);
 
         despawn -= Time.deltaTime;
         if(despawn <= 0)

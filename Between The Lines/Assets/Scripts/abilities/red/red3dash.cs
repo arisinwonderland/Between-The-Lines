@@ -12,13 +12,15 @@ public class red3dash : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         damage = 5;
-        despawn = .4f;
+        despawn = .2f;
+        player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        transform.Translate(Vector3.forward * Time.deltaTime * 100);
+        player.transform.Translate(Vector3.forward * Time.deltaTime * 50);
+        transform.Translate(Vector3.forward * Time.deltaTime * 50);
 
         despawn -= Time.deltaTime;
         if (despawn <= 0)
