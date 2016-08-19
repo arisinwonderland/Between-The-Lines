@@ -12,58 +12,67 @@ public class AbilityButtonTextSetter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        Text txt = gameObject.GetComponentInChildren<Text>();
+		
+		Image image = gameObject.GetComponent<Image>();
+		Text txt = gameObject.GetComponentInChildren<Text>();
+		string selectedText = ""; 
 
         gamemanager = GameManager.GetComponent<gamemanager>();
 
         if (color == "red")
         {
+			
             switch (num)
             {
-                case 1:
+			case 1:
+					
+				selectedText = gamemanager.SelectedRedAbility1;
 
-                    txt.text = gamemanager.SelectedRedAbility1;
+                break;
 
-                    break;
+			case 2:
+				
+				selectedText = gamemanager.SelectedRedAbility2;
 
-                case 2:
+                break;
 
-                    txt.text = gamemanager.SelectedRedAbility2;
+            case 3:
 
-                    break;
+				selectedText = gamemanager.SelectedRedAbility3;
 
-                case 3:
+                break;
+            }
 
-                    txt.text = gamemanager.SelectedRedAbility3;
+        }
+        if (color == "blue")
+        {
+            switch (num)
+            {
+            case 1:
 
-                    break;
+				selectedText = gamemanager.SelectedBlueAbility1;
+
+                break;
+
+            case 2:
+
+				selectedText = gamemanager.SelectedBlueAbility2;
+
+                break;
+
+            case 3:
+
+				selectedText = gamemanager.SelectedBlueAbility3;
+
+                break;
+
             }
         }
-            if (color == "blue")
-            {
-                switch (num)
-                {
-                    case 1:
-
-                        txt.text = gamemanager.SelectedBlueAbility1;
-
-                        break;
-
-                    case 2:
-
-                        txt.text = gamemanager.SelectedBlueAbility2;
-
-                        break;
-
-                    case 3:
-
-                        txt.text = gamemanager.SelectedBlueAbility3;
-
-                        break;
-
-                }
-            }
+		if (selectedText != "") {
+			image.color = Color.white;
+		}
+		Debug.Log (selectedText);
+		txt.text = selectedText;
 
 	}
 	

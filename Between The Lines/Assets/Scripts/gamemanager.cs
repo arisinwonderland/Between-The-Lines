@@ -32,29 +32,33 @@ public class gamemanager : MonoBehaviour {
 
     public void SelectRed1(GameObject buttontext)
     {       
-        if(SelectedAbility != "null")
-        {
-            if (SelectedAbility != SelectedRedAbility1)
-            {
-                if (SelectedAbility != SelectedRedAbility2)
-                {
-                    if (SelectedAbility != SelectedRedAbility3)
-                    {
-                        Text txt = buttontext.GetComponentInChildren<Text>();
-                        txt.text = SelectedAbility;
-                        SelectedRedAbility1 = SelectedAbility;
-                        SelectedAbility = "null";
+		Image image = buttontext.GetComponent<Image>();
 
-                    }
-                }
-            }    
-        }
+		if (SelectedAbility != "") {
+			if (SelectedAbility != SelectedRedAbility1) {
+				if (SelectedAbility != SelectedRedAbility2) {
+					if (SelectedAbility != SelectedRedAbility3) {
+						Text txt = buttontext.GetComponentInChildren<Text> ();
+						txt.text = SelectedAbility;
+						SelectedRedAbility1 = SelectedAbility;
+						SelectedAbility = "";
+						image.color = Color.white;
+					}
+				}
+			}    
+		} else {
+			Text txt = buttontext.GetComponentInChildren<Text> ();
+			txt.text = "";
+			SelectedRedAbility1 = "";
+			image.color = new Color(1F, 0.1F, 0.1F);
+		}
     }
 
     public void SelectRed2(GameObject buttontext)
-    {
+	{
+		Image image = buttontext.GetComponent<Image>();
 
-        if (SelectedAbility != "null")
+        if (SelectedAbility != "")
         {
             if (SelectedAbility != SelectedRedAbility1)
             {
@@ -65,15 +69,23 @@ public class gamemanager : MonoBehaviour {
                         Text txt = buttontext.GetComponentInChildren<Text>();
                         txt.text = SelectedAbility;
                         SelectedRedAbility2 = SelectedAbility;
-                        SelectedAbility = "null";
+						SelectedAbility = "";
+						image.color = Color.white;
                     }
                 }
             }
-        }
+		} else {
+			Text txt = buttontext.GetComponentInChildren<Text> ();
+			txt.text = "";
+			SelectedRedAbility2 = "";
+			image.color = new Color(1F, 0.1F, 0.1F);
+		}
     }
     public void SelectRed3(GameObject buttontext)
-    {
-        if (SelectedAbility != "null")
+	{
+		Image image = buttontext.GetComponent<Image>();
+
+        if (SelectedAbility != "")
         {
             if (SelectedAbility != SelectedRedAbility1)
             {
@@ -84,16 +96,24 @@ public class gamemanager : MonoBehaviour {
                         Text txt = buttontext.GetComponentInChildren<Text>();
                         txt.text = SelectedAbility;
                         SelectedRedAbility3 = SelectedAbility;
-                        SelectedAbility = "null";
+						SelectedAbility = "";
+						image.color = Color.white;
                     }
                 }
             }
-        }
+		} else {
+			Text txt = buttontext.GetComponentInChildren<Text> ();
+			txt.text = "";
+			SelectedRedAbility3 = "";
+			image.color = new Color(1F, 0.1F, 0.1F);
+		}
     }
 
     public void SelectBlue1(GameObject buttontext)
-    {
-        if (SelectedAbility != "null")
+	{
+		Image image = buttontext.GetComponent<Image>();
+
+        if (SelectedAbility != "")
         {
             if (SelectedAbility != SelectedBlueAbility1)
             {
@@ -104,16 +124,24 @@ public class gamemanager : MonoBehaviour {
                         Text txt = buttontext.GetComponentInChildren<Text>();
                         txt.text = SelectedAbility;
                         SelectedBlueAbility1 = SelectedAbility;
-                        SelectedAbility = "null";
+						SelectedAbility = "";
+						image.color = Color.white;
                     }
                 }
             }
-        }
+		} else {
+			Text txt = buttontext.GetComponentInChildren<Text> ();
+			txt.text = "";
+			SelectedBlueAbility1 = "";
+			image.color = new Color(0.3F, 0.3F, 1F);
+		}
     }
 
     public void SelectBlue2(GameObject buttontext)
-    {
-        if (SelectedAbility != "null")
+	{
+		Image image = buttontext.GetComponent<Image>();
+
+        if (SelectedAbility != "")
         {
             if (SelectedAbility != SelectedBlueAbility1)
             {
@@ -124,18 +152,25 @@ public class gamemanager : MonoBehaviour {
                         Text txt = buttontext.GetComponentInChildren<Text>();
                         txt.text = SelectedAbility;
                         SelectedBlueAbility2 = SelectedAbility;
-                        SelectedAbility = "null";
+						SelectedAbility = "";
+						image.color = Color.white;
                     }
                 }
             }
-        }
+		} else {
+			Text txt = buttontext.GetComponentInChildren<Text> ();
+			txt.text = "";
+			SelectedBlueAbility2 = "";
+			image.color = new Color(0.3F, 0.3F, 1F);
+		}
 
     }
 
     public void SelectBlue3(GameObject buttontext)
-    {
+	{
+		Image image = buttontext.GetComponent<Image>();
      
-        if (SelectedAbility != "null")
+        if (SelectedAbility != "")
         {
             if (SelectedAbility != SelectedBlueAbility1)
             {
@@ -146,12 +181,17 @@ public class gamemanager : MonoBehaviour {
                         Text txt = buttontext.GetComponentInChildren<Text>();
                         txt.text = SelectedAbility;
                         SelectedBlueAbility3 = SelectedAbility;
-                        
-                        SelectedAbility = "null";
+						SelectedAbility = "";
+						image.color = Color.white;
                     }
                 }
             }
-        }
+		} else {
+			Text txt = buttontext.GetComponentInChildren<Text> ();
+			txt.text = "";
+			SelectedBlueAbility3 = "";
+			image.color = new Color(0.3F, 0.3F, 1F);
+		}
     }
 
     public void loadlevel(int level)
@@ -167,13 +207,14 @@ public class gamemanager : MonoBehaviour {
     {
         if(menu == "blue")
         {
-      
+			SelectedAbility = "";
             SceneManager.LoadScene("bluemenu");
         }
 
         if(menu == "red")
         {
-            
+
+			SelectedAbility = "";
             SceneManager.LoadScene("redmenu");
         }
     }
