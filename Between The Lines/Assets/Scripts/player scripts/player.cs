@@ -153,17 +153,13 @@ public class player : MonoBehaviour {
 
         //Movement
         if (Input.GetKey (KeyCode.A)) {
-			move ();
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            transform.eulerAngles = new Vector3(0, 0, 0);
 
         } else if (Input.GetKey (KeyCode.D)) {
-			move ();
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        } //else if (Input.GetKey (KeyCode.W)) {
-		//	move (Vector3.forward);
-		//} else if (Input.GetKey (KeyCode.S)) {
-		//	move (Vector3.back);
-		//}
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            transform.eulerAngles = new Vector3(0, -180 , 0);
+        }
 
         //Jumping
 		if (Input.GetKeyDown (KeyCode.Space) && !isjumping) {
@@ -308,13 +304,5 @@ public class player : MonoBehaviour {
 
     }
 
-    void move() { 
-        
-		if (grounded) {
-			transform.Translate (direction * moveSpeed * Time.deltaTime);
-		} else {
-			transform.Translate (direction * moveSpeed * Time.deltaTime);
-            transform.Translate(direction * moveSpeed * Time.deltaTime / 4);
-        }
-	}
+   
 }

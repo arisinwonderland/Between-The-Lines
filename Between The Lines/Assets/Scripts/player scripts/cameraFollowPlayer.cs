@@ -5,11 +5,11 @@ public class cameraFollowPlayer : MonoBehaviour {
     public GameObject player;
 	// Use this for initialization
 	void Start () {
-        transform.position = player.transform.position;
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = player.transform.position;
+        transform.position = new Vector3(-150, player.transform.position.y, player.transform.position.z);
     }
 }

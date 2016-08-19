@@ -69,6 +69,6 @@ public class red4 : MonoBehaviour {
 
     void shoot(Vector3 pos, Quaternion angle)
     {
-        Instantiate(red4pillar, pos + Vector3.forward, angle);
+        Instantiate(red4pillar, pos + (Vector3.forward * 10), angle);
     }
 }

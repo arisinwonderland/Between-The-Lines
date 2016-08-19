@@ -1,0 +1,37 @@
+Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.064 seconds
+Platform assembly: C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Aloon\Documents\Between-The-Lines\Between The Lines\first_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 48Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.779647 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: d57c0 -> priority: 1 
+  Thread -> id: d5710 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.532536 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 574.
+Total: 0.345808 ms (FindLiveObjects: 0.035528 ms CreateObjectMapping: 0.035528 ms MarkObjects: 0.260935 ms  DeleteObjects: 0.013421 ms)
+
+gamemanager
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+

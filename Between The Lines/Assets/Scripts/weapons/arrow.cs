@@ -11,6 +11,7 @@ public class arrow : MonoBehaviour {
 	void Start () {
         damage = 10;
         despawn = 5;
+       
 	}
 	
 	// Update is called once per frame
