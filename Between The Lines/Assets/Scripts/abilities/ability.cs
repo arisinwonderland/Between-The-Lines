@@ -37,6 +37,7 @@ public class ability : MonoBehaviour {
         //Get player
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
+		gamemanager = GameObject.Find ("gamemanager");
         aspects = gamemanager.GetComponent<aspects>();
 
         //Button setters
