@@ -21,7 +21,6 @@ public class AbilityButtonTextSetter : MonoBehaviour {
 
         if (color == "red")
         {
-			
             switch (num)
             {
 			case 1:
@@ -42,7 +41,6 @@ public class AbilityButtonTextSetter : MonoBehaviour {
 
                 break;
             }
-
         }
         if (color == "blue")
         {
