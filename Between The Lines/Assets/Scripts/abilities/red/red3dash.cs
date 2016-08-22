@@ -4,7 +4,7 @@ using System.Collections;
 public class red3dash : MonoBehaviour {
 
     public GameObject player;
-
+    public bool abilityred;
     public int damage;
 
     public float despawn;

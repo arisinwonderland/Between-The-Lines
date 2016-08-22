@@ -4,7 +4,7 @@ using System.Collections;
 public class red1orb : MonoBehaviour {
 
     public int damage;
-
+    public bool abilityred;
     public float despawn;
 
     // Use this for initialization

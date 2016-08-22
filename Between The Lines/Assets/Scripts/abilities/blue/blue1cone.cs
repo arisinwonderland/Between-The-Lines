@@ -4,7 +4,7 @@ using System.Collections;
 public class blue1cone : MonoBehaviour {
 
     public int damage;
-
+    public bool abilityred;
     public GameObject player;
     public player playerscript;
     public float despawn;

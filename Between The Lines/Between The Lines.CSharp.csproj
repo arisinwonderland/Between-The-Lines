@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemy.cs" />
     <Compile Include="Assets\Scripts\gamemanager.cs" />
     <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
     <Compile Include="Assets\Scripts\object scripts\bluebeam.cs" />

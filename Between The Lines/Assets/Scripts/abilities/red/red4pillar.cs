@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class red4pillar : MonoBehaviour {
-
+    public bool abilityred;
     public int damage;
     public float despawn;
     public GameObject player;

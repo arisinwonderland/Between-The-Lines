@@ -5,7 +5,7 @@ public class blue4beam : MonoBehaviour {
 
 
     public int damage;
-
+    public bool abilityred;
     public GameObject player;
     public player playerscript;
     public float despawn;

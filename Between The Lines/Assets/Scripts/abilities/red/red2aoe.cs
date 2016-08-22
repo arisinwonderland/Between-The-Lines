@@ -5,7 +5,7 @@ public class red2aoe : MonoBehaviour {
 
     public int damage;
     public float despawn;
-
+    public bool abilityred;
     // Use this for initialization
     void Start () {
 

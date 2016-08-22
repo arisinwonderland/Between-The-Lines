@@ -4,7 +4,7 @@ using System.Collections;
 public class blue2dash : MonoBehaviour {
 
     public GameObject player;
-
+    public bool abilityred;
     public int damage;
 
     public float despawn;

@@ -4,7 +4,7 @@ using System.Collections;
 public class blue3orb : MonoBehaviour {
 
     public int damage;
-
+    public bool abilityred;
     public GameObject player;
     public float despawn;
 

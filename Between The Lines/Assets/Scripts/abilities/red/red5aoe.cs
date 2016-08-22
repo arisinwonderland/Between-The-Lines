@@ -3,7 +3,7 @@ using System.Collections;
 
 public class red5aoe : MonoBehaviour {
 
-
+    public bool abilityred;
     public int damage;
     public float despawn;
     public GameObject player;
