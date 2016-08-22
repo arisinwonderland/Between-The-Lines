@@ -11,7 +11,7 @@ public class redTextureChanger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        gamecontroller = GameObject.Find("GameController");
+        gamecontroller = GameObject.Find("gamemanager");
         aspects = gamecontroller.GetComponent<aspects>();
         rend = this.GetComponent<MeshRenderer>();
         solid = Resources.Load<Material>("red/Red Block");

@@ -54,7 +54,6 @@ public class aspects : MonoBehaviour {
                     {
                         red = false;
                         player.layer = LayerMask.NameToLayer("bluePlayer");
-                        playercam.layer = LayerMask.NameToLayer("bluePlayer");
                         playerfootbox.layer = LayerMask.NameToLayer("bluePlayer");
                         switched = true;
                         oncd = true;
@@ -64,7 +63,6 @@ public class aspects : MonoBehaviour {
                     {
                         red = true;
                         player.layer = LayerMask.NameToLayer("redPlayer");
-                        playercam.layer = LayerMask.NameToLayer("redPlayer");
                         playerfootbox.layer = LayerMask.NameToLayer("redPlayer");
                         switched = true;
                         oncd = true;

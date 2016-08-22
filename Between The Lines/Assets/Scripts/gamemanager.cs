@@ -14,6 +14,10 @@ public class gamemanager : MonoBehaviour {
     public string SelectedBlueAbility2;
     public string SelectedBlueAbility3;
 
+    public string SelectedWeapon;
+    public string SelectedRedWeapon;
+    public string SelectedBlueWeapon;
+
 
     // Use this for initialization
     void Start () {
@@ -81,6 +85,7 @@ public class gamemanager : MonoBehaviour {
 			image.color = new Color(1F, 0.1F, 0.1F);
 		}
     }
+
     public void SelectRed3(GameObject buttontext)
 	{
 		Image image = buttontext.GetComponent<Image>();
@@ -192,6 +197,65 @@ public class gamemanager : MonoBehaviour {
 			SelectedBlueAbility3 = "";
 			image.color = new Color(0.3F, 0.3F, 1F);
 		}
+    }
+
+    public void weaponselect(string selected)
+    {
+        SelectedWeapon = selected;
+    }
+
+    public void SelectRedWeapon(GameObject buttontext)
+    {
+        Image image = buttontext.GetComponent<Image>();
+
+        if (SelectedWeapon != "")
+        {
+            if (SelectedWeapon != SelectedRedWeapon)
+            {
+                if (SelectedWeapon != SelectedBlueWeapon)
+                {
+                        Text txt = buttontext.GetComponentInChildren<Text>();
+                        txt.text = SelectedWeapon;
+                        SelectedRedWeapon = SelectedWeapon;
+                        SelectedWeapon = "";
+                        image.color = Color.white;
+                }
+            }
+        }
+        else
+        {
+            Text txt = buttontext.GetComponentInChildren<Text>();
+            txt.text = "";
+            SelectedRedWeapon = "";
+            image.color = new Color(1F, 0.1F, 0.1F);
+        }
+    }
+
+    public void SelectBlueWeapon(GameObject buttontext)
+    {
+        Image image = buttontext.GetComponent<Image>();
+
+        if (SelectedWeapon != "")
+        {
+            if (SelectedWeapon != SelectedRedWeapon)
+            {
+                if (SelectedWeapon != SelectedBlueWeapon)
+                {
+                    Text txt = buttontext.GetComponentInChildren<Text>();
+                    txt.text = SelectedWeapon;
+                    SelectedBlueWeapon = SelectedWeapon;
+                    SelectedWeapon = "";
+                    image.color = Color.white;
+                }
+            }
+        }
+        else
+        {
+            Text txt = buttontext.GetComponentInChildren<Text>();
+            txt.text = "";
+            SelectedBlueWeapon = "";
+            image.color = new Color(1F, 0.1F, 0.1F);
+        }
     }
 
     public void loadlevel(int level)

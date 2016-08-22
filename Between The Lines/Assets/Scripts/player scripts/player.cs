@@ -20,8 +20,7 @@ public class player : MonoBehaviour {
     public bool stopped;
     public float Timer;
     public GameObject feets;
-
-    public GameObject gamecontroller;
+    
     public aspects aspects;
     public bool red;
 
@@ -44,11 +43,9 @@ public class player : MonoBehaviour {
 
         rooted = false;
 
-        gamecontroller = GameObject.Find("GameController");
-        aspects = gamecontroller.GetComponent<aspects>();
-
         GameManager = GameObject.Find("gamemanager");
         gamemanager = GameManager.GetComponent<gamemanager>();
+        aspects = GameManager.GetComponent<aspects>();
 
         //Stats
         hp = 100;
@@ -57,89 +54,12 @@ public class player : MonoBehaviour {
         bluemana = 100;
         bluemanaregen = 5;
 
-        for (int num = 0; num <= 2; num++)
-        {
-            if(num == 0)
-            {
-                current = gamemanager.SelectedRedAbility1;
-            }
-            else if(num == 1)
-            {
-                current = gamemanager.SelectedRedAbility2;
-            }
-            else if(num == 2)
-            {
-                current = gamemanager.SelectedRedAbility3;
-            }
-
-            if (current == "Firebolt")  
-            {
-                gameObject.GetComponentInChildren<red1>().enabled = true;
-
-                gameObject.GetComponentInChildren<red1>().buttonid = num;
-            }
-            if (current == "Surge of Flame")
-            {
-                gameObject.GetComponentInChildren<red2>().enabled = true;
-
-                gameObject.GetComponentInChildren<red2>().buttonid = num;
-            }
-            if (current == "Flame Dash")
-            {
-                gameObject.GetComponentInChildren<red3>().enabled = true;
-
-                gameObject.GetComponentInChildren<red3>().buttonid = num;
-            }
-            if (current == "Burning Pillar")
-            {
-                gameObject.GetComponentInChildren<red4>().enabled = true;
-
-                gameObject.GetComponentInChildren<red4>().buttonid = num;
-            }
-        }
-
-        for (int num = 0; num <= 2; num++)
-        {
-            if (num == 0)
-            {
-                current = gamemanager.SelectedBlueAbility1;
-            }
-            else if (num == 1)
-            {
-                current = gamemanager.SelectedBlueAbility2;
-            }
-            else if (num == 2)
-            {
-                current = gamemanager.SelectedBlueAbility3;
-            }
-
-            if (current == "Cone of Cold")
-            {
-                gameObject.GetComponentInChildren<blue1>().enabled = true;
-
-                gameObject.GetComponentInChildren<blue1>().buttonid = num;
-            }
-            if (current == "Soaring Hope")
-            {
-                gameObject.GetComponentInChildren<blue2>().enabled = true;
-
-                gameObject.GetComponentInChildren<blue2>().buttonid = num;
-            }
-            if (current == "Guardian Blade")
-            {
-                gameObject.GetComponentInChildren<blue3>().enabled = true;
-
-                gameObject.GetComponentInChildren<blue3>().buttonid = num;
-            }
-
-        }
+        //Ability Init
+        RedAbilitiesInit();
+        BlueAbilitiesInit();
+        WeaponsInit();
 
     }
-
-
-
-
-
 
     // Update is called once per frame
     void Update()
@@ -331,11 +251,112 @@ public class player : MonoBehaviour {
         }
     }
 
-    public static void IgnoreLayerCollision(int layer1, int layer2, bool ignore = true)
+    void RedAbilitiesInit()
     {
-            
+        for (int num = 0; num <= 2; num++)
+        {
+            if (num == 0)
+            {
+                current = gamemanager.SelectedRedAbility1;
+            }
+            else if (num == 1)
+            {
+                current = gamemanager.SelectedRedAbility2;
+            }
+            else if (num == 2)
+            {
+                current = gamemanager.SelectedRedAbility3;
+            }
 
+            if (current == "Firebolt")
+            {
+                gameObject.GetComponentInChildren<red1>().enabled = true;
+
+                gameObject.GetComponentInChildren<red1>().buttonid = num;
+            }
+            if (current == "Surge of Flame")
+            {
+                gameObject.GetComponentInChildren<red2>().enabled = true;
+
+                gameObject.GetComponentInChildren<red2>().buttonid = num;
+            }
+            if (current == "Flame Dash")
+            {
+                gameObject.GetComponentInChildren<red3>().enabled = true;
+
+                gameObject.GetComponentInChildren<red3>().buttonid = num;
+            }
+            if (current == "Burning Pillar")
+            {
+                gameObject.GetComponentInChildren<red4>().enabled = true;
+
+                gameObject.GetComponentInChildren<red4>().buttonid = num;
+            }
+        }
+    }   
+
+    void BlueAbilitiesInit()
+    {
+        for (int num = 0; num <= 2; num++)
+        {
+            if (num == 0)
+            {
+                current = gamemanager.SelectedBlueAbility1;
+            }
+            else if (num == 1)
+            {
+                current = gamemanager.SelectedBlueAbility2;
+            }
+            else if (num == 2)
+            {
+                current = gamemanager.SelectedBlueAbility3;
+            }
+
+            if (current == "Cone of Cold")
+            {
+                gameObject.GetComponentInChildren<blue1>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue1>().buttonid = num;
+            }
+            if (current == "Soaring Hope")
+            {
+                gameObject.GetComponentInChildren<blue2>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue2>().buttonid = num;
+            }
+            if (current == "Guardian Blade")
+            {
+                gameObject.GetComponentInChildren<blue3>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue3>().buttonid = num;
+            }
+
+        }
     }
 
-   
+    void WeaponsInit()  
+    {
+        if(gamemanager.SelectedRedWeapon == "bow")
+        {
+            gameObject.GetComponentInChildren<bow>().enabled = true;
+            gameObject.GetComponentInChildren<bow>().weaponred = true;
+        }
+        else if(gamemanager.SelectedRedWeapon == "sword")
+        {
+            gameObject.GetComponentInChildren<sword>().enabled = true;
+            gameObject.GetComponentInChildren<sword>().weaponred = true;
+        }
+
+        if (gamemanager.SelectedBlueWeapon == "bow")
+        {
+            gameObject.GetComponentInChildren<bow>().enabled = true;
+            gameObject.GetComponentInChildren<bow>().weaponred = false;
+        }
+        else if (gamemanager.SelectedBlueWeapon == "sword")
+        {
+            gameObject.GetComponentInChildren<sword>().enabled = true;
+            gameObject.GetComponentInChildren<sword>().weaponred = false;
+        }
+
+    }
 }

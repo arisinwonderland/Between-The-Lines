@@ -7,8 +7,12 @@ public class arrow : MonoBehaviour {
 
     public float despawn;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject Weapons;
+    public bow bow;
+    string current;
+
+    // Use this for initialization
+    void Start () {
         damage = 10;
         despawn = 5;
        
@@ -17,7 +21,7 @@ public class arrow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.Translate(Vector3.forward * 75 * Time.deltaTime);
+        transform.Translate(Vector3.forward * 65 * Time.deltaTime);
 
         despawn -= Time.deltaTime;
         if (despawn <= 0)
