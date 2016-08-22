@@ -1,0 +1,149 @@
+-debug
+-target:library
+-nowarn:0169
+-out:'Temp/Assembly-CSharp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll'
+-r:'/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll'
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_4_0
+-define:UNITY_5_4
+-define:UNITY_5
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_EDITOR_RETINA
+-define:ENABLE_RETINA_GUISTYLES
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_SPRITE_POLYGON
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_COLLAB
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:INCLUDE_DIRECTX12
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:INCLUDE_PUBNUB
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
+-define:ENABLE_EDITOR_TESTS_RUNNER
+-define:UNITY_STANDALONE_OSX
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GAMECENTER
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_WEBSOCKET_HOST
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_OSX
+-define:UNITY_TEAM_LICENSE
+'Assets/Scripts/abilities/ability.cs'
+'Assets/Scripts/abilities/blue/blue1.cs'
+'Assets/Scripts/abilities/blue/blue1cone.cs'
+'Assets/Scripts/abilities/blue/blue2.cs'
+'Assets/Scripts/abilities/blue/blue2dash.cs'
+'Assets/Scripts/abilities/blue/blue3.cs'
+'Assets/Scripts/abilities/blue/blue3orb.cs'
+'Assets/Scripts/abilities/blue/blue4.cs'
+'Assets/Scripts/abilities/blue/blue4beam.cs'
+'Assets/Scripts/abilities/blue/blue5.cs'
+'Assets/Scripts/abilities/blue/blue5beam.cs'
+'Assets/Scripts/abilities/red/red1.cs'
+'Assets/Scripts/abilities/red/red1orb.cs'
+'Assets/Scripts/abilities/red/red2.cs'
+'Assets/Scripts/abilities/red/red2aoe.cs'
+'Assets/Scripts/abilities/red/red3.cs'
+'Assets/Scripts/abilities/red/red3dash.cs'
+'Assets/Scripts/abilities/red/red4.cs'
+'Assets/Scripts/abilities/red/red4pillar.cs'
+'Assets/Scripts/abilities/red/red5.cs'
+'Assets/Scripts/abilities/red/red5aoe.cs'
+'Assets/Scripts/button scripts/AbilityButtonTextSetter.cs'
+'Assets/Scripts/button scripts/ShowDescription.cs'
+'Assets/Scripts/button scripts/levelselect/loadlvl0.cs'
+'Assets/Scripts/button scripts/levelselect/loadlvl1.cs'
+'Assets/Scripts/button scripts/levelselect/loadlvl2.cs'
+'Assets/Scripts/button scripts/title/continuescript.cs'
+'Assets/Scripts/button scripts/title/levelselectscript.cs'
+'Assets/Scripts/button scripts/title/newgamescript.cs'
+'Assets/Scripts/button scripts/title/quitscript.cs'
+'Assets/Scripts/dimension swapping scripts/aspects.cs'
+'Assets/Scripts/dimension swapping scripts/beamcolorchanger.cs'
+'Assets/Scripts/dimension swapping scripts/blueTextureChanger.cs'
+'Assets/Scripts/dimension swapping scripts/gloveColorChange.cs'
+'Assets/Scripts/dimension swapping scripts/redTextureChanger.cs'
+'Assets/Scripts/gamemanager.cs'
+'Assets/Scripts/object scripts/blueField.cs'
+'Assets/Scripts/object scripts/bluebeam.cs'
+'Assets/Scripts/object scripts/level2plate1.cs'
+'Assets/Scripts/object scripts/level4playerrotater.cs'
+'Assets/Scripts/object scripts/level4rotating.cs'
+'Assets/Scripts/object scripts/moving2pts.cs'
+'Assets/Scripts/object scripts/nextlevel.cs'
+'Assets/Scripts/object scripts/redField.cs'
+'Assets/Scripts/object scripts/redPlate.cs'
+'Assets/Scripts/object scripts/redbeam.cs'
+'Assets/Scripts/player scripts/CameraOnly.cs'
+'Assets/Scripts/player scripts/cameraFollow.cs'
+'Assets/Scripts/player scripts/cameraFollowPlayer.cs'
+'Assets/Scripts/player scripts/deathboxscript.cs'
+'Assets/Scripts/player scripts/getPicked.cs'
+'Assets/Scripts/player scripts/hands.cs'
+'Assets/Scripts/player scripts/mouseCamera.cs'
+'Assets/Scripts/player scripts/mouseScreen.cs'
+'Assets/Scripts/player scripts/noRotate.cs'
+'Assets/Scripts/player scripts/player.cs'
+'Assets/Scripts/weapons/bow/arrow.cs'
+'Assets/Scripts/weapons/bow/bow.cs'
+'Assets/Scripts/weapons/sword/sword.cs'
+'Assets/Scripts/weapons/sword/swordslash.cs'
+'Assets/Scripts/weapons/weapons.cs'
+-r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

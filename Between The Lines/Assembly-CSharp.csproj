@@ -45,11 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\abilities\ability.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue1.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue1cone.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue2.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue2dash.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue3.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue3orb.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue4.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue4beam.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue5.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue5beam.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red1.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red1orb.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red2.cs" />
@@ -58,7 +64,10 @@
      <Compile Include="Assets\Scripts\abilities\red\red3dash.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red4.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red4pillar.cs" />
+     <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
+     <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
      <Compile Include="Assets\Scripts\button scripts\AbilityButtonTextSetter.cs" />
+     <Compile Include="Assets\Scripts\button scripts\ShowDescription.cs" />
      <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl0.cs" />
      <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl1.cs" />
      <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl2.cs" />
@@ -92,9 +101,11 @@
      <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
      <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
      <Compile Include="Assets\Scripts\player scripts\player.cs" />
-     <Compile Include="Assets\Scripts\weapons\arrow.cs" />
-     <Compile Include="Assets\Scripts\weapons\bow.cs" />
-     <Compile Include="Assets\Scripts\weapons\sword.cs" />
+     <Compile Include="Assets\Scripts\weapons\bow\arrow.cs" />
+     <Compile Include="Assets\Scripts\weapons\bow\bow.cs" />
+     <Compile Include="Assets\Scripts\weapons\sword\sword.cs" />
+     <Compile Include="Assets\Scripts\weapons\sword\swordslash.cs" />
+     <Compile Include="Assets\Scripts\weapons\weapons.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
