@@ -15,7 +15,7 @@ public class ability : MonoBehaviour {
     KeyCode button;
 
     //Game controller and aspects
-    public GameObject gamecontroller;
+    public GameObject gamemanager;
     public aspects aspects;
     public bool red;
 
@@ -37,7 +37,7 @@ public class ability : MonoBehaviour {
         //Get player
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
-        aspects = gamecontroller.GetComponent<aspects>();
+        aspects = gamemanager.GetComponent<aspects>();
 
         //Button setters
         if (buttonid == 0)
@@ -52,7 +52,6 @@ public class ability : MonoBehaviour {
         {
             button = KeyCode.Alpha3;
         }
-
 
     }
 	
