@@ -54,7 +54,6 @@ public class player : MonoBehaviour {
         bluemana = 100;
         bluemanaregen = 5;
 
-<<<<<<< HEAD
         for (int num = 0; num <= 2; num++)
         {
             if(num == 0)
@@ -142,12 +141,11 @@ public class player : MonoBehaviour {
 				gameObject.GetComponentInChildren<blue5>().buttonid = num;
 			}
         }
-=======
+
         //Ability Init
         RedAbilitiesInit();
         BlueAbilitiesInit();
         WeaponsInit();
->>>>>>> 44ef82c64b37b074bdb3c81cc8ed7ac907c4e05d
 
     }
 

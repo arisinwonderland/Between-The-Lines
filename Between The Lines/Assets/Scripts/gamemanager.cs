@@ -138,7 +138,7 @@ public class gamemanager : MonoBehaviour {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
 			txt.text = "";
 			SelectedBlueAbility1 = "";
-			image.color = new Color(0.3F, 0.3F, 1F);
+			image.color = new Color(70F/255F, 75F/255F, 240F/255F);
 		}
     }
 
@@ -166,7 +166,7 @@ public class gamemanager : MonoBehaviour {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
 			txt.text = "";
 			SelectedBlueAbility2 = "";
-			image.color = new Color(0.3F, 0.3F, 1F);
+			image.color = new Color(70F/255F, 75F/255F, 240F/255F);
 		}
 
     }
@@ -195,7 +195,7 @@ public class gamemanager : MonoBehaviour {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
 			txt.text = "";
 			SelectedBlueAbility3 = "";
-			image.color = new Color(0.3F, 0.3F, 1F);
+			image.color = new Color(70F/255F, 75F/255F, 240F/255F);
 		}
     }
 
