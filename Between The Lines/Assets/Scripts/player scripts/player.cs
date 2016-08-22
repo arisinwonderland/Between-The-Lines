@@ -113,7 +113,7 @@ public class player : MonoBehaviour {
                 current = gamemanager.SelectedBlueAbility3;
             }
 
-            if (current == "Cone of Cold")
+            if (current == "Cone Of Cold")
             {
                 gameObject.GetComponentInChildren<blue1>().enabled = true;
 
@@ -131,7 +131,18 @@ public class player : MonoBehaviour {
 
                 gameObject.GetComponentInChildren<blue3>().buttonid = num;
             }
+			if (current == "Ice Blast")
+			{
+				gameObject.GetComponentInChildren<blue4>().enabled = true;
 
+				gameObject.GetComponentInChildren<blue4>().buttonid = num;
+			}
+			if (current == "Arctic Circle")
+			{
+				gameObject.GetComponentInChildren<blue5>().enabled = true;
+
+				gameObject.GetComponentInChildren<blue5>().buttonid = num;
+			}
         }
 
     }
