@@ -66,12 +66,15 @@
      <Compile Include="Assets\Scripts\abilities\red\red4pillar.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
+     <Compile Include="Assets\Scripts\button scripts\AbilityButtonTextSetter.cs" />
+     <Compile Include="Assets\Scripts\button scripts\ShowDescription.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\beamcolorchanger.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
-     <Compile Include="Assets\Scripts\enemies\enemy.cs" />
+     <Compile Include="Assets\Scripts\enemies\enemyDamage.cs" />
+     <Compile Include="Assets\Scripts\enemies\testEnemy.cs" />
      <Compile Include="Assets\Scripts\gamemanager.cs" />
      <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
      <Compile Include="Assets\Scripts\object scripts\bluebeam.cs" />
@@ -93,7 +96,7 @@
      <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
      <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
      <Compile Include="Assets\Scripts\player scripts\player.cs" />
-     <Compile Include="Assets\Scripts\ui scripts\AbilityButtonTextSetter.cs" />
+     <Compile Include="Assets\Scripts\ui scripts\AbilityButtonTextSetter-emily.cs" />
      <Compile Include="Assets\Scripts\ui scripts\description\descbox.cs" />
      <Compile Include="Assets\Scripts\ui scripts\description\description.cs" />
      <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl0.cs" />
@@ -108,6 +111,7 @@
      <Compile Include="Assets\Scripts\weapons\sword\sword.cs" />
      <Compile Include="Assets\Scripts\weapons\sword\swordslash.cs" />
      <Compile Include="Assets\Scripts\weapons\weapons.cs" />
+     <Compile Include="Assets\feetsCollider.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
