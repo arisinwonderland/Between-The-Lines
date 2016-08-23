@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class enemy : MonoBehaviour {
+public class enemyDamage : MonoBehaviour {
 
     public int hp;
     public bool EnemyRed;
