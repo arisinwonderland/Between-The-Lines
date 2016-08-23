@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
     <Compile Include="Assets\Scripts\button scripts\AbilityButtonTextSetter.cs" />
+    <Compile Include="Assets\Scripts\button scripts\ShowDescription.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl0.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl1.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl2.cs" />

@@ -14,6 +14,15 @@ public class enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+        //death
+        if(hp < 0)
+        {
+            Destroy(gameObject);
+        }
+
+
+
+
 	}
 
     void OnTriggerEnter(Collider other)
@@ -57,11 +66,11 @@ public class enemy : MonoBehaviour {
                 hp -= other.gameObject.GetComponent<red3dash>().damage;
             }
         }
-        if (other.name == "red4pillar(Clone)")
+        if (other.name == "red4pillarcollider")
         {
-            if (EnemyRed == other.gameObject.GetComponent<red4pillar>().abilityred)
+            if (EnemyRed == GameObject.Find("redpillar(Clone)").GetComponent<red4pillar>().abilityred)
             {
-                hp -= other.gameObject.GetComponent<red4pillar>().damage;
+                hp -= GameObject.Find("red4pillar(Clone)").GetComponent<red4pillar>().damage;
             }
         }
         if (other.name == "red5aoe(Clone)")
