@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
     <Compile Include="Assets\Scripts\button scripts\AbilityButtonTextSetter.cs" />
+    <Compile Include="Assets\Scripts\button scripts\ShowDescription.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl0.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl1.cs" />
     <Compile Include="Assets\Scripts\button scripts\levelselect\loadlvl2.cs" />
@@ -103,7 +104,8 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
-    <Compile Include="Assets\Scripts\enemies\enemy.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemyDamage.cs" />
+    <Compile Include="Assets\Scripts\enemies\testEnemy.cs" />
     <Compile Include="Assets\Scripts\gamemanager.cs" />
     <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
     <Compile Include="Assets\Scripts\object scripts\bluebeam.cs" />
