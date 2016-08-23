@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour {
 
-	public bool grounded = false;
+	public bool grounded = true;
 	public bool isjumping = false;
 	public bool midJump = false;
 	public bool carryingObject = false;
@@ -14,7 +14,7 @@ public class player : MonoBehaviour {
 
     public float gravity = 3f;
 
-	public int moveSpeed = 5;
+	public int moveSpeed = 10;
 
     public float antiGrav = 10;
     public bool stopped;
@@ -97,7 +97,6 @@ public class player : MonoBehaviour {
             midJump = false;
             isjumping = false;
             gravity = 4f;
-            jumptimer = 0;
             antiGrav = 10;
         }
 
@@ -129,7 +128,6 @@ public class player : MonoBehaviour {
         
         if (isjumping == true)
         {
-            antiGrav = 10;
 
             if (!midJump)
             {
@@ -137,7 +135,7 @@ public class player : MonoBehaviour {
             }
             else gravity = 4f;
             jumptimer += Time.deltaTime;
-            if (jumptimer >= .25 && jumptimer <= .55 && midJump == false)
+            if (jumptimer >= .25 && jumptimer <= .70 && midJump == false)
             {
                 midJump = true;
             }
@@ -147,113 +145,6 @@ public class player : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter(Collision other) {
-        
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            grounded = true;
-            isjumping = false;
-			midJump = false;
-            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-        }
-
-        else if (other.gameObject.CompareTag("redfloor"))
-        {
-            grounded = true;
-			isjumping = false;
-			midJump = false;
-            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("redblock"))
-        {
-            grounded = true;
-			isjumping = false;
-			midJump = false;
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("blueblock"))
-        {
-            grounded = true;
-			isjumping = false;
-			midJump = false;
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("bluefloor"))
-        {
-            grounded = true;
-			isjumping = false;
-			midJump = false;
-            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-        } else grounded = false;
-
-    }
-
-    void OnCollisionStay(Collision other)
-    {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            grounded = true;
-            isjumping = false;
-            midJump = false;
-            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-        }
-
-        else if (other.gameObject.CompareTag("redfloor"))
-        {
-            grounded = true;
-            isjumping = false;
-            midJump = false;
-            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("redblock"))
-        {
-            grounded = true;
-            isjumping = false;
-            midJump = false;
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("blueblock"))
-        {
-            grounded = true;
-            isjumping = false;
-            midJump = false;
-
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("bluefloor"))
-        {
-            grounded = true;
-            isjumping = false;
-            midJump = false;
-            transform.position = new Vector3(this.transform.position.x, other.transform.position.y + 2, this.transform.position.z);
-        }
-        else grounded = false;
-
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            grounded = false;
-        }
-        else if (other.gameObject.CompareTag("redfloor"))
-        {
-            grounded = false;
-        }
-        else if (other.gameObject.CompareTag("bluefloor"))
-        {
-            grounded = false;
-        }
-        else if (other.gameObject.CompareTag("blueblock"))
-        {
-            grounded = false;
-        }
-        else if (other.gameObject.CompareTag("redblock"))
-        {
-            grounded = false;
-        }
-    }
 
     void RedAbilitiesInit()
     {
