@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour {
 
-	public bool grounded = false;
+	public bool grounded = true;
 	public bool isjumping = false;
 	public bool midJump = false;
 	public bool carryingObject = false;
@@ -14,7 +14,7 @@ public class player : MonoBehaviour {
 
     public float gravity = 3f;
 
-	public int moveSpeed = 5;
+	public int moveSpeed = 10;
 
     public float antiGrav = 10;
     public bool stopped;
@@ -97,7 +97,6 @@ public class player : MonoBehaviour {
             midJump = false;
             isjumping = false;
             gravity = 4f;
-            jumptimer = 0;
             antiGrav = 10;
         }
 
@@ -129,7 +128,6 @@ public class player : MonoBehaviour {
         
         if (isjumping == true)
         {
-            antiGrav = 10;
 
             if (!midJump)
             {
@@ -137,7 +135,7 @@ public class player : MonoBehaviour {
             }
             else gravity = 4f;
             jumptimer += Time.deltaTime;
-            if (jumptimer >= .25 && jumptimer <= .55 && midJump == false)
+            if (jumptimer >= .25 && jumptimer <= .70 && midJump == false)
             {
                 midJump = true;
             }
@@ -147,6 +145,7 @@ public class player : MonoBehaviour {
 
     }
 
+<<<<<<< HEAD
     void OnCollisionEnter(Collision other) {
 
 
@@ -302,6 +301,8 @@ public class player : MonoBehaviour {
             grounded = false;
         }
     }
+=======
+>>>>>>> bcc6395d30950cf30cd29709548cf7ee0c8dce5b
 
     void RedAbilitiesInit()
     {
