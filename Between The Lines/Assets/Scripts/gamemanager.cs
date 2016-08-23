@@ -31,7 +31,11 @@ public class gamemanager : MonoBehaviour {
 
     public void abilityselect(string selected)
     {
-        SelectedAbility = selected;
+		/*if (SelectedAbility == selected) {
+			SelectedAbility = "";
+		} else {*/
+			SelectedAbility = selected;
+		//}
     }
 
     public void SelectRed1(GameObject buttontext)
@@ -52,9 +56,9 @@ public class gamemanager : MonoBehaviour {
 			}    
 		} else {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
-			txt.text = "";
+			txt.text = "Empty";
 			SelectedRedAbility1 = "";
-			image.color = new Color(1F, 0.1F, 0.1F);
+			image.color = new Color(1F, 30/255F, 30/255F);
 		}
     }
 
@@ -80,9 +84,9 @@ public class gamemanager : MonoBehaviour {
             }
 		} else {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
-			txt.text = "";
+			txt.text = "Empty";
 			SelectedRedAbility2 = "";
-			image.color = new Color(1F, 0.1F, 0.1F);
+			image.color = new Color(1F, 30/255F, 30/255F);
 		}
     }
 
@@ -108,9 +112,9 @@ public class gamemanager : MonoBehaviour {
             }
 		} else {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
-			txt.text = "";
+			txt.text = "Empty";
 			SelectedRedAbility3 = "";
-			image.color = new Color(1F, 0.1F, 0.1F);
+			image.color = new Color(1F, 30/255F, 30/255F);
 		}
     }
 
@@ -136,9 +140,9 @@ public class gamemanager : MonoBehaviour {
             }
 		} else {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
-			txt.text = "";
+			txt.text = "Empty";
 			SelectedBlueAbility1 = "";
-			image.color = new Color(70F/255F, 75F/255F, 240F/255F);
+			image.color = new Color(55F/255F, 60F/255F, 240F/255F);
 		}
     }
 
@@ -164,9 +168,9 @@ public class gamemanager : MonoBehaviour {
             }
 		} else {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
-			txt.text = "";
+			txt.text = "Empty";
 			SelectedBlueAbility2 = "";
-			image.color = new Color(70F/255F, 75F/255F, 240F/255F);
+			image.color = new Color(55F/255F, 60F/255F, 240F/255F);
 		}
 
     }
@@ -193,15 +197,19 @@ public class gamemanager : MonoBehaviour {
             }
 		} else {
 			Text txt = buttontext.GetComponentInChildren<Text> ();
-			txt.text = "";
+			txt.text = "Empty";
 			SelectedBlueAbility3 = "";
-			image.color = new Color(70F/255F, 75F/255F, 240F/255F);
+			image.color = new Color(55F/255F, 60F/255F, 240F/255F);
 		}
     }
 
     public void weaponselect(string selected)
     {
-        SelectedWeapon = selected;
+		/*if (SelectedWeapon == selected) {
+			SelectedWeapon = "";
+		} else { */
+			SelectedWeapon = selected;
+		//}
     }
 
     public void SelectRedWeapon(GameObject buttontext)
@@ -218,16 +226,16 @@ public class gamemanager : MonoBehaviour {
                         txt.text = SelectedWeapon;
                         SelectedRedWeapon = SelectedWeapon;
                         SelectedWeapon = "";
-                        image.color = Color.white;
+                        //image.color = Color.white;
                 }
             }
         }
         else
         {
             Text txt = buttontext.GetComponentInChildren<Text>();
-            txt.text = "";
+            txt.text = "Red Weapon";
             SelectedRedWeapon = "";
-            image.color = new Color(1F, 0.1F, 0.1F);
+            //image.color = new Color(1F, 30/255F, 30/255F);
         }
     }
 
@@ -245,16 +253,16 @@ public class gamemanager : MonoBehaviour {
                     txt.text = SelectedWeapon;
                     SelectedBlueWeapon = SelectedWeapon;
                     SelectedWeapon = "";
-                    image.color = Color.white;
+                    //image.color = Color.white;
                 }
             }
         }
         else
         {
             Text txt = buttontext.GetComponentInChildren<Text>();
-            txt.text = "";
-            SelectedBlueWeapon = "";
-            image.color = new Color(1F, 0.1F, 0.1F);
+            txt.text = "Blue Weapon";
+			SelectedBlueWeapon = "";
+			//image.color = new Color(55F/255F, 60F/255F, 240F/255F);
         }
     }
 
@@ -281,6 +289,13 @@ public class gamemanager : MonoBehaviour {
 			SelectedAbility = "";
             SceneManager.LoadScene("redmenu");
         }
+
+		if(menu == "items")
+		{
+
+			SelectedAbility = "";
+			SceneManager.LoadScene("itemsmenu");
+		}
     }
 
 }

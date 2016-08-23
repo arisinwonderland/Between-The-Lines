@@ -40,9 +40,15 @@ public class AbilityButtonTextSetter : MonoBehaviour {
 				selectedText = gamemanager.SelectedRedAbility3;
 
                 break;
+
+			case 4:
+
+				selectedText = gamemanager.SelectedRedWeapon;
+
+				break;
             }
         }
-        if (color == "blue")
+        else if (color == "blue")
         {
             switch (num)
             {
@@ -63,11 +69,24 @@ public class AbilityButtonTextSetter : MonoBehaviour {
 				selectedText = gamemanager.SelectedBlueAbility3;
 
                 break;
+			
+			case 4:
 
+				selectedText = gamemanager.SelectedBlueWeapon;
+
+				break;
             }
         }
-		if (selectedText != "") {
+		if ((selectedText != "") && (num != 4)) {
 			image.color = Color.white;
+		} else if ((selectedText == "") && (num != 4)) {
+			selectedText = "Empty";
+		} else if ((selectedText == "") && (num == 4)) {
+			if (color == "red") {
+				selectedText = "Red Weapon";
+			} else {
+				selectedText = "Blue Weapon";
+			}
 		}
 		Debug.Log (selectedText);
 		txt.text = selectedText;

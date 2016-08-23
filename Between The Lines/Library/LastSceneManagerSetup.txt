@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/levels/bluemenu.unity
+- path: Assets/levels/itemsmenu.unity
   isLoaded: 1
   isActive: 1
