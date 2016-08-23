@@ -148,7 +148,38 @@ public class player : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other) {
-        
+
+
+
+        if (other.gameObject.CompareTag("EnAttack"))
+        {
+            hp -= other.gameObject.GetComponent<testHit>().damage;
+        }
+        if (other.gameObject.CompareTag("redEnAttack") && gamemanager.GetComponent<aspects>().red)
+        {
+            hp -= other.gameObject.GetComponent<testHit>().damage;
+        }
+        if (other.gameObject.CompareTag("blueEnAttack") && !gamemanager.GetComponent<aspects>().red)
+        {
+            hp -= other.gameObject.GetComponent<testHit>().damage;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         if (other.gameObject.CompareTag("Floor"))
         {
             grounded = true;
@@ -187,6 +218,23 @@ public class player : MonoBehaviour {
         } else grounded = false;
 
     }
+
+    void OnTriggerEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("EnAttack"))
+        {
+            hp -= other.gameObject.GetComponent<testHit>().damage;
+        }
+        if (other.gameObject.CompareTag("redEnAttack") && gamemanager.GetComponent<aspects>().red)
+        {
+            hp -= other.gameObject.GetComponent<testHit>().damage;
+        }
+        if (other.gameObject.CompareTag("blueEnAttack") && !gamemanager.GetComponent<aspects>().red)
+        {
+            hp -= other.gameObject.GetComponent<testHit>().damage;
+        }
+    }
+
 
     void OnCollisionStay(Collision other)
     {
