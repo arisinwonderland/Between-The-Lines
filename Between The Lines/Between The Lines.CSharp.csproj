@@ -106,6 +106,8 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyDamage.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemyHitScript\baseAttack.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemyHitScript\testHit.cs" />
     <Compile Include="Assets\Scripts\enemies\testEnemy.cs" />
     <Compile Include="Assets\Scripts\gamemanager.cs" />
     <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
