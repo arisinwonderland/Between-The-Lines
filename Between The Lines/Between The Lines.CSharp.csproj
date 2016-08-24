@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\abilities\AbilityStats.cs" />
     <Compile Include="Assets\Scripts\abilities\ability.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue1.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue1cone.cs" />
@@ -104,7 +105,10 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemy.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyDamage.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemyHitScript\baseAttack.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemyHitScript\testHit.cs" />
     <Compile Include="Assets\Scripts\enemies\testEnemy.cs" />
     <Compile Include="Assets\Scripts\gamemanager.cs" />
     <Compile Include="Assets\Scripts\object scripts\blueField.cs" />
@@ -121,17 +125,22 @@
     <Compile Include="Assets\Scripts\player scripts\cameraFollow.cs" />
     <Compile Include="Assets\Scripts\player scripts\cameraFollowPlayer.cs" />
     <Compile Include="Assets\Scripts\player scripts\deathboxscript.cs" />
+    <Compile Include="Assets\Scripts\player scripts\feetsCollider.cs" />
     <Compile Include="Assets\Scripts\player scripts\getPicked.cs" />
     <Compile Include="Assets\Scripts\player scripts\hands.cs" />
     <Compile Include="Assets\Scripts\player scripts\mouseCamera.cs" />
     <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
     <Compile Include="Assets\Scripts\player scripts\player.cs" />
+    <Compile Include="Assets\Scripts\ui scripts\description\descbox.cs" />
+    <Compile Include="Assets\Scripts\ui scripts\description\description.cs" />
+    <Compile Include="Assets\Scripts\weapons\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\weapons\bow\arrow.cs" />
     <Compile Include="Assets\Scripts\weapons\bow\bow.cs" />
     <Compile Include="Assets\Scripts\weapons\sword\sword.cs" />
     <Compile Include="Assets\Scripts\weapons\sword\swordslash.cs" />
     <Compile Include="Assets\Scripts\weapons\weapons.cs" />
+    <Compile Include="Assets\TestRedEnemyAttack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
