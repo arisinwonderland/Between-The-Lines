@@ -106,6 +106,7 @@
      <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl2.cs" />
      <Compile Include="Assets\Scripts\ui scripts\misc\AbilityButtonTextSetter.cs" />
      <Compile Include="Assets\Scripts\ui scripts\misc\abilitybar.cs" />
+     <Compile Include="Assets\Scripts\ui scripts\misc\healthmanabars.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\continuescript.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\levelselectscript.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\newgamescript.cs" />
