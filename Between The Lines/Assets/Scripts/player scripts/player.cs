@@ -116,7 +116,7 @@ public class player : MonoBehaviour {
             midJump = false;
             isjumping = false;
             gravity = 4f;
-            antiGrav = 10;
+            antiGrav = 15;
         }
 
         //Movement

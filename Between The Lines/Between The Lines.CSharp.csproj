@@ -134,6 +134,7 @@
     <Compile Include="Assets\Scripts\ui scripts\title\levelselectscript.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\newgamescript.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\quitscript.cs" />
+    <Compile Include="Assets\Scripts\ui scripts\unlockerButtons.cs" />
     <Compile Include="Assets\Scripts\weapons\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\weapons\bow\arrow.cs" />
     <Compile Include="Assets\Scripts\weapons\bow\bow.cs" />
