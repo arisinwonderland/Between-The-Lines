@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class testEnemy: enemyDamage{
+public class testEnemy: MonoBehaviour{
 
     public GameObject player;
     public float distance;
@@ -10,6 +10,8 @@ public class testEnemy: enemyDamage{
     public GameObject attack;
     public float timer;
     public float toHit;
+  
+
 
     void Start()
     {
@@ -23,7 +25,8 @@ public class testEnemy: enemyDamage{
 
     // Update is called once per frame
     void Update () {
-        
+      
+
         distance = Vector3.Distance(transform.position, player.transform.position);
         if(distance <= 15)
         {
@@ -41,7 +44,7 @@ public class testEnemy: enemyDamage{
         {
             timer += Time.deltaTime;
             toHit++;
-            if (toHit >= 25)
+            if (toHit >= 75)
             {
                 hitStart(myTransform.position, myTransform.rotation);
                 toHit = 0;
