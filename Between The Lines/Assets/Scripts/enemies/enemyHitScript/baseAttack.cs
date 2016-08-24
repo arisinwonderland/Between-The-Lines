@@ -7,11 +7,7 @@ public class baseAttack : MonoBehaviour {
     public float tillDespawn;
     public float timer;
     public int damage;
-
-
-
-
-
+    public bool redAttack;
 
 	// Use this for initialization
 	void Start () {
@@ -20,11 +16,8 @@ public class baseAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
-        tillDespawn--;
-        if (tillDespawn <= 0)
-        {
-            Destroy(gameObject);
-        }
+
 	}
+
+    
 }

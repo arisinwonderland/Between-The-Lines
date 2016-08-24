@@ -3,11 +3,20 @@ using System.Collections;
 
 public class testHit : baseAttack {
 
-	// Use this for initialization
-	 void Start () {
-        damage = 20;
-        tillDespawn = 10;
-        timer = 0;
-	}
-	
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("hoop");
+        if (other.gameObject.name == "Player")
+        {
+            Debug.Log("player");
+            if (other.gameObject.GetComponent<player>().red == redAttack)
+            {
+                other.gameObject.GetComponent<player>().hp -= damage;
+                Destroy(gameObject);
+            }
+        }
+
+    }
+
 }

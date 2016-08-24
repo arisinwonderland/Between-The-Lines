@@ -3,7 +3,7 @@ using System.Collections;
 
 public class testEnemy: enemyDamage{
 
-    public GameObject player = GameObject.FindGameObjectWithTag("Player");
+    public GameObject player;
     public float distance;
     public Transform myTransform;
     public float moveSpeed;
@@ -33,11 +33,11 @@ public class testEnemy: enemyDamage{
             }
             else transform.eulerAngles = new Vector3(0, -180, 0);
         }
-        if (distance <= 5)
+        if (distance <= 10 && distance > 5)
         {
             myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
         }
-        if (distance <= 1.5)
+        if (distance <= 5)
         {
             timer += Time.deltaTime;
             toHit++;
@@ -51,11 +51,7 @@ public class testEnemy: enemyDamage{
 
     public void hitStart(Vector3 pos, Quaternion angle)
     {
-        if (myTransform.rotation.y == 0)
-        {
-            pos.z += 1;
-        }
-        else pos.z -= 1;
+
         Instantiate(attack, pos, angle);
     }
 }
