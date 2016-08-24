@@ -123,13 +123,13 @@
     <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
     <Compile Include="Assets\Scripts\player scripts\player.cs" />
-    <Compile Include="Assets\Scripts\ui scripts\AbilityButtonTextSetter.cs" />
-    <Compile Include="Assets\Scripts\ui scripts\ShowDescription.cs" />
     <Compile Include="Assets\Scripts\ui scripts\description\descbox.cs" />
     <Compile Include="Assets\Scripts\ui scripts\description\description.cs" />
     <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl0.cs" />
     <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl1.cs" />
     <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl2.cs" />
+    <Compile Include="Assets\Scripts\ui scripts\misc\AbilityButtonTextSetter.cs" />
+    <Compile Include="Assets\Scripts\ui scripts\misc\abilitybar.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\continuescript.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\levelselectscript.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\newgamescript.cs" />
