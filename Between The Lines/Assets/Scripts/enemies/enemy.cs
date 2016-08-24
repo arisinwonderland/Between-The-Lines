@@ -12,7 +12,7 @@ public class enemy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        gamemanager = GameObject.Find("gamemanager");
+       
         perkManager = gamemanager.GetComponent<perkManager>();
     }
 	
