@@ -18,36 +18,14 @@ public class feetsCollider : MonoBehaviour {
 	}
 
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
-
-        else if (other.gameObject.CompareTag("redfloor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
-        else if (other.gameObject.CompareTag("bluefloor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
-        else PlayerScript.grounded = false;
+        
 
     }
 
-    void OnCollisionStay(Collision other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
@@ -76,7 +54,7 @@ public class feetsCollider : MonoBehaviour {
 
     }
 
-    void OnCollisionExit(Collision other)
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {

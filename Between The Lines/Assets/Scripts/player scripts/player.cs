@@ -14,7 +14,7 @@ public class player : MonoBehaviour {
 
     public float gravity = 3f;
 
-	public int moveSpeed = 10;
+	public int moveSpeed = 15;
 
     public float antiGrav = 10;
     public bool stopped;
@@ -156,28 +156,22 @@ public class player : MonoBehaviour {
                     isjumping = true;
                 }
             }
-        
-        if (isjumping == true)
-        {
-                antiGrav = 10;
+
+            if (isjumping == true)
+            {
 
                 if (!midJump)
                 {
                     transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-                    animator.SetInteger("animation", 5);
                 }
-                else
+                else gravity = 4f;
+                jumptimer += Time.deltaTime;
+                if (jumptimer >= .25 && jumptimer <= .70 && midJump == false)
                 {
-                    gravity = 4f;
-                    animator.SetInteger("animation", 6);
+                    midJump = true;
                 }
-            jumptimer += Time.deltaTime;
-            if (jumptimer >= .25 && jumptimer <= .70 && midJump == false)
-            {
-                midJump = true;
             }
         }
-    }
 
 
     }
