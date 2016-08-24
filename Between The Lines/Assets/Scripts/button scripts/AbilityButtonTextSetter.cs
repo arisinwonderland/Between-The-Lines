@@ -88,7 +88,7 @@ public class AbilityButtonTextSetter : MonoBehaviour {
 				selectedText = "Blue Weapon";
 			}
 		}
-
+		Debug.Log (selectedText);
 		txt.text = selectedText;
 
 	}
