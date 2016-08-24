@@ -34,10 +34,23 @@ public class player : MonoBehaviour {
     public float bluemana;
     public float bluemanaregen;
 
+
+
+    public GameObject sprite;
+
+    public Animator animator;
+
+
+
+
+
+
     public Vector3 direction;
 
     // Use this for initialization
     void Start () {
+        sprite = GameObject.Find("playerSprite");
+        animator = sprite.GetComponent<Animator>();
         direction = Vector3.right;
         Timer = 0;
 
@@ -192,12 +205,24 @@ public class player : MonoBehaviour {
             {
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
                 transform.eulerAngles = new Vector3(0, 0, 0);
+                animator.SetInteger("animation", 2);
+                
 
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
                 transform.eulerAngles = new Vector3(0, -180, 0);
+                animator.SetInteger("animation", 2);
+                
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                animator.SetInteger("animation", 1);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                animator.SetInteger("animation", 1);
             }
 
 
@@ -213,13 +238,19 @@ public class player : MonoBehaviour {
         
         if (isjumping == true)
         {
-            antiGrav = 10;
+                
+                antiGrav = 10;
 
-            if (!midJump)
-            {
-                transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-            }
-            else gravity = 4f;
+                if (!midJump)
+                {
+                    transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+                    animator.SetInteger("animation", 5);
+                }
+                else
+                {
+                    gravity = 4f;
+                    animator.SetInteger("animation", 6);
+                }
             jumptimer += Time.deltaTime;
             if (jumptimer >= .25 && jumptimer <= .55 && midJump == false)
             {
@@ -235,6 +266,7 @@ public class player : MonoBehaviour {
         
         if (other.gameObject.CompareTag("Floor"))
         {
+            animator.SetInteger("animation", 1);
             grounded = true;
             isjumping = false;
 			midJump = false;
@@ -243,6 +275,7 @@ public class player : MonoBehaviour {
 
         else if (other.gameObject.CompareTag("redfloor"))
         {
+            animator.SetInteger("animation", 1);
             grounded = true;
 			isjumping = false;
 			midJump = false;
@@ -250,6 +283,7 @@ public class player : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("redblock"))
         {
+            animator.SetInteger("animation", 1);
             grounded = true;
 			isjumping = false;
 			midJump = false;
@@ -257,6 +291,7 @@ public class player : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("blueblock"))
         {
+            animator.SetInteger("animation", 1);
             grounded = true;
 			isjumping = false;
 			midJump = false;
@@ -264,6 +299,7 @@ public class player : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
+            animator.SetInteger("animation", 1);
             grounded = true;
 			isjumping = false;
 			midJump = false;
