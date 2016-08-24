@@ -23,7 +23,7 @@ public class deathboxscript : MonoBehaviour {
             switch (levelindex)
             {
                 case 0:
-                    SceneManager.LoadScene("Level 0");
+                    SceneManager.LoadScene("testlevel");
                     break;
 
                 case 1:

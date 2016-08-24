@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\abilities\AbilityStats.cs" />
     <Compile Include="Assets\Scripts\abilities\ability.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue1.cs" />
     <Compile Include="Assets\Scripts\abilities\blue\blue1cone.cs" />
@@ -96,7 +97,6 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
     <Compile Include="Assets\Scripts\enemies\enemy.cs" />
-    <Compile Include="Assets\Scripts\enemies\enemyDamage.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\baseAttack.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\testHit.cs" />
     <Compile Include="Assets\Scripts\enemies\testEnemy.cs" />
@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\object scripts\redField.cs" />
     <Compile Include="Assets\Scripts\object scripts\redPlate.cs" />
     <Compile Include="Assets\Scripts\object scripts\redbeam.cs" />
+    <Compile Include="Assets\Scripts\perkManager.cs" />
     <Compile Include="Assets\Scripts\player scripts\CameraOnly.cs" />
     <Compile Include="Assets\Scripts\player scripts\cameraFollow.cs" />
     <Compile Include="Assets\Scripts\player scripts\cameraFollowPlayer.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Assets\Scripts\ui scripts\title\levelselectscript.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\newgamescript.cs" />
     <Compile Include="Assets\Scripts\ui scripts\title\quitscript.cs" />
+    <Compile Include="Assets\Scripts\weapons\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\weapons\bow\arrow.cs" />
     <Compile Include="Assets\Scripts\weapons\bow\bow.cs" />
     <Compile Include="Assets\Scripts\weapons\sword\sword.cs" />
