@@ -3,14 +3,12 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class abilityTextChanger : MonoBehaviour {
-    
+    GameObject gameManager;
+	gamemanager gameManagerScript;
+    aspects aspects;
 	public int num;
 
 	Text txt;
-	GameObject gameManager;
-	gamemanager gameManagerScript;
-	aspects aspects;
-
 	bool red;
 
 	// Use this for initialization
