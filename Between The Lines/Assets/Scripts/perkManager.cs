@@ -6,10 +6,19 @@ public class perkManager : MonoBehaviour {
     public int RedPoints;
     public int BluePoints;
 
+    public bool red2unlock;
+    public bool red3unlock;
+    public bool red4unlock;
+    public bool red5unlock;
 
-	// Use this for initialization
-	void Start () {
-	
+    public bool blue2unlock;
+    public bool blue3unlock;
+    public bool blue4unlock;
+    public bool blue5unlock;
+
+    // Use this for initialization
+    void Start () {
+
 	}
 	
 	// Update is called once per frame
@@ -27,4 +36,6 @@ public class perkManager : MonoBehaviour {
             BluePoints = +num;
         }
     }
+
+        
 }

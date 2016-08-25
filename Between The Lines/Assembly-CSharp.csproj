@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\abilities\red\red4pillar.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
+     <Compile Include="Assets\Scripts\dimension swapping scripts\abilityTextChanger.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\beamcolorchanger.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
@@ -106,10 +107,12 @@
      <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl2.cs" />
      <Compile Include="Assets\Scripts\ui scripts\misc\AbilityButtonTextSetter.cs" />
      <Compile Include="Assets\Scripts\ui scripts\misc\abilitybar.cs" />
+     <Compile Include="Assets\Scripts\ui scripts\misc\healthmanabars.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\continuescript.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\levelselectscript.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\newgamescript.cs" />
      <Compile Include="Assets\Scripts\ui scripts\title\quitscript.cs" />
+     <Compile Include="Assets\Scripts\ui scripts\unlockerButtons.cs" />
      <Compile Include="Assets\Scripts\weapons\WeaponStats.cs" />
      <Compile Include="Assets\Scripts\weapons\bow\arrow.cs" />
      <Compile Include="Assets\Scripts\weapons\bow\bow.cs" />
