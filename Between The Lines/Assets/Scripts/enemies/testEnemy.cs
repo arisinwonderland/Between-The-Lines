@@ -46,8 +46,12 @@ public class testEnemy: MonoBehaviour{
             toHit++;
             if (toHit >= 75)
             {
-                hitStart(myTransform.position, myTransform.rotation);
-                toHit = 0;
+                if(this.gameObject.GetComponent<enemy>().EnemyRed == player.gameObject.GetComponent<player>().red)
+                {
+                    hitStart(myTransform.position, myTransform.rotation);
+                    toHit = 0;
+                }
+               
             }
         }
     }
