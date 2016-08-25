@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\abilities\red\red4pillar.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
+    <Compile Include="Assets\Scripts\dimension swapping scripts\abilityTextChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\beamcolorchanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
