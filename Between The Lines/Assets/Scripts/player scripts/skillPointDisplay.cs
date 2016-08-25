@@ -1,18 +1,16 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class skillPointDisplay : MonoBehaviour {
 
 	public bool red;
-
-	GameObject gameManager;
+	public GameObject gameManager;
 	perkManager perkManager;
 	Text txt;
 
 	// Use this for initialization
 	void Start () {
-		gameManager = GameObject.Find("gamemanager");
 		perkManager = gameManager.GetComponent<perkManager>();
 		txt = gameObject.GetComponentInChildren<Text>();
 	}

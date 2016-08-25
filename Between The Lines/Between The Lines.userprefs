@@ -1,11 +1,11 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="Between The Lines.CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/player scripts/getPicked.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/player scripts/skillPointDisplay.cs">
     <Files>
-      <File FileName="Assets/Scripts/dimension swapping scripts/uiColorChanger.cs" Line="19" Column="2" />
+      <File FileName="Assets/Scripts/dimension swapping scripts/uiColorChanger.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/player scripts/player.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ui scripts/description/descbox.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/gamemanager.cs" Line="228" Column="14" />
+      <File FileName="Assets/Scripts/gamemanager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/weapons/bow/bow.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/weapons/bow/arrow.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/abilities/blue/blue1.cs" Line="1" Column="1" />
@@ -19,7 +19,8 @@
       <File FileName="Assets/Scripts/player scripts/skillPointDisplay.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/dimension swapping scripts/beamcolorchanger.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/dimension swapping scripts/enemyColorChanger.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/player scripts/getPicked.cs" Line="9" Column="23" />
+      <File FileName="Assets/Scripts/player scripts/getPicked.cs" Line="44" Column="10" />
+      <File FileName="Assets/TestRedEnemyAttack.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
