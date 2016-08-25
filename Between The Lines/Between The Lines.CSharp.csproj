@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
     <Compile Include="Assets\Scripts\player scripts\player.cs" />
+    <Compile Include="Assets\Scripts\player scripts\skillPointDisplay.cs" />
     <Compile Include="Assets\Scripts\ui scripts\description\descbox.cs" />
     <Compile Include="Assets\Scripts\ui scripts\description\description.cs" />
     <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl0.cs" />
