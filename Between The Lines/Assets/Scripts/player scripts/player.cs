@@ -152,7 +152,7 @@ public class player : MonoBehaviour {
             {
                 if (grounded == true)
                 {
-                    grounded = false;
+    
                     isjumping = true;
                 }
             }

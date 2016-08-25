@@ -23,7 +23,7 @@ public class nextlevel : MonoBehaviour {
             switch (levelindex)
             {
                 case 0:
-                    SceneManager.LoadScene("Level 1");
+                    SceneManager.LoadScene("MainMenu");
                     break;
 
                 case 1:

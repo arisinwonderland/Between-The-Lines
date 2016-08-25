@@ -5,6 +5,7 @@ public class feetsCollider : MonoBehaviour {
 
     public GameObject player;
     public player PlayerScript;
+    public float timer;
 
     // Use player for initialization
     void Start() {
@@ -21,7 +22,29 @@ public class feetsCollider : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
 
-        
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            PlayerScript.grounded = true;
+            PlayerScript.isjumping = false;
+            PlayerScript.midJump = false;
+            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+        }
+
+        else if (other.gameObject.CompareTag("redfloor"))
+        {
+            PlayerScript.grounded = true;
+            PlayerScript.isjumping = false;
+            PlayerScript.midJump = false;
+            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+        }
+
+        else if (other.gameObject.CompareTag("bluefloor"))
+        {
+            PlayerScript.grounded = true;
+            PlayerScript.isjumping = false;
+            PlayerScript.midJump = false;
+            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+        }
 
     }
 
@@ -50,12 +73,13 @@ public class feetsCollider : MonoBehaviour {
             PlayerScript.midJump = false;
             player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
         }
-        else PlayerScript.grounded = false;
+        
 
     }
 
     void OnTriggerExit(Collider other)
     {
+        
         if (other.gameObject.CompareTag("Floor"))
         {
             PlayerScript.grounded = false;
@@ -69,4 +93,7 @@ public class feetsCollider : MonoBehaviour {
             PlayerScript.grounded = false;
         }
      }
+
+
+
 }
