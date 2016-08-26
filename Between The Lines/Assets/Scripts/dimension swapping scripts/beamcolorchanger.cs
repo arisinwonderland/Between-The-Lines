@@ -3,15 +3,15 @@ using System.Collections;
 
 public class beamcolorchanger : MonoBehaviour {
 
-    public GameObject gamecontroller;
+    public GameObject gamemanager;
     public aspects aspects;
     public bool red;
     public bool isredpart;
 
     // Use this for initialization
-    void Start () {
-        gamecontroller = GameObject.Find("GameController");
-        aspects = gamecontroller.GetComponent<aspects>();
+	void Start () {
+		gamemanager = GameObject.Find("gamemanager");
+        aspects = gamemanager.GetComponent<aspects>();
     }
 	
 	// Update is called once per frame
@@ -19,26 +19,20 @@ public class beamcolorchanger : MonoBehaviour {
 
         red = aspects.red;
 
-        if(isredpart == true)
-        {
-            if (red == true)
-            {
+        if(isredpart) {
+            if (red) {
                 this.GetComponent<ParticleSystem>().startColor = new Color(1, 0, 0, 1f);
-            }else
-            {
+            } 
+			else {
                 this.GetComponent<ParticleSystem>().startColor = new Color(1, 0, 0, .25f);
             }
-
         }
 
-        if (isredpart == false)
-        {
-            if (red == true)
-            {
+        else {
+            if (red) {
                 this.GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1, .25f);
             }
-            else
-            {
+            else {
                 this.GetComponent<ParticleSystem>().startColor = new Color(0, 0, 1, 1f);
             }
 

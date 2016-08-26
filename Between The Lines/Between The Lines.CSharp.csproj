@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\beamcolorchanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\blueTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\dimension swapping scripts\enemyColorChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
     <Compile Include="Assets\Scripts\enemies\enemy.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\Scripts\player scripts\mouseScreen.cs" />
     <Compile Include="Assets\Scripts\player scripts\noRotate.cs" />
     <Compile Include="Assets\Scripts\player scripts\player.cs" />
+    <Compile Include="Assets\Scripts\player scripts\skillPointDisplay.cs" />
     <Compile Include="Assets\Scripts\ui scripts\description\descbox.cs" />
     <Compile Include="Assets\Scripts\ui scripts\description\description.cs" />
     <Compile Include="Assets\Scripts\ui scripts\levelselect\loadlvl0.cs" />

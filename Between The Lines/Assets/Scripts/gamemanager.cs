@@ -214,55 +214,41 @@ public class gamemanager : MonoBehaviour {
 
     public void SelectRedWeapon(GameObject buttontext)
     {
-        Image image = buttontext.GetComponent<Image>();
 
-        if (SelectedWeapon != "")
-        {
-            if (SelectedWeapon != SelectedRedWeapon)
-            {
-                if (SelectedWeapon != SelectedBlueWeapon)
-                {
+        if (SelectedWeapon != "") {
+            if (SelectedWeapon != SelectedRedWeapon) {
+                if (SelectedWeapon != SelectedBlueWeapon) {
                         Text txt = buttontext.GetComponentInChildren<Text>();
                         txt.text = SelectedWeapon;
                         SelectedRedWeapon = SelectedWeapon;
                         SelectedWeapon = "";
-                        //image.color = Color.white;
                 }
             }
         }
-        else
-        {
+        else {
             Text txt = buttontext.GetComponentInChildren<Text>();
             txt.text = "Red Weapon";
             SelectedRedWeapon = "";
-            //image.color = new Color(1F, 30/255F, 30/255F);
         }
     }
 
     public void SelectBlueWeapon(GameObject buttontext)
     {
-        Image image = buttontext.GetComponent<Image>();
 
-        if (SelectedWeapon != "")
-        {
-            if (SelectedWeapon != SelectedRedWeapon)
-            {
-                if (SelectedWeapon != SelectedBlueWeapon)
-                {
+        if (SelectedWeapon != "") {
+            if (SelectedWeapon != SelectedRedWeapon) {
+                if (SelectedWeapon != SelectedBlueWeapon) {
                     Text txt = buttontext.GetComponentInChildren<Text>();
                     txt.text = SelectedWeapon;
                     SelectedBlueWeapon = SelectedWeapon;
                     SelectedWeapon = "";
-                    //image.color = Color.white;
                 }
             }
         }
-        else
-        {
+        else {
             Text txt = buttontext.GetComponentInChildren<Text>();
             txt.text = "Blue Weapon";
 			SelectedBlueWeapon = "";
-			//image.color = new Color(55F/255F, 60F/255F, 240F/255F);
         }
     }
 

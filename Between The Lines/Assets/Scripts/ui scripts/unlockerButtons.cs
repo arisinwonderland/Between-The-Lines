@@ -109,7 +109,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if(perkManager.red2unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -117,7 +120,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.red3unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -125,7 +131,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.red4unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -133,7 +142,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.red5unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -142,7 +154,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.blue2unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -150,7 +165,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.blue3unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -158,7 +176,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.blue4unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }
@@ -166,7 +187,10 @@ public class unlockerButtons : MonoBehaviour {
         {
             if (perkManager.blue5unlock == true)
             {
-                next.GetComponent<unlockerButtons>().unlockable = true;
+                if (nextunlock)
+                {
+                    next.GetComponent<unlockerButtons>().unlockable = true;
+                }
                 Destroy(gameObject);
             }
         }

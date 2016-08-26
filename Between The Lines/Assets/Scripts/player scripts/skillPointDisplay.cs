@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class skillPointDisplay : MonoBehaviour {
 
 	public bool red;
-
 	public GameObject gameManager;
 	perkManager perkManager;
 	Text txt;
