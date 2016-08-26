@@ -91,6 +91,8 @@
     <Compile Include="Assets\Scripts\abilities\red\red4pillar.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red5.cs" />
     <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
+    <Compile Include="Assets\Scripts\abilities\red\red6.cs" />
+    <Compile Include="Assets\Scripts\abilities\red\red6sigil.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\abilityTextChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\beamcolorchanger.cs" />
@@ -98,6 +100,7 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\enemyColorChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\dimension swapping scripts\uiColorChanger.cs" />
     <Compile Include="Assets\Scripts\enemies\enemy.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\baseAttack.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\testHit.cs" />
