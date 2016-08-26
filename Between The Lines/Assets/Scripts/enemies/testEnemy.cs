@@ -36,7 +36,7 @@ public class testEnemy: MonoBehaviour{
             }
             else transform.eulerAngles = new Vector3(0, -180, 0);
         }
-        if (distance <= 10 && distance > 5)
+        if (distance <= 10 && distance > 5) 
         {
             myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
         }
