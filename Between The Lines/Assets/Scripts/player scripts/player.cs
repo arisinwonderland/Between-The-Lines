@@ -211,13 +211,13 @@ public class player : MonoBehaviour {
 
                 gameObject.GetComponentInChildren<red3>().buttonid = num;
             }
-            if (current == "Pillar of Flame")
+            if (current == "Demonic Pillar")
             {
                 gameObject.GetComponentInChildren<red4>().enabled = true;
 
                 gameObject.GetComponentInChildren<red4>().buttonid = num;
             }
-            if (current == "Hellfire")
+            if (current == "Cataclysm")
             {
                 gameObject.GetComponentInChildren<red5>().enabled = true;
 
@@ -243,7 +243,7 @@ public class player : MonoBehaviour {
                 current = gamemanager.SelectedBlueAbility3;
             }
 
-            if (current == "Cone Of Cold")
+            if (current == "Prism")
             {
                 gameObject.GetComponentInChildren<blue1>().enabled = true;
 
@@ -261,13 +261,13 @@ public class player : MonoBehaviour {
 
                 gameObject.GetComponentInChildren<blue3>().buttonid = num;
             }
-            if (current == "Ice Blast")
+            if (current == "Heavenly Wrath")
             {
                 gameObject.GetComponentInChildren<blue4>().enabled = true;
 
                 gameObject.GetComponentInChildren<blue4>().buttonid = num;
             }
-            if (current == "Arctic Circle")
+            if (current == "Halo\'s Reach")
             {
                 gameObject.GetComponentInChildren<blue5>().enabled = true;
 

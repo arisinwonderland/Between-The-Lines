@@ -21,17 +21,17 @@ public class descbox : MonoBehaviour {
 		image = gameObject.GetComponent<Image>();
 		txt = gameObject.GetComponentInChildren<Text>();
 
-		descriptions.Add ("Cone Of Cold", "<b><color=blue>Cone of Cold</color></b>\nActive\nDescription here");
+		descriptions.Add ("Prism", "<b><color=blue>Prism</color></b>\nActive\nDescription here");
 		descriptions.Add ("Soaring Hope", "<b><color=blue>Soaring Hope</color></b>\nActive\nDescription here");
 		descriptions.Add ("Guardian Blade", "<b><color=blue>Guardian Blade</color></b>\nActive\nDescription here");
-		descriptions.Add ("Ice Blast", "<b><color=blue>Ice Blast</color></b>\nActive\nDescription here");
-		descriptions.Add ("Arctic Circle", "<b><color=blue>Arctic Circle</color></b>\nActive\nDescription here");
+		descriptions.Add ("Heavenly Wrath", "<b><color=blue>Heavenly Wrath</color></b>\nActive\nDescription here");
+		descriptions.Add ("Halo\'s Reach", "<b><color=blue>Halo\'s Reach</color></b>\nActive\nDescription here");
 
 		descriptions.Add ("Firebolt", "<b><color=red>Firebolt</color></b>\nActive\nDescription here");
 		descriptions.Add ("Obsidian Rush", "<b><color=red>Obsidian Rush</color></b>\nActive\nDescription here");
 		descriptions.Add ("Surge of Flame", "<b><color=red>Surge of Flame</color></b>\nActive\nDescription here");
-		descriptions.Add ("Pillar of Flame", "<b><color=red>Pillar of Flame</color></b>\nActive\nDescription here");
-		descriptions.Add ("Hellfire", "<b><color=red>Hellfire</color></b>\nActive\nDescription here");
+		descriptions.Add ("Demonic Pillar", "<b><color=red>Demonic Pillar</color></b>\nActive\nDescription here");
+		descriptions.Add ("Cataclysm", "<b><color=red>Cataclysm</color></b>\nActive\nDescription here");
 
 		descriptions.Add ("Up Close Blue", "<b><color=blue>Up Close</color></b>\nPassive\nDescription here");
 		descriptions.Add ("Far Away Blue", "<b><color=blue>Far Away</color></b>\nPassive\nDescription here");
