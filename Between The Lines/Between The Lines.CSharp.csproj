@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\enemyColorChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
+    <Compile Include="Assets\Scripts\dimension swapping scripts\uiColorChanger.cs" />
     <Compile Include="Assets\Scripts\enemies\enemy.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\baseAttack.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\testHit.cs" />
