@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/levels/redmenu.unity
-=======
 - path: Assets/levels/testlevel.unity
->>>>>>> sean
   isLoaded: 1
   isActive: 1
