@@ -18,14 +18,15 @@ public class testEnemy: MonoBehaviour{
         timer = 0;
         player = GameObject.Find("Player");
         myTransform = gameObject.transform;
-        moveSpeed = 3;
+       
         toHit = 0;
     }
 
 
     // Update is called once per frame
     void Update () {
-      
+
+        moveSpeed = gameObject.GetComponent<enemy>().movespeed;
 
         distance = Vector3.Distance(transform.position, player.transform.position);
         if(distance <= 15)

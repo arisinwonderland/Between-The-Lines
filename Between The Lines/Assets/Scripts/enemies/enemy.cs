@@ -8,6 +8,7 @@ public class enemy : MonoBehaviour {
     public GameObject gamemanager;
     public perkManager perkManager;
     public int XPValue;
+    public int movespeed;
 
     // Use this for initialization
     void Start()
