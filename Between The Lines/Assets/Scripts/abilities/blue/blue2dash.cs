@@ -28,5 +28,9 @@ public class blue2dash : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+	void OnTriggerEnter(Collider c) {
+		
+	}
 }
 
