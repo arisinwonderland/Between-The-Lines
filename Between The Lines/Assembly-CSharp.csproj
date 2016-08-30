@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\abilities\blue\blue5.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue5beam.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue6.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue6shard.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red1.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red1orb.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red2.cs" />
@@ -70,6 +71,8 @@
      <Compile Include="Assets\Scripts\abilities\red\red5aoe.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red6.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red6sigil.cs" />
+     <Compile Include="Assets\Scripts\abilities\red\red7.cs" />
+     <Compile Include="Assets\Scripts\abilities\red\red7blast.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\abilityTextChanger.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\aspects.cs" />
      <Compile Include="Assets\Scripts\dimension swapping scripts\backgroundChanger.cs" />

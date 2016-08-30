@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ability : MonoBehaviour {
     //Attack object
-    public GameObject attackObject;
+	public GameObject attackObject;
+	public GameObject[] attackObjs;
 
     //Cooldown values
     public float cooldown;
@@ -28,12 +29,23 @@ public class ability : MonoBehaviour {
     public float mana;
     public float manaCost;
 
+	//for multiuse abilities
+	public bool isMultiUse;
+	public bool autoUseAtEnd;
+	public int uses;
+	public int currentUses;
+	public float subCooldown;
+	public float subLimit;
+	public bool onsubcd;
+	public float subTimer;
+	public bool isUsing;
+
     //ability info
     public bool abilityRed;
 
     // Use this for initialization
     void Start () {
-
+		
         //Get player
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
@@ -54,6 +66,9 @@ public class ability : MonoBehaviour {
             button = KeyCode.Alpha3;
         }
 
+		if (isMultiUse) {
+			attackObjs = new GameObject[uses];
+		}
     }
 	
 	// Update is called once per frame
@@ -76,34 +91,57 @@ public class ability : MonoBehaviour {
         }
         
         //Ability
+
         if (red == abilityRed)
         {
             if (Input.GetKeyDown(button))
             {
-                if (!oncd)
-                {
-                    if (mana > manaCost)
-                    {
-                        if (!rooted)
-                        {
+				if (!isMultiUse) {
+					if (!oncd) {
+						if (mana > manaCost) {
+							if (!rooted) {
+								//Mana stuff
+								mana = mana - manaCost;
+								if (abilityRed) {
+									playerscript.redmana = mana;
+								} else if (!abilityRed) {
+									playerscript.bluemana = mana;
+								}
 
-                            //Mana stuff
-                            mana = mana - 20;
-                            if (abilityRed)
-                            {
-                                playerscript.redmana = mana;
-                            }
-                            else if (!abilityRed)
-                            {
-                                playerscript.bluemana = mana;
-                            }
-
-                            abilityStart(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
-                            timer = cooldown;
-                            oncd = true;
-                        }       
-                    }
-                }
+								abilityStart (new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
+								timer = cooldown;
+								oncd = true;
+							}       
+						}
+					}
+				} else {
+					if (!oncd) {
+						if (!onsubcd) {
+							if (currentUses > 0) {
+								if ((mana > manaCost) != isUsing) {
+									if (!isUsing) {
+										mana = mana - manaCost;
+										if (abilityRed) {
+											playerscript.redmana = mana;
+										} else if (!abilityRed) {
+											playerscript.bluemana = mana;
+										}
+										isUsing = true;
+									}
+									abilityStart (new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
+									currentUses--;
+									subTimer = subCooldown + subLimit;
+									onsubcd = true;
+								}
+							} else {
+								abilityEnd ();
+								timer = cooldown;
+								isUsing = false;
+								oncd = true;
+							}
+						}
+					}
+				}
             }
         }
 
@@ -114,9 +152,23 @@ public class ability : MonoBehaviour {
             if (timer <= 0)
             {
                 oncd = false;
+				currentUses = uses;
                 timer = 0;
             }
         }
+		if (isUsing) {
+			subTimer -= Time.deltaTime;
+			if (subTimer <= subLimit) {
+				onsubcd = false;
+			}
+			if (subTimer <= 0)
+			{
+				abilityEnd ();
+				timer = cooldown;
+				isUsing = false;
+				oncd = true;
+			}
+		}
     }
 
     public virtual void abilityStart(Vector3 pos, Quaternion angle)
@@ -124,5 +176,9 @@ public class ability : MonoBehaviour {
 
     }
 
+	public virtual void abilityEnd()
+	{
+
+	}
    
 }
