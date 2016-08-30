@@ -10,7 +10,7 @@ public class red2aoe : MonoBehaviour {
     void Start () {
 
         damage = 20;
-        despawn = .5f;
+        despawn = .7f;
 
     }
 	
