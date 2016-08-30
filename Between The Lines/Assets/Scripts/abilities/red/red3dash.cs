@@ -36,10 +36,6 @@ public class red3dash : MonoBehaviour {
         despawn -= Time.deltaTime;
 
 
-        //dash.transform.position = player.transform.position;
-        //dash.transform.rotation = player.transform.rotation;
-       //dashyThing.transform.position = player.transform.position;
-        //dashyThing.transform.rotation = player.transform.rotation;
 
         if (despawn <= 0 || (!moving))
         {
