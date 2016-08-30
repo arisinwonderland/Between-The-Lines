@@ -6,15 +6,21 @@ public class uiColorChanger : MonoBehaviour {
     GameObject gameManager;
     aspects aspects;
 	Image image;
-
-	bool red;
+	SpriteRenderer sprite;
 	Color color;
+
+	public bool isStatic;
+	bool red;
 
 	// Use this for initialization
 	void Start () {
         gameManager = GameObject.Find("gamemanager");
 		aspects = gameManager.GetComponent<aspects>();
-		image = gameObject.GetComponent<Image> ();
+		if (isStatic) {
+			image = gameObject.GetComponent<Image> ();
+		} else {
+			sprite = gameObject.GetComponent<SpriteRenderer> ();
+		}
     }
 
 	// Update is called once per frame
@@ -25,6 +31,10 @@ public class uiColorChanger : MonoBehaviour {
 		} else {
 			color = new Color(30F/255F, 30F/255F, 80F/255F);
 		}
-		image.color = color;
+		if (isStatic) {
+			image.color = color;
+		} else {
+			sprite.color = color;
+		}
 	}
 }
