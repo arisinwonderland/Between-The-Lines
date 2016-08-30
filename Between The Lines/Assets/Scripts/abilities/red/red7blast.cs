@@ -7,13 +7,17 @@ public class red7blast : MonoBehaviour {
     public float despawn;
     public GameObject player;
     public player playerscript;
-    public GameObject blast;
     public GameObject explosion;
+    public GameObject blast;
+    bool task1done;
+
     // Use this for initialization
     void Start()
     {
+        task1done = false;
 
-        despawn = 1f;
+
+        despawn = 0;
 
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
@@ -24,28 +28,50 @@ public class red7blast : MonoBehaviour {
     void Update()
     {
 
-        despawn -= Time.deltaTime;
+        despawn += Time.deltaTime;
 
-        if(despawn > .75f)
+        if(despawn < .25f)
         {
-            transform.Translate(Vector3.forward * 25 * Time.deltaTime);
+            if (!task1done)
+            {
+                transform.Translate(Vector3.forward * 25 * Time.deltaTime);
+            }
         }
 
-        if (despawn <= .75f)
+        if (despawn >= .25f)
         {
-            blast.GetComponent<SpriteRenderer>().enabled = false;
-            explosion.GetComponentInChildren<SpriteRenderer>().enabled = true;
-            explosion.GetComponentInChildren<BoxCollider>().enabled = true;
+            if (!task1done)
+            {
+                task1done = true;
+                task1();
+            }
         }
-        if(despawn <= .5f)
+       
+        if(despawn >= 1)
         {
-            explosion.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            explosion.GetComponentInChildren<BoxCollider>().enabled = false;
-        }
-        if(despawn <= 0)
-        {
+            
             Destroy(gameObject);
         }
 
+    }
+
+    void task1()
+    {
+        blast.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        explosion.GetComponentInChildren<SpriteRenderer>().enabled = true;
+        explosion.GetComponentInChildren<BoxCollider>().enabled = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if (abilityred == other.gameObject.GetComponent<enemy>().EnemyRed)
+            {
+                task1done = true;
+                task1();
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ public class red6sigil : MonoBehaviour {
     public float despawn;
     public GameObject player;
     public player playerscript;
+    public GameObject red6collider; 
 
     // Use this for initialization
     void Start()
@@ -35,8 +36,8 @@ public class red6sigil : MonoBehaviour {
         //Wait for pillar
         if(despawn <= .5)
         {
-            gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
-            gameObject.GetComponentInChildren<BoxCollider>().enabled = true;
+            red6collider.GetComponent<SpriteRenderer>().enabled = true;
+            red6collider.GetComponent<BoxCollider>().enabled = true;
         }
         //Despawn
         if (despawn <= 0)
