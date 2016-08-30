@@ -3,6 +3,10 @@ using System.Collections;
 
 public class red3dash : MonoBehaviour {
 
+
+    public GameObject dash;
+    public GameObject dashyThing;
+
     public GameObject player;
     public bool abilityred;
     public int damage;
@@ -18,7 +22,9 @@ public class red3dash : MonoBehaviour {
         despawn = .2f;
         player = GameObject.Find("Player");
 		moving = true;
-	}
+        dash = GameObject.Find("dash");
+        dashyThing = GameObject.Find("dashyThing");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,7 +34,14 @@ public class red3dash : MonoBehaviour {
         transform.Translate(Vector3.forward * Time.deltaTime * 50);
 
         despawn -= Time.deltaTime;
-		if (despawn <= 0 || (!moving))
+
+
+        //dash.transform.position = player.transform.position;
+        //dash.transform.rotation = player.transform.rotation;
+       //dashyThing.transform.position = player.transform.position;
+        //dashyThing.transform.rotation = player.transform.rotation;
+
+        if (despawn <= 0 || (!moving))
         {
 			player.transform.localPosition = lastPos;
             Destroy(gameObject);
