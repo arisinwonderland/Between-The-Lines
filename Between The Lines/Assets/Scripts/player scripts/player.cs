@@ -29,6 +29,7 @@ public class player : MonoBehaviour {
     string current;
 
     public int hp;
+    public int maxhp;
     public float redmana;
     public float redmanaregen;
     public float bluemana;
@@ -62,7 +63,8 @@ public class player : MonoBehaviour {
         aspects = GameManager.GetComponent<aspects>();
 
         //Stats
-        hp = 100;
+        maxhp = 100;
+        hp = maxhp;
         redmana = 100;
         redmanaregen = 5;
         bluemana = 100;
