@@ -7,8 +7,11 @@ public class red3 : ability {
  
     public override void abilityStart(Vector3 pos, Quaternion angle)
     {
-        Instantiate(attackObject, pos, angle);
-        Instantiate(dash, pos, angle);
-        Instantiate(dashyThing, pos, angle);
+        Quaternion angyy = player.transform.rotation;
+        angyy.Set(angyy.x, 90, angyy.z, angyy.w);
+        angyy.SetEulerAngles(new Vector3(angyy.x, 90, angyy.z));
+        Instantiate(attackObject, pos, angyy);
+        Instantiate(dash, pos, angyy);
+        Instantiate(dashyThing, pos, angyy);
     }
 }
