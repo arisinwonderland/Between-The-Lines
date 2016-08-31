@@ -68,6 +68,7 @@ public class ability : MonoBehaviour {
 
 		if (isMultiUse) {
 			attackObjs = new GameObject[uses];
+			currentUses = uses;
 		}
     }
 	
@@ -95,10 +96,8 @@ public class ability : MonoBehaviour {
         
         //Ability
 
-        if (red == abilityRed)
-        {
-            if (Input.GetKeyDown(button))
-            {
+		if (red == abilityRed) {
+			if (Input.GetKeyDown (button)) {
 				if (!isMultiUse) {
 					if (!oncd) {
 						if (mana > manaCost) {
@@ -121,7 +120,7 @@ public class ability : MonoBehaviour {
 					if (!oncd) {
 						if (!onsubcd) {
 							if (currentUses > 0) {
-								if ((mana > manaCost) != isUsing) {
+								if ((mana > manaCost) || !isUsing) {
 									if (!isUsing) {
 										mana = mana - manaCost;
 										if (abilityRed) {
@@ -135,8 +134,11 @@ public class ability : MonoBehaviour {
 									currentUses--;
 									subTimer = subCooldown + subLimit;
 									onsubcd = true;
+
+									Debug.Log ("e");
 								}
 							} else {
+								Debug.Log ("d");
 								abilityEnd (true);
 								timer = cooldown;
 								isUsing = false;
@@ -145,8 +147,10 @@ public class ability : MonoBehaviour {
 						}
 					}
 				}
-            }
-        }
+			}
+		} else {
+			subTimer = 0;
+		}
 
         //Cooldown Timer
         if (oncd)
@@ -163,6 +167,7 @@ public class ability : MonoBehaviour {
 			subTimer -= Time.deltaTime;
 			if (subTimer <= subLimit) {
 				onsubcd = false;
+
 			}
 			if (subTimer <= 0)
 			{

@@ -1,36 +1,13 @@
-<<<<<<< HEAD
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/abilities/blue/blue6.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/abilities/blue/blue7.cs">
     <Files>
-      <File FileName="Assets/Scripts/abilities/ability.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/abilities/blue/blue5.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/abilities/blue/blue6.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/abilities/blue/blue1cone.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/abilities/blue/blue2.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/abilities/blue/blue2dash.cs" Line="16" Column="20" />
-      <File FileName="Assets/Scripts/abilities/red/red3dash.cs" Line="31" Column="3" />
-      <File FileName="Assets/Scripts/abilities/AbilityStats.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/abilities/blue/blue1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/abilities/red/red2aoe.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/player scripts/player.cs" Line="1" Column="1" />
-=======
-﻿<Properties StartupItem="Between The Lines.CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dimension swapping scripts\backgroundChanger.cs">
-    <Files>
-      <File FileName="Assets\Scripts\abilities\red\red3dash.cs" Line="34" Column="33" />
-      <File FileName="Assets\Scripts\abilities\ability.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\blue\blue5.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\blue\blue6.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\blue\blue1cone.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\blue\blue2.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\blue\blue2dash.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\AbilityStats.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\blue\blue1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\abilities\red\red2aoe.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\dimension swapping scripts\backgroundChanger.cs" Line="1" Column="1" />
->>>>>>> sean
+      <File FileName="Assets/Scripts/abilities/ability.cs" Line="187" Column="3" />
+      <File FileName="Assets/Scripts/abilities/blue/blue7.cs" Line="4" Column="19" />
+      <File FileName="Assets/Scripts/abilities/blue/blue7dash.cs" Line="4" Column="19" />
+      <File FileName="Assets/Scripts/abilities/blue/blue6shard.cs" Line="14" Column="2" />
+      <File FileName="Assets/Scripts/abilities/blue/blue6.cs" Line="15" Column="43" />
+      <File FileName="Assets/Scripts/abilities/red/red3.cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

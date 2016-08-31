@@ -13,6 +13,7 @@ public class blue6 : ability {
 		for (int i = 0; i < uses - currentUses; i++) {
 			attackScript = attackObjs [i].GetComponent<blue6shard>();
 			attackScript.EndAbility (wasActivated);
+			Debug.Log (i);
 		}
 	}
 }

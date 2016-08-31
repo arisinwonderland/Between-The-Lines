@@ -48,27 +48,25 @@ public class aspects : MonoBehaviour {
         {
             if (oncd == false)
             {
-                if (Input.GetKeyDown(KeyCode.Q))
-                {
-                    if (red)
-                    {
-                        red = false;
-                        player.layer = LayerMask.NameToLayer("bluePlayer");
-                        playerfootbox.layer = LayerMask.NameToLayer("bluePlayer");
-                        switched = true;
-                        oncd = true;
-                        cd = cdtimer;
-                    }
-                    else if (!red)
-                    {
-                        red = true;
-                        player.layer = LayerMask.NameToLayer("redPlayer");
-                        playerfootbox.layer = LayerMask.NameToLayer("redPlayer");
-                        switched = true;
-                        oncd = true;
-                        cd = cdtimer;
-                    }
-                }
+				if (!playerscript.rooted) {
+					if (Input.GetKeyDown (KeyCode.Q)) {
+						if (red) {
+							red = false;
+							player.layer = LayerMask.NameToLayer ("bluePlayer");
+							playerfootbox.layer = LayerMask.NameToLayer ("bluePlayer");
+							switched = true;
+							oncd = true;
+							cd = cdtimer;
+						} else if (!red) {
+							red = true;
+							player.layer = LayerMask.NameToLayer ("redPlayer");
+							playerfootbox.layer = LayerMask.NameToLayer ("redPlayer");
+							switched = true;
+							oncd = true;
+							cd = cdtimer;
+						}
+					}
+				}
             }
         }
     }
