@@ -4,30 +4,40 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour {
 
+    //Jumping
 	public bool grounded = true;
 	public bool isjumping = false;
 	public bool midJump = false;
 	public bool carryingObject = false;
     public float jumptimer = 0;
 
+    //Walljump stuff
+    public bool holdingWall = false;
+    public bool wallGrabReady = false;
+    public float wallJumpTimer = 0;
+    public bool isWallJumping = false;
+    public bool midWallJump = false;
+    bool wallIsRight;
+
+    //rooted
     public bool rooted;
 
-    public float gravity = 3f;
-
+    //Movement
 	public int moveSpeed = 15;
+    public float antiGrav = 25;
+    public bool gravity = false;
 
-    public float antiGrav = 10;
-    public bool stopped;
-    public float Timer;
+    //Feet
     public GameObject feets;
     
-    public aspects aspects;
-    public bool red;
-
+    //Game manager init and stats
     public GameObject GameManager;
     public gamemanager gamemanager;
+    public aspects aspects;
+    public bool red;
     string current;
 
+    //Player stats
     public int hp;
     public int maxhp;
     public float redmana;
@@ -35,29 +45,21 @@ public class player : MonoBehaviour {
     public float bluemana;
     public float bluemanaregen;
 
-
-
+    //animations
     public GameObject sprite;
-
     public Animator animator;
 
-
-
-
-
-
-    public Vector3 direction;
 
     public int levelindex;
     // Use this for initialization
     void Start () {
+        //animator init
         sprite = GameObject.Find("playerSprite");
         animator = sprite.GetComponent<Animator>();
-        direction = Vector3.right;
-        Timer = 0;
 
         rooted = false;
 
+        //game manager init
         GameManager = GameObject.Find("gamemanager");
         gamemanager = GameManager.GetComponent<gamemanager>();
         aspects = GameManager.GetComponent<aspects>();
@@ -69,11 +71,8 @@ public class player : MonoBehaviour {
         redmanaregen = 5;
         bluemana = 100;
         bluemanaregen = 5;
-
+        holdingWall = false;
       
-
-       
-
         //Ability Init
         RedAbilitiesInit();
         BlueAbilitiesInit();
@@ -85,17 +84,17 @@ public class player : MonoBehaviour {
     void Update()
     {
         //death
-        if(hp <= 0)
+        if (hp <= 0)
         {
             gamemanager.loadlevel(levelindex);
         }
 
         //Mana regen
-        if(redmana < 100)
+        if (redmana < 100)
         {
             redmana = redmana + (redmanaregen * Time.deltaTime);
         }
-        if(redmana > 100)
+        if (redmana > 100)
         {
             redmana = 100;
         }
@@ -117,65 +116,181 @@ public class player : MonoBehaviour {
             jumptimer = 0;
             midJump = false;
             isjumping = false;
-            gravity = 4f;
-            antiGrav = 15;
+
         }
 
         //Movement
-        if (!rooted)
+        if (gravity)
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                animator.SetInteger("animation", 2);
-                
-
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                animator.SetInteger("animation", 2);
-                
-            }
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                animator.SetInteger("animation", 1);
-            }
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                animator.SetInteger("animation", 1);
-            }
-
-
-            //Jumping
-            if (Input.GetKeyDown(KeyCode.Space) && !isjumping)
-            {
-                if (grounded == true)
-                {
-    
-                    isjumping = true;
-                }
-            }
-
-            if (isjumping == true)
-            {
-
-                if (!midJump)
-                {
-                    transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-                }
-                else gravity = 4f;
-                jumptimer += Time.deltaTime;
-                if (jumptimer >= .25 && jumptimer <= .70 && midJump == false)
-                {
-                    midJump = true;
-                }
-            }
+            transform.Translate(Vector3.down * 10 * Time.deltaTime);
+        }else if (holdingWall)
+        {
+            transform.Translate(Vector3.down * Time.deltaTime);
         }
+        if (!rooted){
+            if (!holdingWall)
+            {
+                if (!wallGrabReady)
+                {
+                    if (!midWallJump)
+                    {
+                        //Move left and right
+                        if (Input.GetKey(KeyCode.A))
+                        {
+                            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                            transform.eulerAngles = new Vector3(0, 0, 0);
+                            animator.SetInteger("animation", 2);
+                        }
+                        else if (Input.GetKey(KeyCode.D))
+                        {
+                            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                            transform.eulerAngles = new Vector3(0, -180, 0);
+                            animator.SetInteger("animation", 2);
+                        }
+
+                        if (Input.GetKeyUp(KeyCode.A))
+                        {
+                            animator.SetInteger("animation", 1);
+                        }
+                        if (Input.GetKeyUp(KeyCode.D))
+                        {
+                            animator.SetInteger("animation", 1);
+                        }
+                    }
+                }
+            }
+                if (wallGrabReady){
+                        if (wallIsRight){
+
+                            //Wall hold
+                            if (Input.GetKey(KeyCode.D)){
+                                if (!grounded){
+
+                                 holdingWall = true;
+                                 isjumping = false;
+                                 midJump = false;
+                                 midWallJump = false;
+                                 isWallJumping = false;
+                                 gravity = false;
+                                
+                                }
+                            }else if (Input.GetKey(KeyCode.A)){
+
+                                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                                transform.eulerAngles = new Vector3(0, 0, 0);
+                                animator.SetInteger("animation", 2);
+                                holdingWall = false;
+                                gravity = true;
+
+                           }else{
+
+                                holdingWall = false;
+                                gravity = true;
+
+                    }
+                        }else if (!wallIsRight){
+
+                            //Wall hold
+                            if (Input.GetKey(KeyCode.A)){
+                        if (!grounded)
+                        {
+
+                            holdingWall = true;
+                            isjumping = false;
+                            midJump = false;
+                            midWallJump = false;
+                            isWallJumping = false;
+                            gravity = false;
 
 
+                        }
+                            }else if (Input.GetKey(KeyCode.D)){
+
+                                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                                transform.eulerAngles = new Vector3(0, -180, 0);
+                                animator.SetInteger("animation", 2);
+                                holdingWall = false;
+                                gravity = true;
+    
+                    }
+                    else{
+
+                                holdingWall = false;
+                                gravity = true;
+                    }
+                        }
+                }
+
+
+
+                //Jumping
+                if (Input.GetKeyDown(KeyCode.Space) && !isjumping)
+                {
+                Debug.Log("test1");
+                //Regular jump
+                if (!holdingWall){
+                        if (grounded == true)
+                        {
+                            isjumping = true;
+                        }
+                    }
+                    //Wall jump
+                    if (holdingWall)
+                    {
+                    Debug.Log("test2");
+                        if (!grounded)
+                        {
+                        Debug.Log("test3");
+                        transform.Rotate(0, 180, 0);
+                            midWallJump = true;
+                            isWallJumping = true;
+                        }
+
+                    }
+                }
+
+                //Regular Jumping
+                if (isjumping == true)
+                {
+                 
+                if (!midJump)
+                    {
+                    gravity = false;
+                    transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
+                    }
+                    jumptimer += Time.deltaTime;
+                    if (jumptimer >= .35 && jumptimer <= .70 && midJump == false)
+                    {
+                        midJump = true;
+                        gravity = true;
+                }
+                }
+
+                //Wall jumping
+                if (isWallJumping == true)
+                {
+                    transform.Translate(Vector3.up * 20 * Time.deltaTime);
+                    transform.Translate(Vector3.forward * 10 * Time.deltaTime);
+
+                    wallJumpTimer += Time.deltaTime;
+
+                    if (midWallJump)
+                    {
+                        if (wallJumpTimer > .20f)
+                        {
+                            midWallJump = false;
+                        }
+                    }
+
+                    if (wallJumpTimer > .25f)
+                    {
+                        midWallJump = false;
+                        wallJumpTimer = 0;
+                        isWallJumping = false;
+                        gravity = true;
+                }
+                }
+        }
     }
 
     void RedAbilitiesInit()
@@ -302,5 +417,42 @@ public class player : MonoBehaviour {
             gameObject.GetComponentInChildren<sword>().weaponred = false;
         }
 
+    }
+
+    void onCollisionEnter(Collision other)
+    {
+        
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+
+        if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("redwall") || other.gameObject.CompareTag("bluewall"))
+        {
+
+            //get right or left
+            if (other.gameObject.transform.position.z > gameObject.transform.position.z)
+            {
+                wallIsRight = false;
+            }
+            else
+            {
+                wallIsRight = true;
+            }
+            wallGrabReady = true;
+        }   
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("redwall") || other.gameObject.CompareTag("bluewall"))
+        {
+            holdingWall = false;
+            wallGrabReady = false;
+            if (!isWallJumping)
+            {
+               gravity = true;
+            }
+        }
     }
 }

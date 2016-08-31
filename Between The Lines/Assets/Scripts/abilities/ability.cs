@@ -24,6 +24,7 @@ public class ability : MonoBehaviour {
     public GameObject player;
     public player playerscript;
     public bool rooted;
+    public bool holdingWall;
 
     //mana values
     public float mana;
@@ -79,6 +80,9 @@ public class ability : MonoBehaviour {
 
         //Get rooted
         rooted = playerscript.rooted;
+
+        //get wall
+        holdingWall = playerscript.holdingWall;
 
         //Get mana
         if (abilityRed)
