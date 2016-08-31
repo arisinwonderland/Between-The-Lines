@@ -22,59 +22,33 @@ public class feetsCollider : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Floor"))
+        if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("redfloor") || other.gameObject.CompareTag("bluefloor"))
         {
             PlayerScript.grounded = true;
             PlayerScript.isjumping = false;
             PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
+            //player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+            PlayerScript.gravity = false;
 
-        else if (other.gameObject.CompareTag("redfloor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
-
-        else if (other.gameObject.CompareTag("bluefloor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
         }
 
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Floor"))
+        if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("redfloor") || other.gameObject.CompareTag("bluefloor"))
         {
             PlayerScript.grounded = true;
             PlayerScript.isjumping = false;
             PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+            //player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+            PlayerScript.gravity = false;
+            if (PlayerScript.holdingWall)
+            {
+                PlayerScript.holdingWall = false;
+                PlayerScript.wallGrabReady = false;
+            }
         }
-
-        else if (other.gameObject.CompareTag("redfloor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
-       
-        else if (other.gameObject.CompareTag("bluefloor"))
-        {
-            PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-        }
-        
-
     }
 
     void OnTriggerExit(Collider other)
@@ -83,16 +57,19 @@ public class feetsCollider : MonoBehaviour {
         if (other.gameObject.CompareTag("Floor"))
         {
             PlayerScript.grounded = false;
+            PlayerScript.gravity = true;
         }
         else if (other.gameObject.CompareTag("redfloor"))
         {
             PlayerScript.grounded = false;
+            PlayerScript.gravity = true;
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             PlayerScript.grounded = false;
+            PlayerScript.gravity = true;
         }
-     }
+    }
 
 
 
