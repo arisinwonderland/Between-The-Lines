@@ -23,8 +23,8 @@ public class ability : MonoBehaviour {
     //Player 
     public GameObject player;
     public player playerscript;
-    public bool rooted;
-    public bool holdingWall;
+	public bool rooted;
+	public bool holdingWall;
 
     //mana values
     public float mana;
@@ -32,7 +32,6 @@ public class ability : MonoBehaviour {
 
 	//for multiuse abilities
 	public bool isMultiUse;
-	public bool autoUseAtEnd;
 	public int uses;
 	public int currentUses;
 	public float subCooldown;
@@ -81,8 +80,8 @@ public class ability : MonoBehaviour {
         //Get rooted
         rooted = playerscript.rooted;
 
-        //get wall
-        holdingWall = playerscript.holdingWall;
+		//get wall
+		holdingWall = playerscript.holdingWall;
 
         //Get mana
         if (abilityRed)
@@ -138,7 +137,7 @@ public class ability : MonoBehaviour {
 									onsubcd = true;
 								}
 							} else {
-								abilityEnd ();
+								abilityEnd (true);
 								timer = cooldown;
 								isUsing = false;
 								oncd = true;
@@ -167,7 +166,7 @@ public class ability : MonoBehaviour {
 			}
 			if (subTimer <= 0)
 			{
-				abilityEnd ();
+				abilityEnd (false);
 				timer = cooldown;
 				isUsing = false;
 				oncd = true;
@@ -180,7 +179,7 @@ public class ability : MonoBehaviour {
 
     }
 
-	public virtual void abilityEnd()
+	public virtual void abilityEnd(bool wasActivated)
 	{
 
 	}
