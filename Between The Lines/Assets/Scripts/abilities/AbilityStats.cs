@@ -38,6 +38,7 @@ public class AbilityStats : MonoBehaviour {
                 if(other.gameObject.GetComponent<enemy>().hp <= 0 && red5)
                 {
                     red5unique();
+                    Debug.Log("test1");
                 }
     
 
@@ -49,6 +50,7 @@ public class AbilityStats : MonoBehaviour {
 
     public void red5unique()
     {
+        Debug.Log("test2");
         Instantiate(red5aoe, gameObject.transform.position, Quaternion.identity);
     }
 
