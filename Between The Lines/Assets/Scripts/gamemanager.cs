@@ -255,7 +255,7 @@ public class gamemanager : MonoBehaviour {
     public void loadlevel(int level)
     {
         
-        SceneManager.LoadScene("testlevel");
+        SceneManager.LoadScene("testlevel - Copy");
         
 
 
