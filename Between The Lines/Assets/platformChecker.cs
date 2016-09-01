@@ -39,11 +39,11 @@ public class platformChecker : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.name);
+  
         if (aspects.red)
         {
 
-            if (other.CompareTag("bluewall") || other.CompareTag("blueFloor"))
+            if (other.CompareTag("bluewall") || other.CompareTag("bluefloor"))
             {
                 aspects.canswitch = true;
             }
@@ -51,7 +51,7 @@ public class platformChecker : MonoBehaviour {
         }
         else if (!aspects.red)
         {
-            if (other.CompareTag("redwall") || other.CompareTag("redFloor"))
+            if (other.CompareTag("redwall") || other.CompareTag("redfloor"))
             {
                 aspects.canswitch = true;
             }
