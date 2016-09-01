@@ -134,11 +134,8 @@ public class ability : MonoBehaviour {
 									currentUses--;
 									subTimer = subCooldown + subLimit;
 									onsubcd = true;
-
-									Debug.Log ("e");
 								}
 							} else {
-								Debug.Log ("d");
 								abilityEnd (true);
 								timer = cooldown;
 								isUsing = false;

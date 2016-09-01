@@ -1,4 +1,4 @@
-﻿    using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class AbilityStats : MonoBehaviour {
@@ -9,7 +9,9 @@ public class AbilityStats : MonoBehaviour {
     public bool red5;
     public GameObject red5aoe;
 
-    public bool red7;
+	public bool blue8;
+	public GameObject blue8obj;
+	public blue8drain blue8script;
 
     public float timer;
 	// Use this for initialization
@@ -26,8 +28,7 @@ public class AbilityStats : MonoBehaviour {
     {
        
         if (other.CompareTag("Enemy"))
-        {
-            
+        { 
 
             if (abilityRed == other.gameObject.GetComponent<enemy>().EnemyRed)
             {
@@ -38,11 +39,12 @@ public class AbilityStats : MonoBehaviour {
                 if(other.gameObject.GetComponent<enemy>().hp <= 0 && red5)
                 {
                     red5unique();
-                    Debug.Log("test1");
                 }
-    
 
-            }
+				if (other.gameObject.GetComponent<enemy>().hp > 0 && blue8) {
+					blue8unique(other.gameObject);
+				}            
+			}
         }
 
        
@@ -50,9 +52,12 @@ public class AbilityStats : MonoBehaviour {
 
     public void red5unique()
     {
-        Debug.Log("test2");
         Instantiate(red5aoe, gameObject.transform.position, Quaternion.identity);
     }
 
+	public void blue8unique(GameObject enemy) {
+		blue8script = gameObject.transform.parent.gameObject.GetComponent<blue8drain> ();
+		blue8script.startDrain (enemy);
+	}
 
 }

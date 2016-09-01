@@ -51,7 +51,6 @@ public class blue6shard : MonoBehaviour {
 			despawn = moveTime;
 			playerPos = player.transform.position;
 			shard.GetComponent<BoxCollider> ().enabled = true;
-			Debug.Log ("A");
 		} else {
 			sphere.GetComponent<SphereCollider> ().enabled = true;
 			sphere.GetComponent<MeshRenderer> ().enabled = true;

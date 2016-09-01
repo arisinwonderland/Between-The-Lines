@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\abilities\blue\blue6shard.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue7.cs" />
      <Compile Include="Assets\Scripts\abilities\blue\blue7dash.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue8.cs" />
+     <Compile Include="Assets\Scripts\abilities\blue\blue8drain.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red1.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red1orb.cs" />
      <Compile Include="Assets\Scripts\abilities\red\red2.cs" />
