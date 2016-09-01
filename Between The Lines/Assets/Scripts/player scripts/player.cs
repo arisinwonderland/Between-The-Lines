@@ -73,7 +73,7 @@ public class player : MonoBehaviour {
         bluemana = 100;
         bluemanaregen = 5;
         holdingWall = false;
-        moveSpeed = 15;
+        moveSpeed = 10;
       
         //Ability Init
         RedAbilitiesInit();
