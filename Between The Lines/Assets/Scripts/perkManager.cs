@@ -10,6 +10,10 @@ public class perkManager : MonoBehaviour {
     public bool red3unlock;
     public bool red4unlock;
     public bool red5unlock;
+    public bool red6unlock;
+    public bool red7unlock;
+    public bool red8unlock;
+    public bool red9unlock;
 
     public bool blue2unlock;
     public bool blue3unlock;

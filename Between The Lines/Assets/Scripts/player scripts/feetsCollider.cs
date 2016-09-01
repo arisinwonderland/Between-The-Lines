@@ -25,10 +25,9 @@ public class feetsCollider : MonoBehaviour {
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("redfloor") || other.gameObject.CompareTag("bluefloor"))
         {
             PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
-            //player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-            PlayerScript.gravity = false;
+
+            player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
+            PlayerScript.GetComponent<Rigidbody>().useGravity = false;
 
         }
 
@@ -39,10 +38,8 @@ public class feetsCollider : MonoBehaviour {
         if (other.gameObject.CompareTag("Floor") || other.gameObject.CompareTag("redfloor") || other.gameObject.CompareTag("bluefloor"))
         {
             PlayerScript.grounded = true;
-            PlayerScript.isjumping = false;
-            PlayerScript.midJump = false;
             //player.transform.position = new Vector3(player.transform.position.x, other.transform.position.y + 2, player.transform.position.z);
-            PlayerScript.gravity = false;
+            PlayerScript.GetComponent<Rigidbody>().useGravity = false;
             if (PlayerScript.holdingWall)
             {
                 PlayerScript.holdingWall = false;
@@ -57,17 +54,17 @@ public class feetsCollider : MonoBehaviour {
         if (other.gameObject.CompareTag("Floor"))
         {
             PlayerScript.grounded = false;
-            PlayerScript.gravity = true;
+            PlayerScript.GetComponent<Rigidbody>().useGravity = true;
         }
         else if (other.gameObject.CompareTag("redfloor"))
         {
             PlayerScript.grounded = false;
-            PlayerScript.gravity = true;
+            PlayerScript.GetComponent<Rigidbody>().useGravity = true;
         }
         else if (other.gameObject.CompareTag("bluefloor"))
         {
             PlayerScript.grounded = false;
-            PlayerScript.gravity = true;
+            PlayerScript.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 

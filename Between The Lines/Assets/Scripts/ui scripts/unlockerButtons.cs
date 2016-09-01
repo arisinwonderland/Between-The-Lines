@@ -83,6 +83,22 @@ public class unlockerButtons : MonoBehaviour {
         {
             perkManager.red5unlock = true;
         }
+        else if (buttontag == "red6")
+        {
+            perkManager.red6unlock = true;
+        }
+        else if (buttontag == "red7")
+        {
+            perkManager.red7unlock = true;
+        }
+        else if (buttontag == "red8")
+        {
+            perkManager.red8unlock = true;
+        }
+        else if (buttontag == "red9")
+        {
+            perkManager.red9unlock = true;
+        }
 
         if (buttontag == "blue2")
         {
