@@ -8,6 +8,7 @@ public class aspects : MonoBehaviour {
 	public GameObject playerfootbox;
     bool switched;
     bool grounded;
+    public bool canswitch;
 
     float cd;
     float cdtimer;
@@ -19,7 +20,7 @@ public class aspects : MonoBehaviour {
     void Start () {
         player = GameObject.Find("Player");
         playerscript = player.GetComponent<player>();
-
+        canswitch = true;
         cdtimer = 1;
     }
 	
@@ -49,22 +50,28 @@ public class aspects : MonoBehaviour {
             if (oncd == false)
             {
 				if (!playerscript.rooted) {
-					if (Input.GetKeyDown (KeyCode.Q)) {
-						if (red) {
-							red = false;
-							player.layer = LayerMask.NameToLayer ("bluePlayer");
-							playerfootbox.layer = LayerMask.NameToLayer ("bluePlayer");
-							switched = true;
-							oncd = true;
-							cd = cdtimer;
-						} else if (!red) {
-							red = true;
-							player.layer = LayerMask.NameToLayer ("redPlayer");
-							playerfootbox.layer = LayerMask.NameToLayer ("redPlayer");
-							switched = true;
-							oncd = true;
-							cd = cdtimer;
-						}
+                    if (canswitch) {
+                        if (Input.GetKeyDown(KeyCode.Q))
+                        {
+                            if (red)
+                            {
+                                red = false;
+                                player.layer = LayerMask.NameToLayer("bluePlayer");
+                                playerfootbox.layer = LayerMask.NameToLayer("bluePlayer");
+                                switched = true;
+                                oncd = true;
+                                cd = cdtimer;
+                            }
+                            else if (!red)
+                            {
+                                red = true;
+                                player.layer = LayerMask.NameToLayer("redPlayer");
+                                playerfootbox.layer = LayerMask.NameToLayer("redPlayer");
+                                switched = true;
+                                oncd = true;
+                                cd = cdtimer;
+                            }
+                        }
 					}
 				}
             }
