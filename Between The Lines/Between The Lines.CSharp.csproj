@@ -111,7 +111,9 @@
     <Compile Include="Assets\Scripts\dimension swapping scripts\gloveColorChange.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\redTextureChanger.cs" />
     <Compile Include="Assets\Scripts\dimension swapping scripts\uiColorChanger.cs" />
+    <Compile Include="Assets\Scripts\enemies\RedEyeAttack.cs" />
     <Compile Include="Assets\Scripts\enemies\enemy.cs" />
+    <Compile Include="Assets\Scripts\enemies\enemyHitScript\RedEyeAttackHit.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\baseAttack.cs" />
     <Compile Include="Assets\Scripts\enemies\enemyHitScript\testHit.cs" />
     <Compile Include="Assets\Scripts\enemies\testEnemy.cs" />
@@ -159,6 +161,7 @@
     <Compile Include="Assets\Scripts\weapons\sword\swordslash.cs" />
     <Compile Include="Assets\Scripts\weapons\weapons.cs" />
     <Compile Include="Assets\TestRedEnemyAttack.cs" />
+    <Compile Include="Assets\platformChecker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
