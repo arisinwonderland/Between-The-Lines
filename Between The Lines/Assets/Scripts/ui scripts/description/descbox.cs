@@ -41,6 +41,7 @@ public class descbox : MonoBehaviour {
         descriptions.Add("Pillar Chain", "<b><color=red>Pillar Chain</color></b>\nActive\nPillars move to the left and right of you, dealing damage");
         descriptions.Add("Dark Gift", "<b><color=red>Dark Gift</color></b>\nActive\nHeal 20 percent of your max HP");
 
+        descriptions.Add("Start", "<b><color=blue>Up Close</color></b>\nPassive\nDescription here");
 
         descriptions.Add ("Up Close Blue", "<b><color=blue>Up Close</color></b>\nPassive\nDescription here");
 		descriptions.Add ("Far Away Blue", "<b><color=blue>Far Away</color></b>\nPassive\nDescription here");
