@@ -132,14 +132,16 @@ public class ability : MonoBehaviour {
 									}
 									abilityStart (new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), gameObject.transform.rotation);
 									currentUses--;
-									subTimer = subCooldown + subLimit;
+									subTimer = subLimit;
 									onsubcd = true;
+									Debug.Log ("a");
 								}
 							} else {
 								abilityEnd (true);
 								timer = cooldown;
 								isUsing = false;
 								oncd = true;
+								Debug.Log ("b");
 							}
 						}
 					}
@@ -162,7 +164,7 @@ public class ability : MonoBehaviour {
         }
 		if (isUsing) {
 			subTimer -= Time.deltaTime;
-			if (subTimer <= subLimit) {
+			if (subTimer <= subLimit-subCooldown) {
 				onsubcd = false;
 
 			}

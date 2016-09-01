@@ -67,9 +67,9 @@ public class blue7dash : MonoBehaviour {
 		
 		if (dashStopped && wasActivated) {
 			abilityEnded = true;
+			playerScript.rooted = true;
 			playerSprite.enabled = false;
 			playerCollider.enabled = false;
-			playerScript.rooted = true;
 			gameObject.GetComponentInChildren<MeshRenderer> ().enabled = true;
 		} else if (!wasActivated) {
 			Destroy (gameObject);

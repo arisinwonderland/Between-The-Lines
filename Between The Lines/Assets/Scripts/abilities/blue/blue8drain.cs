@@ -5,6 +5,7 @@ public class blue8drain : MonoBehaviour {
 
 	public GameObject player;
 	player playerScript;
+	blue8 blue8;
 
 	GameObject currentEnemy;
 	enemy enemyScript;
@@ -25,6 +26,7 @@ public class blue8drain : MonoBehaviour {
 	void Start () {
 		player = GameObject.Find("Player");
 		playerScript = player.GetComponent<player> ();
+		blue8 = player.GetComponentInChildren<blue8> ();
 	}
 
 	// Update is called once per frame
@@ -75,8 +77,12 @@ public class blue8drain : MonoBehaviour {
 		if (!draining) {
 			draining = true;
 			currentEnemy = enemy;
-			enemyScript = currentEnemy.GetComponent<enemy> ();
 			playerScript.rooted = true;
+			blue8.subCooldown = 0.25F;
+			blue8.subLimit = 1.5F;
+			blue8.subTimer = 1.5F;
+			blue8.onsubcd = true;
+			enemyScript = currentEnemy.GetComponent<enemy> ();
 			gameObject.GetComponentInChildren<SphereCollider> ().enabled = false;
 		}
 	}
