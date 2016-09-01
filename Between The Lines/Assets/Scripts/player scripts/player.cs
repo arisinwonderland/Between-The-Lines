@@ -10,6 +10,7 @@ public class player : MonoBehaviour {
 	public bool midJump = false;
 	public bool carryingObject = false;
     public float jumptimer = 0;
+    public float startHight;
 
     //Walljump stuff
     public bool holdingWall = false;
@@ -25,7 +26,6 @@ public class player : MonoBehaviour {
     //Movement
 	public int moveSpeed = 15;
     public float antiGrav = 25;
-    public bool gravity = false;
 
     //Feet
     public GameObject feets;
@@ -78,6 +78,7 @@ public class player : MonoBehaviour {
         BlueAbilitiesInit();
         WeaponsInit();
 
+
     }
 
     // Update is called once per frame
@@ -113,17 +114,16 @@ public class player : MonoBehaviour {
         //Grounded stuff
         if (grounded)
         {
-            jumptimer = 0;
+  
             midJump = false;
             isjumping = false;
 
+
         }
 
+       
         //Movement
-        if (gravity)
-        {
-            transform.Translate(Vector3.down * 10 * Time.deltaTime);
-        }else if (holdingWall)
+        if (holdingWall)
         {
             transform.Translate(Vector3.down * Time.deltaTime);
         }
@@ -137,15 +137,36 @@ public class player : MonoBehaviour {
                         //Move left and right
                         if (Input.GetKey(KeyCode.A))
                         {
-                            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                         
+                            
                             transform.eulerAngles = new Vector3(0, 0, 0);
+
+                            if (gameObject.GetComponent<Rigidbody>().velocity.z < 15)
+                            {
+                                if (gameObject.GetComponent<Rigidbody>().velocity.z < 0)
+                                {
+                                    gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z / 1.6f);
+                                }
+                                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 40);
+                            }
                             animator.SetInteger("animation", 2);
                         }
                         else if (Input.GetKey(KeyCode.D))
                         {
-                            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+                            
                             transform.eulerAngles = new Vector3(0, -180, 0);
+                            if (gameObject.GetComponent<Rigidbody>().velocity.z > -15)
+                            {
+                                if (gameObject.GetComponent<Rigidbody>().velocity.z > 0)
+                                {
+                                    gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z / 1.6f);
+                                }
+                                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * 40);
+                            }
                             animator.SetInteger("animation", 2);
+                        }else
+                        {
+                            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z/1.5f);
                         }
 
                         if (Input.GetKeyUp(KeyCode.A))
@@ -171,21 +192,22 @@ public class player : MonoBehaviour {
                                  midJump = false;
                                  midWallJump = false;
                                  isWallJumping = false;
-                                 gravity = false;
-                                
-                                }
+                                 gameObject.GetComponent<Rigidbody>().useGravity = false;
+
+                        }
                             }else if (Input.GetKey(KeyCode.A)){
 
                                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
                                 transform.eulerAngles = new Vector3(0, 0, 0);
                                 animator.SetInteger("animation", 2);
                                 holdingWall = false;
-                                gravity = true;
+                                gameObject.GetComponent<Rigidbody>().useGravity = true;
 
-                           }else{
+                    }
+                    else{
 
                                 holdingWall = false;
-                                gravity = true;
+                                gameObject.GetComponent<Rigidbody>().useGravity = true;
 
                     }
                         }else if (!wallIsRight){
@@ -200,7 +222,7 @@ public class player : MonoBehaviour {
                             midJump = false;
                             midWallJump = false;
                             isWallJumping = false;
-                            gravity = false;
+                            gameObject.GetComponent<Rigidbody>().useGravity = false;
 
 
                         }
@@ -210,13 +232,13 @@ public class player : MonoBehaviour {
                                 transform.eulerAngles = new Vector3(0, -180, 0);
                                 animator.SetInteger("animation", 2);
                                 holdingWall = false;
-                                gravity = true;
-    
+                                gameObject.GetComponent<Rigidbody>().useGravity = true;
+
                     }
                     else{
 
                                 holdingWall = false;
-                                gravity = true;
+                                gameObject.GetComponent<Rigidbody>().useGravity = true;
                     }
                         }
                 }
@@ -226,23 +248,31 @@ public class player : MonoBehaviour {
                 //Jumping
                 if (Input.GetKeyDown(KeyCode.Space) && !isjumping)
                 {
-                Debug.Log("test1");
+               
                 //Regular jump
                 if (!holdingWall){
                         if (grounded == true)
                         {
                             isjumping = true;
+                            jumptimer = 0;
+                        if (gameObject.GetComponent<Rigidbody>().velocity.y > 10)
+                        {
+                            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 30000 * Time.deltaTime);
                         }
+
+                    }
                     }
                     //Wall jump
                     if (holdingWall)
                     {
-                    Debug.Log("test2");
+               
                         if (!grounded)
                         {
-                        Debug.Log("test3");
+                        
                         transform.Rotate(0, 180, 0);
-                            midWallJump = true;
+                        gameObject.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * 500);
+                        gameObject.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 150);
+                        midWallJump = true;
                             isWallJumping = true;
                         }
 
@@ -252,25 +282,17 @@ public class player : MonoBehaviour {
                 //Regular Jumping
                 if (isjumping == true)
                 {
-                 
-                if (!midJump)
-                    {
-                    gravity = false;
-                    transform.Translate(Vector3.up * antiGrav * Time.deltaTime);
-                    }
-                    jumptimer += Time.deltaTime;
-                    if (jumptimer >= .35 && jumptimer <= .70 && midJump == false)
-                    {
-                        midJump = true;
-                        gravity = true;
-                }
+
+                jumptimer += Time.deltaTime;
+                    gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 30000 * Time.deltaTime * ((-jumptimer) + 1));
+               
+          
                 }
 
                 //Wall jumping
                 if (isWallJumping == true)
                 {
-                    transform.Translate(Vector3.up * 20 * Time.deltaTime);
-                    transform.Translate(Vector3.forward * 10 * Time.deltaTime);
+                    
 
                     wallJumpTimer += Time.deltaTime;
 
@@ -287,10 +309,12 @@ public class player : MonoBehaviour {
                         midWallJump = false;
                         wallJumpTimer = 0;
                         isWallJumping = false;
-                        gravity = true;
+                        
                 }
                 }
         }
+     
+
     }
 
     void RedAbilitiesInit()
@@ -339,6 +363,30 @@ public class player : MonoBehaviour {
                 gameObject.GetComponentInChildren<red5>().enabled = true;
 
                 gameObject.GetComponentInChildren<red5>().buttonid = num;
+            }
+            if (current == "Ritual Summon")
+            {
+                gameObject.GetComponentInChildren<red6>().enabled = true;
+
+                gameObject.GetComponentInChildren<red6>().buttonid = num;
+            }
+            if (current == "Brimstone Blast")
+            {
+                gameObject.GetComponentInChildren<red7>().enabled = true;
+
+                gameObject.GetComponentInChildren<red7>().buttonid = num;
+            }
+            if (current == "Pillar Chain")
+            {
+                gameObject.GetComponentInChildren<red8>().enabled = true;
+
+                gameObject.GetComponentInChildren<red8>().buttonid = num;
+            }
+            if (current == "Dark Gift")
+            {
+                gameObject.GetComponentInChildren<red9>().enabled = true;
+
+                gameObject.GetComponentInChildren<red9>().buttonid = num;
             }
         }
     }   
@@ -390,6 +438,31 @@ public class player : MonoBehaviour {
 
                 gameObject.GetComponentInChildren<blue5>().buttonid = num;
             }
+            if (current == "Shards of Eternity")
+            {
+                gameObject.GetComponentInChildren<blue6>().enabled = true;
+
+                gameObject.GetComponentInChildren<blue6>().buttonid = num;
+            }
+            if (current == "Celestial Shift")
+            {
+                //gameObject.GetComponentInChildren<blue7>().enabled = true;
+
+                //.GetComponentInChildren<blue7>().buttonid = num;
+            }
+            if (current == "Soul Tap")
+            {
+                //gameObject.GetComponentInChildren<blue8>().enabled = true;
+
+                //gameObject.GetComponentInChildren<blue8>().buttonid = num;
+            }
+            if (current == "Lightning Shock")
+            {
+                //gameObject.GetComponentInChildren<blue9>().enabled = true;
+
+                //gameObject.GetComponentInChildren<blue9>().buttonid = num;
+            }
+            
         }
     }
 
@@ -449,10 +522,11 @@ public class player : MonoBehaviour {
         {
             holdingWall = false;
             wallGrabReady = false;
-            if (!isWallJumping)
+            if (!holdingWall)
             {
-               gravity = true;
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
             }
         }
+        
     }
 }

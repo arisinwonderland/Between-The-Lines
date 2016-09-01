@@ -18,6 +18,10 @@ public class red2aoe : MonoBehaviour {
 	void Update () {
 
         despawn -= Time.deltaTime;
+        if(despawn <= .6f)
+        {
+            gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
         if (despawn <= 0)
         {
             Destroy(gameObject);
