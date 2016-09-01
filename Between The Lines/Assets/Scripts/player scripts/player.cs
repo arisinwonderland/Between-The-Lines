@@ -160,7 +160,10 @@ public class player : MonoBehaviour {
                                 }
                                 gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60);
                             }
-                            animator.SetInteger("animation", 2);
+                            if (isjumping == false && isWallJumping == false)
+                            {
+                                animator.SetInteger("animation", 2);
+                            }
                         }
                         else if (Input.GetKey(KeyCode.D))
                         {
@@ -174,7 +177,10 @@ public class player : MonoBehaviour {
                                 }
                                 gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * 60);
                             }
-                            animator.SetInteger("animation", 2);
+                            if (isjumping == false && isWallJumping == false)
+                            {
+                                animator.SetInteger("animation", 2);
+                            }
                         }else
                         {
                             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, gameObject.GetComponent<Rigidbody>().velocity.y, gameObject.GetComponent<Rigidbody>().velocity.z/1.5f);
@@ -182,11 +188,17 @@ public class player : MonoBehaviour {
 
                         if (Input.GetKeyUp(KeyCode.A))
                         {
-                            animator.SetInteger("animation", 1);
+                            if (isjumping == false && isWallJumping == false)
+                            {
+                                animator.SetInteger("animation", 1);
+                            }
                         }
                         if (Input.GetKeyUp(KeyCode.D))
                         {
-                            animator.SetInteger("animation", 1);
+                            if (isjumping == false && isWallJumping == false)
+                            {
+                                animator.SetInteger("animation", 1);
+                            }
                         }
                     }
                 }
@@ -210,7 +222,10 @@ public class player : MonoBehaviour {
 
                                 gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 60);
                                 transform.eulerAngles = new Vector3(0, 0, 0);
-                                animator.SetInteger("animation", 2);
+                        if (isjumping == false && isWallJumping == false)
+                        {
+                            animator.SetInteger("animation", 2);
+                        }
                                 holdingWall = false;
                                 
 
@@ -241,7 +256,10 @@ public class player : MonoBehaviour {
     
                                 gameObject.GetComponent<Rigidbody>().AddForce(Vector3.back * 60);
                                 transform.eulerAngles = new Vector3(0, -180, 0);
-                                animator.SetInteger("animation", 2);
+                        if (isjumping == false && isWallJumping == false)
+                        {
+                            animator.SetInteger("animation", 2);
+                        }
                                 holdingWall = false;
                                 
 
@@ -259,7 +277,7 @@ public class player : MonoBehaviour {
                 //Jumping
                 if (Input.GetKeyDown(KeyCode.Space) && !isjumping)
                 {
-               
+                animator.SetInteger("animation", 5);
                 //Regular jump
                 if (!holdingWall){
                         if (grounded){
@@ -291,10 +309,11 @@ public class player : MonoBehaviour {
                 //Regular Jumping
                 if (isjumping == true)
                 {
-
+                animator.SetInteger("animation", 6);
                 jumptimer += Time.deltaTime;
                 if(jumptimer <= .3f)
                 {
+                    
                     transform.Translate(Vector3.up *9* Time.deltaTime);
                 }  
                
@@ -304,21 +323,24 @@ public class player : MonoBehaviour {
                 //Wall jumping
                 if (isWallJumping == true)
                 {
-                    
 
-                    wallJumpTimer += Time.deltaTime;
+                animator.SetInteger("animation", 6);
+                wallJumpTimer += Time.deltaTime;
 
                     if (midWallJump)
                     {
                         if (wallJumpTimer > .20f)
                         {
-                            midWallJump = false;
+                        
+                        midWallJump = false;
                         }
                     }
 
                     if (wallJumpTimer > .25f)
                     {
-                        midWallJump = false;
+                    
+                    
+                    midWallJump = false;
                         wallJumpTimer = 0;
                         isWallJumping = false;
                         
