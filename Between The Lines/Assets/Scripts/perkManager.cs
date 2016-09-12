@@ -34,10 +34,10 @@ public class perkManager : MonoBehaviour {
     {
         if (red)
         {
-            RedPoints =+ num;
+            RedPoints = RedPoints + num;
         }else if (!red)
         {
-            BluePoints = +num;
+            BluePoints = BluePoints + num;
         }
     }
 

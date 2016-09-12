@@ -145,7 +145,7 @@ public class player : MonoBehaviour
 								if (gameObject.GetComponent<Rigidbody> ().velocity.z < 0) {
 									gameObject.GetComponent<Rigidbody> ().velocity = new Vector3 (0, gameObject.GetComponent<Rigidbody> ().velocity.y, gameObject.GetComponent<Rigidbody> ().velocity.z / 1.6f);
 								}
-								gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.forward * 60);
+								gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.forward * 100);
 							}
 							if (isjumping == false && isWallJumping == false) {
 								animator.SetInteger ("animation", 2);
@@ -157,7 +157,7 @@ public class player : MonoBehaviour
 								if (gameObject.GetComponent<Rigidbody> ().velocity.z > 0) {
 									gameObject.GetComponent<Rigidbody> ().velocity = new Vector3 (0, gameObject.GetComponent<Rigidbody> ().velocity.y, gameObject.GetComponent<Rigidbody> ().velocity.z / 1.6f);
 								}
-								gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.back * 60);
+								gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.back * 100);
 							}
 							if (isjumping == false && isWallJumping == false) {
 								animator.SetInteger ("animation", 2);
